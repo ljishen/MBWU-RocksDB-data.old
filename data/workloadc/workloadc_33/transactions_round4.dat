@@ -1,0 +1,120 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl com.yahoo.ycsb:rocksdb-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /tmp/ycsb-rocksdb/YCSB/rocksdb/conf:/tmp/ycsb-rocksdb/YCSB/rocksdb/target/rocksdb-binding-0.16.0-SNAPSHOT.jar:/home/ljishen/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/home/ljishen/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/ljishen/.m2/repository/org/rocksdb/rocksdbjni/5.14.3/rocksdbjni-5.14.3.jar:/home/ljishen/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/tmp/ycsb-rocksdb/YCSB/core/target/core-0.16.0-SNAPSHOT.jar:/home/ljishen/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/home/ljishen/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/ljishen/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar:/home/ljishen/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar:/home/ljishen/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar com.yahoo.ycsb.Client -db com.yahoo.ycsb.db.rocksdb.RocksDBClient -s -P /tmp/ycsb-rocksdb/data/output_myworkload/myworkload -p rocksdb.dir=/mnt/sda1/ycsb-rocksdb-data -t
+Command line: -db com.yahoo.ycsb.db.rocksdb.RocksDBClient -s -P /tmp/ycsb-rocksdb/data/output_myworkload/myworkload -p rocksdb.dir=/mnt/sda1/ycsb-rocksdb-data -t
+YCSB Client 0.16.0-SNAPSHOT
+
+Loading workload...
+Starting test.
+0      [      Thread-34] INFO  .ycsb.db.rocksdb.RocksDBClient  - RocksDB data dir: /mnt/sda1/ycsb-rocksdb-data
+2018-09-25 16:18:50:687 0 sec: 0 operations; est completion in 0 second 
+297    [      Thread-34] INFO  .ycsb.db.rocksdb.RocksDBClient  - Load column families: [default, usertable] from options file: OPTIONS-001593
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2018-09-25 16:19:00:658 10 sec: 349077 operations; 34904.21 current ops/sec; est completion in 4 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=349183, Max=27039, Min=10, Avg=779.45, 90=1364, 99=1577, 99.9=2031, 99.99=25807] [SYS_LOAD_AVG: Count=1, Max=18, Min=18, Avg=18, 90=18, 99=18, 99.9=18, 99.99=18] [GCS: Count=1, Max=0, Min=0, Avg=0, 90=0, 99=0, 99.9=0, 99.99=0] [USED_MEM_MB: Count=1, Max=196, Min=196, Avg=196, 90=196, 99=196, 99.9=196, 99.99=196] [GCS_TIME: Count=1, Max=0, Min=0, Avg=0, 90=0, 99=0, 99.9=0, 99.99=0] 
+2018-09-25 16:19:10:660 20 sec: 824838 operations; 47576.1 current ops/sec; est completion in 3 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=475803, Max=19327, Min=10, Avg=691, 90=1332, 99=1586, 99.9=4763, 99.99=5171] [SYS_LOAD_AVG: Count=1, Max=20, Min=20, Avg=20, 90=20, 99=20, 99.9=20, 99.99=20] [GCS: Count=1, Max=10, Min=10, Avg=10, 90=10, 99=10, 99.9=10, 99.99=10] [USED_MEM_MB: Count=1, Max=136, Min=136, Avg=136, 90=136, 99=136, 99.9=136, 99.99=136] [GCS_TIME: Count=1, Max=101, Min=101, Avg=101, 90=101, 99=101, 99.9=101, 99.99=101] 
+2018-09-25 16:19:20:658 30 sec: 1349310 operations; 52447.2 current ops/sec; est completion in 3 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=524405, Max=7431, Min=10, Avg=626.7, 90=1321, 99=1531, 99.9=1810, 99.99=3515] [SYS_LOAD_AVG: Count=1, Max=22, Min=22, Avg=22, 90=22, 99=22, 99.9=22, 99.99=22] [GCS: Count=1, Max=4, Min=4, Avg=4, 90=4, 99=4, 99.9=4, 99.99=4] [USED_MEM_MB: Count=1, Max=814, Min=814, Avg=814, 90=814, 99=814, 99.9=814, 99.99=814] [GCS_TIME: Count=1, Max=7, Min=7, Avg=7, 90=7, 99=7, 99.9=7, 99.99=7] 
+2018-09-25 16:19:30:658 40 sec: 1903289 operations; 55397.9 current ops/sec; est completion in 2 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=553958, Max=26607, Min=10, Avg=593.36, 90=1296, 99=1511, 99.9=1795, 99.99=17423] [SYS_LOAD_AVG: Count=1, Max=24, Min=24, Avg=24, 90=24, 99=24, 99.9=24, 99.99=24] [GCS: Count=1, Max=7, Min=7, Avg=7, 90=7, 99=7, 99.9=7, 99.99=7] [USED_MEM_MB: Count=1, Max=398, Min=398, Avg=398, 90=398, 99=398, 99.9=398, 99.99=398] [GCS_TIME: Count=1, Max=11, Min=11, Avg=11, 90=11, 99=11, 99.9=11, 99.99=11] 
+2018-09-25 16:19:40:660 50 sec: 2401336 operations; 49804.7 current ops/sec; est completion in 2 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=498015, Max=36735, Min=10, Avg=660.31, 90=1303, 99=4719, 99.9=5019, 99.99=19183] [SYS_LOAD_AVG: Count=1, Max=25, Min=25, Avg=25, 90=25, 99=25, 99.9=25, 99.99=25] [GCS: Count=1, Max=9, Min=9, Avg=9, 90=9, 99=9, 99.9=9, 99.99=9] [USED_MEM_MB: Count=1, Max=424, Min=424, Avg=424, 90=424, 99=424, 99.9=424, 99.99=424] [GCS_TIME: Count=1, Max=93, Min=93, Avg=93, 90=93, 99=93, 99.9=93, 99.99=93] 
+2018-09-25 16:19:50:658 60 sec: 3020490 operations; 61915.4 current ops/sec; est completion in 2 minutes [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=619228, Max=14647, Min=10, Avg=530.54, 90=1266, 99=1481, 99.9=1725, 99.99=8223] [SYS_LOAD_AVG: Count=1, Max=26, Min=26, Avg=26, 90=26, 99=26, 99.9=26, 99.99=26] [GCS: Count=1, Max=4, Min=4, Avg=4, 90=4, 99=4, 99.9=4, 99.99=4] [USED_MEM_MB: Count=1, Max=1087, Min=1087, Avg=1087, 90=1087, 99=1087, 99.9=1087, 99.99=1087] [GCS_TIME: Count=1, Max=77, Min=77, Avg=77, 90=77, 99=77, 99.9=77, 99.99=77] 
+2018-09-25 16:20:00:658 70 sec: 3671132 operations; 65064.2 current ops/sec; est completion in 1 minute [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=650603, Max=23439, Min=10, Avg=504.94, 90=1248, 99=1460, 99.9=1726, 99.99=9959] [SYS_LOAD_AVG: Count=1, Max=27, Min=27, Avg=27, 90=27, 99=27, 99.9=27, 99.99=27] [GCS: Count=1, Max=4, Min=4, Avg=4, 90=4, 99=4, 99.9=4, 99.99=4] [USED_MEM_MB: Count=1, Max=1195, Min=1195, Avg=1195, 90=1195, 99=1195, 99.9=1195, 99.99=1195] [GCS_TIME: Count=1, Max=25, Min=25, Avg=25, 90=25, 99=25, 99.9=25, 99.99=25] 
+2018-09-25 16:20:10:658 80 sec: 4351184 operations; 68005.2 current ops/sec; est completion in 1 minute [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=680053, Max=22447, Min=10, Avg=483.04, 90=1233, 99=1447, 99.9=1719, 99.99=15503] [SYS_LOAD_AVG: Count=1, Max=28, Min=28, Avg=28, 90=28, 99=28, 99.9=28, 99.99=28] [GCS: Count=1, Max=6, Min=6, Avg=6, 90=6, 99=6, 99.9=6, 99.99=6] [USED_MEM_MB: Count=1, Max=430, Min=430, Avg=430, 90=430, 99=430, 99.9=430, 99.99=430] [GCS_TIME: Count=1, Max=57, Min=57, Avg=57, 90=57, 99=57, 99.9=57, 99.99=57] 
+2018-09-25 16:20:20:658 90 sec: 5064748 operations; 71356.4 current ops/sec; est completion in 1 minute [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=713577, Max=29103, Min=10, Avg=460.25, 90=1213, 99=1427, 99.9=1681, 99.99=15663] [SYS_LOAD_AVG: Count=1, Max=29, Min=29, Avg=29, 90=29, 99=29, 99.9=29, 99.99=29] [GCS: Count=1, Max=7, Min=7, Avg=7, 90=7, 99=7, 99.9=7, 99.99=7] [USED_MEM_MB: Count=1, Max=590, Min=590, Avg=590, 90=590, 99=590, 99.9=590, 99.99=590] [GCS_TIME: Count=1, Max=88, Min=88, Avg=88, 90=88, 99=88, 99.9=88, 99.99=88] 
+2018-09-25 16:20:30:658 100 sec: 5813417 operations; 74866.9 current ops/sec; est completion in 1 minute [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=748668, Max=39679, Min=10, Avg=438.5, 90=1198, 99=1409, 99.9=1654, 99.99=17551] [SYS_LOAD_AVG: Count=1, Max=29, Min=29, Avg=29, 90=29, 99=29, 99.9=29, 99.99=29] [GCS: Count=1, Max=6, Min=6, Avg=6, 90=6, 99=6, 99.9=6, 99.99=6] [USED_MEM_MB: Count=1, Max=621, Min=621, Avg=621, 90=621, 99=621, 99.9=621, 99.99=621] [GCS_TIME: Count=1, Max=88, Min=88, Avg=88, 90=88, 99=88, 99.9=88, 99.99=88] 
+2018-09-25 16:20:40:658 110 sec: 6493773 operations; 68035.6 current ops/sec; est completion in 57 seconds [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=680302, Max=19487, Min=10, Avg=482.74, 90=1194, 99=4527, 99.9=4851, 99.99=16399] [SYS_LOAD_AVG: Count=1, Max=30, Min=30, Avg=30, 90=30, 99=30, 99.9=30, 99.99=30] [GCS: Count=1, Max=5, Min=5, Avg=5, 90=5, 99=5, 99.9=5, 99.99=5] [USED_MEM_MB: Count=1, Max=389, Min=389, Avg=389, 90=389, 99=389, 99.9=389, 99.99=389] [GCS_TIME: Count=1, Max=104, Min=104, Avg=104, 90=104, 99=104, 99.9=104, 99.99=104] 
+2018-09-25 16:20:50:658 120 sec: 7069934 operations; 57616.1 current ops/sec; est completion in 47 seconds [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=576197, Max=41087, Min=10, Avg=570.55, 90=1208, 99=4727, 99.9=4939, 99.99=17839] [SYS_LOAD_AVG: Count=1, Max=30, Min=30, Avg=30, 90=30, 99=30, 99.9=30, 99.99=30] [GCS: Count=1, Max=4, Min=4, Avg=4, 90=4, 99=4, 99.9=4, 99.99=4] [USED_MEM_MB: Count=1, Max=617, Min=617, Avg=617, 90=617, 99=617, 99.9=617, 99.99=617] [GCS_TIME: Count=1, Max=30, Min=30, Avg=30, 90=30, 99=30, 99.9=30, 99.99=30] 
+2018-09-25 16:21:00:658 130 sec: 7926460 operations; 85652.6 current ops/sec; est completion in 31 seconds [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=856524, Max=10911, Min=10, Avg=382.92, 90=1142, 99=1365, 99.9=1625, 99.99=5599] [SYS_LOAD_AVG: Count=1, Max=31, Min=31, Avg=31, 90=31, 99=31, 99.9=31, 99.99=31] [GCS: Count=1, Max=4, Min=4, Avg=4, 90=4, 99=4, 99.9=4, 99.99=4] [USED_MEM_MB: Count=1, Max=838, Min=838, Avg=838, 90=838, 99=838, 99.9=838, 99.99=838] [GCS_TIME: Count=1, Max=59, Min=59, Avg=59, 90=59, 99=59, 99.9=59, 99.99=59] 
+2018-09-25 16:21:10:658 140 sec: 8729701 operations; 80324.1 current ops/sec; est completion in 18 seconds [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=803303, Max=25551, Min=10, Avg=408.48, 90=1135, 99=4247, 99.9=4807, 99.99=16815] [SYS_LOAD_AVG: Count=1, Max=31, Min=31, Avg=31, 90=31, 99=31, 99.9=31, 99.99=31] [GCS: Count=1, Max=8, Min=8, Avg=8, 90=8, 99=8, 99.9=8, 99.99=8] [USED_MEM_MB: Count=1, Max=784, Min=784, Avg=784, 90=784, 99=784, 99.9=784, 99.99=784] [GCS_TIME: Count=1, Max=29, Min=29, Avg=29, 90=29, 99=29, 99.9=29, 99.99=29] 
+2018-09-25 16:21:20:658 150 sec: 9670128 operations; 94042.7 current ops/sec; est completion in 3 second [THREAD_COUNT: Count=1, Max=35, Min=35, Avg=35, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=940378, Max=14567, Min=10, Avg=348.46, 90=1097, 99=1321, 99.9=1582, 99.99=11999] [SYS_LOAD_AVG: Count=1, Max=31, Min=31, Avg=31, 90=31, 99=31, 99.9=31, 99.99=31] [GCS: Count=1, Max=11, Min=11, Avg=11, 90=11, 99=11, 99.9=11, 99.99=11] [USED_MEM_MB: Count=1, Max=333, Min=333, Avg=333, 90=333, 99=333, 99.9=333, 99.99=333] [GCS_TIME: Count=1, Max=73, Min=73, Avg=73, 90=73, 99=73, 99.9=73, 99.99=73] 
+2018-09-25 16:21:22:210 151 sec: 9811237 operations; 90920.75 current ops/sec; [THREAD_COUNT: Count=2, Max=35, Min=2, Avg=18.5, 90=35, 99=35, 99.9=35, 99.99=35] [READ: Count=141040, Max=4267, Min=10, Avg=311.05, 90=1057, 99=1283, 99.9=1523, 99.99=3553] [SYS_LOAD_AVG: Count=2, Max=31, Min=31, Avg=31, 90=31, 99=31, 99.9=31, 99.99=31] [GCS: Count=2, Max=8, Min=1, Avg=4.5, 90=8, 99=8, 99.9=8, 99.99=8] [USED_MEM_MB: Count=2, Max=874, Min=791, Avg=832.5, 90=874, 99=874, 99.9=874, 99.99=874] [CLEANUP: Count=33, Max=34911, Min=1, Avg=1062.48, 90=8, 99=34911, 99.9=34911, 99.99=34911] [GCS_TIME: Count=2, Max=59, Min=2, Avg=30.5, 90=59, 99=59, 99.9=59, 99.99=59] 
+[OVERALL], RunTime(ms), 151552
+[OVERALL], Throughput(ops/sec), 64738.41981630067
+[TOTAL_GCS_PS_Scavenge], Count, 98
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 903
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.5958350929054055
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 98
+[TOTAL_GC_TIME], Time(ms), 903
+[TOTAL_GC_TIME_%], Time(%), 0.5958350929054055
+[MAX_MEM_USED], MBs, 1195
+[MIN_MEM_USED], MBs, 136
+[MAX_THREADS], Count, 35
+[MIN_THREADS], Count, 2
+[MAX_SYS_LOAD_AVG], Load, 31.87
+[MIN_SYS_LOAD_AVG], Load, 18.29
+[THREAD_COUNT], Operations, 17
+[THREAD_COUNT], AverageLatency(us), 33.05882352941177
+[THREAD_COUNT], MinLatency(us), 2
+[THREAD_COUNT], MaxLatency(us), 35
+[THREAD_COUNT], 95thPercentileLatency(us), 35
+[THREAD_COUNT], 99thPercentileLatency(us), 35
+[READ], Operations, 9811237
+[READ], AverageLatency(us), 500.8772844851266
+[READ], MinLatency(us), 10
+[READ], MaxLatency(us), 41087
+[READ], 95thPercentileLatency(us), 1322
+[READ], 99thPercentileLatency(us), 1571
+[READ], Return=OK, 9811237
+[SYS_LOAD_AVG], Operations, 17
+[SYS_LOAD_AVG], AverageLatency(us), 27.235294117647058
+[SYS_LOAD_AVG], MinLatency(us), 18
+[SYS_LOAD_AVG], MaxLatency(us), 31
+[SYS_LOAD_AVG], 95thPercentileLatency(us), 31
+[SYS_LOAD_AVG], 99thPercentileLatency(us), 31
+[GCS], Operations, 17
+[GCS], AverageLatency(us), 5.764705882352941
+[GCS], MinLatency(us), 0
+[GCS], MaxLatency(us), 11
+[GCS], 95thPercentileLatency(us), 10
+[GCS], 99thPercentileLatency(us), 11
+[USED_MEM_MB], Operations, 17
+[USED_MEM_MB], AverageLatency(us), 618.6470588235294
+[USED_MEM_MB], MinLatency(us), 136
+[USED_MEM_MB], MaxLatency(us), 1195
+[USED_MEM_MB], 95thPercentileLatency(us), 1087
+[USED_MEM_MB], 99thPercentileLatency(us), 1195
+[CLEANUP], Operations, 33
+[CLEANUP], AverageLatency(us), 1062.4848484848485
+[CLEANUP], MinLatency(us), 1
+[CLEANUP], MaxLatency(us), 34911
+[CLEANUP], 95thPercentileLatency(us), 16
+[CLEANUP], 99thPercentileLatency(us), 34911
+[GCS_TIME], Operations, 17
+[GCS_TIME], AverageLatency(us), 53.11764705882353
+[GCS_TIME], MinLatency(us), 0
+[GCS_TIME], MaxLatency(us), 104
+[GCS_TIME], 95thPercentileLatency(us), 101
+[GCS_TIME], 99thPercentileLatency(us), 104
