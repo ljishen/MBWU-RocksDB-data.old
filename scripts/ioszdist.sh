@@ -7,7 +7,12 @@ if [ "$#" -ne 1 ]; then
 Usage: ./ioszdist.sh TRACE_FILE
 
 TRACE_FILE:
-    The trace file is the output from the 'trace-cmd report' command.
+    The trace file is the output from 'trace-cmd report' command.
+
+
+Note that the "sectors" in result are the standard UNIX 512-byte sectors,
+not any device- or filesystem-specific block size. See
+https://www.kernel.org/doc/Documentation/block/stat.txt
 ENDOFMESSAGE
     exit
 fi
@@ -26,13 +31,19 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     fi
 done < "$1"
 
-printf '\n%-21s%s\n' 'SECTORS' 'COUNT'
-for _ in $(seq 40); do
+
+total=0
+for sec in "${!buckets[@]}"; do
+    (( total += ${buckets[$sec]} ))
+done
+
+printf '\n%-13s%-11s%s\n' SECTORS COUNT RATIO
+for _ in $(seq 45); do
     printf '-'
 done
 echo
 
 for sec in "${!buckets[@]}"; do
-	printf '%-5s sectors   ->   %s\n' "$sec" "${buckets[$sec]}"
+    printf '%-5d   ->   %-11d%.3f%%\n' "$sec" "${buckets[$sec]}" "$(echo "${buckets[$sec]}" / "$total * 100" | bc -l)"
 done |
 sort -rn -k3
