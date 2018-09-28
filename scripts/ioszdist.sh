@@ -23,7 +23,6 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 
     if [ -n "$sectors" ]; then
         buckets[$sectors]="$(( ${buckets[$sectors]:-0} + 1 ))"
-        echo "$sectors"
     fi
 done < "$1"
 
