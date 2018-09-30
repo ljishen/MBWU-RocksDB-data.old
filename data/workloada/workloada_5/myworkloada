@@ -39,11 +39,11 @@ requestdistribution=zipfian
 
 threadcount=5
 
-# The database size is approximately 65 GB
-recordcount=8503072
+# The database size is approximately 75 GB
+recordcount=9811237
 
-# The number of operations is about 75% of the recordcount
-operationcount=6377304
+# The number of operations is the same of the recordcount
+operationcount=9811237
 
 # BEGIN ANSIBLE MANAGED BLOCK
 ########## Common Workload Parameters ##########
