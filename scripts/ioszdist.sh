@@ -7,34 +7,40 @@ if [ "$#" -ne 1 ]; then
 Usage: ./ioszdist.sh TRACE_FILE
 
 TRACE_FILE:
-    The trace file is the output from 'trace-cmd report' command.
+    The trace file is the output from 'trace-cmd record' command.
 
 
 Note that the "sectors" in result are the standard UNIX 512-byte sectors,
 not any device- or filesystem-specific block size. See
 https://www.kernel.org/doc/Documentation/block/stat.txt
+https://github.com/brendangregg/perf-tools/blob/master/disk/bitesize
 ENDOFMESSAGE
     exit
 fi
 
-declare -A buckets
+input_file="$1"
+input_file_dir="$( cd "$( dirname "$input_file" )" >/dev/null && pwd )"
+events_file="$input_file_dir"/events.dat
+sectors_file="$input_file_dir"/sectors.dat
 
 event="block_rq_issue"
 
-while IFS='' read -r line || [[ -n "$line" ]]; do
-    # Prevent grep from exiting in case of nomatch
-    #   https://unix.stackexchange.com/questions/330660/prevent-grep-from-exiting-in-case-of-nomatch
-    sectors="$(grep -oP "$event.+\\+ \\K\\d+" <<< "$line" || :)"
+echo "Generate events file with command 'trace-cmd report': $events_file"
+trace-cmd report -t -i "$input_file" -F "$event" > "$events_file"
 
-    if [ -n "$sectors" ]; then
-        buckets[$sectors]="$(( ${buckets[$sectors]:-0} + 1 ))"
-    fi
-done < "$1"
+echo "Extract sectors from events file to file: $sectors_file"
+grep -oP "$event.+\\+ \\K\\d+" "$events_file" > "$sectors_file"
+
+declare -A buckets
+
+while IFS='' read -r sectors || [[ -n "$sectors" ]]; do
+    buckets[$sectors]="$(( ${buckets[$sectors]:-0} + 1 ))"
+done < "$sectors_file"
 
 
 total=0
-for sec in "${!buckets[@]}"; do
-    (( total += ${buckets[$sec]} ))
+for sectors in "${!buckets[@]}"; do
+    (( total += ${buckets[$sectors]} ))
 done
 
 printf '\n%-13s%-11s%s\n' SECTORS COUNT RATIO
@@ -43,7 +49,7 @@ for _ in $(seq 45); do
 done
 echo
 
-for sec in "${!buckets[@]}"; do
-    printf '%-5d   ->   %-11d%.3f%%\n' "$sec" "${buckets[$sec]}" "$(echo "${buckets[$sec]}" / "$total * 100" | bc -l)"
+for sectors in "${!buckets[@]}"; do
+    printf '%-5d   ->   %-11d%.3f%%\n' "$sectors" "${buckets[$sectors]}" "$(echo "${buckets[$sectors]}" / "$total * 100" | bc -l)"
 done |
 sort -rn -k3
