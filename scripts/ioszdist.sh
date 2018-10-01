@@ -25,10 +25,10 @@ sectors_file="$input_file_dir"/sectors.dat
 
 event="block_rq_issue"
 
-echo "Generate events file with command 'trace-cmd report': $events_file"
+echo "Generating events file with command 'trace-cmd report': $events_file"
 trace-cmd report -t -i "$input_file" -F "$event" > "$events_file"
 
-echo "Extract sectors from events file to file: $sectors_file"
+echo "Extracting sectors from events file to file: $sectors_file"
 grep -oP "$event.+\\+ \\K\\d+" "$events_file" > "$sectors_file"
 
 declare -A buckets
