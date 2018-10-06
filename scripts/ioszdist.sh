@@ -84,7 +84,7 @@ echo "SUMMARY (512-byte sectors)"
 printSeparator
 
 total_sectors="$(( read_sectors + write_sectors ))"
-printf 'Total read sectors:  %-11d(%-7.3fMB, %.3f%%)' "$read_sectors" "$(echo "$read_sectors" / 2 / 1024 | bc -l)" "$(echo "$read_sectors" / "$total_sectors" | bc -l)"
+printf 'Total read sectors:  %-11d(%-7.3fMB, %.3f%%)' "$read_sectors" "$(echo "$read_sectors" / 2 / 1024 | bc -l)" "$(echo "$read_sectors" / "$total_sectors * 100" | bc -l)"
 echo
-printf 'Total write sectors: %-11d(%-7.3fMB, %.3f%%)' "$write_sectors" "$(echo "$write_sectors" / 2 / 1024 | bc -l)" "$(echo "$write_sectors" / "$total_sectors" | bc -l)"
+printf 'Total write sectors: %-11d(%-7.3fMB, %.3f%%)' "$write_sectors" "$(echo "$write_sectors" / 2 / 1024 | bc -l)" "$(echo "$write_sectors" / "$total_sectors * 100" | bc -l)"
 echo
