@@ -25,31 +25,66 @@ sectors_file="$input_file_dir"/sectors.dat
 
 event="block_rq_issue"
 
-echo "Generating events file with command 'trace-cmd report': $events_file"
+echo "Generating events file $events_file"
 trace-cmd report -t -i "$input_file" -F "$event" > "$events_file"
 
-echo "Extracting sectors from events file to file: $sectors_file"
-grep -oP "$event.+\\+ \\K\\d+" "$events_file" > "$sectors_file"
+echo "Extracting sectors from events file to $sectors_file"
+sed -nr 's/^.+,[[:digit:]]+ ([[:upper:]]+).+\+ ([[:digit:]]+).+$/\1 \2/ p' "$events_file" > "$sectors_file"
 
-declare -A buckets
+echo "Parsing results..."
 
-while IFS='' read -r sectors || [[ -n "$sectors" ]]; do
-    buckets[$sectors]="$(( ${buckets[$sectors]:-0} + 1 ))"
-done < "$sectors_file"
-
+declare -A buckets_read=()
+declare -A buckets_write=()
 
 total=0
-for sectors in "${!buckets[@]}"; do
-    (( total += ${buckets[$sectors]} ))
-done
+read_sectors=0
+write_sectors=0
 
-printf '\n%-13s%-11s%s\n' SECTORS COUNT RATIO
-for _ in $(seq 45); do
-    printf '-'
-done
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    rwbs="${line%% *}"
+    sectors="${line#* }"
+    if [[ $rwbs == *R* ]]; then
+        buckets_read[$sectors]="$(( ${buckets_read[$sectors]:-0} + 1 ))"
+        read_sectors="$(( read_sectors + sectors ))"
+    else
+        buckets_write[$sectors]="$(( ${buckets_write[$sectors]:-0} + 1 ))"
+        write_sectors="$(( write_sectors + sectors ))"
+    fi
+
+    (( total += 1 ))
+done < "$sectors_file"
+
+function printSeparator() {
+    for _ in $(seq 45); do
+        printf '-'
+    done
+    echo
+}
+
+printf '\n%-11s   %-2s   %-12s%s\n' SECTOR_SIZE RW COUNT RATIO
+printSeparator
+
+function printTable() {
+    eval "declare -A buckets=${1#*=}"
+    rw="$2"
+
+    # shellcheck disable=SC2154
+    for sectors in "${!buckets[@]}"; do
+        printf '%-11d   %-2s   %-12d%.3f%%\n' "$sectors" "$rw" "${buckets[$sectors]}" "$(echo "${buckets[$sectors]}" / "$total * 100" | bc -l)"
+    done
+}
+
+# Pass associative array as an argument to a function
+#   https://stackoverflow.com/a/8879444
+(printTable "$(declare -p buckets_read)" R ; printTable "$(declare -p buckets_write)" W) | sort -rn -k3
+
+printf '\n\n'
+
+echo "SUMMARY (512-byte sectors)"
+printSeparator
+
+total_sectors="$(( read_sectors + write_sectors ))"
+printf 'Total read sectors:  %-11d(%-7.3fMB, %.3f%%)' "$read_sectors" "$(echo "$read_sectors" / 2 / 1024 | bc -l)" "$(echo "$read_sectors" / "$total_sectors" | bc -l)"
 echo
-
-for sectors in "${!buckets[@]}"; do
-    printf '%-5d   ->   %-11d%.3f%%\n' "$sectors" "${buckets[$sectors]}" "$(echo "${buckets[$sectors]}" / "$total * 100" | bc -l)"
-done |
-sort -rn -k3
+printf 'Total write sectors: %-11d(%-7.3fMB, %.3f%%)' "$write_sectors" "$(echo "$write_sectors" / 2 / 1024 | bc -l)" "$(echo "$write_sectors" / "$total_sectors" | bc -l)"
+echo
