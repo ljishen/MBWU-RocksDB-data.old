@@ -36,7 +36,8 @@ echo "Parsing results..."
 declare -A buckets_read=()
 declare -A buckets_write=()
 
-total=0
+reads=0
+writes=0
 read_sectors=0
 write_sectors=0
 
@@ -46,31 +47,50 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     if [[ $rwbs == *R* ]]; then
         buckets_read[$sectors]="$(( ${buckets_read[$sectors]:-0} + 1 ))"
         read_sectors="$(( read_sectors + sectors ))"
+        (( reads += 1 ))
     else
         buckets_write[$sectors]="$(( ${buckets_write[$sectors]:-0} + 1 ))"
         write_sectors="$(( write_sectors + sectors ))"
+        (( writes += 1 ))
     fi
 
-    (( total += 1 ))
 done < "$sectors_file"
 
 function printSeparator() {
-    for _ in $(seq 45); do
+    for _ in $(seq 70); do
         printf '-'
     done
     echo
 }
 
-printf '\n%-11s   %-2s   %-12s%s\n' SECTOR_SIZE RW COUNT RATIO
+printf '\n%-11s   %-2s   %-11s   %-14s   %-15s\n' \
+       SECTOR_SIZE \
+       RW \
+       COUNT \
+       "RATIO (in R/W)" \
+       "RATIO (Overall)"
 printSeparator
+
+total_ios="$(( reads + writes ))"
 
 function printTable() {
     eval "declare -A buckets=${1#*=}"
     rw="$2"
 
+    if [ "$rw" = "R" ]; then
+        cat_ios="$reads"
+    else
+        cat_ios="$writes"
+    fi
+
     # shellcheck disable=SC2154
     for sectors in "${!buckets[@]}"; do
-        printf '%-11d   %-2s   %-12d%.3f%%\n' "$sectors" "$rw" "${buckets[$sectors]}" "$(echo "${buckets[$sectors]}" / "$total * 100" | bc -l)"
+        printf '%-11d   %-2s   %-11d   %13.3f%%   %14.3f%%\n' \
+               "$sectors" \
+               "$rw" \
+               "${buckets[$sectors]}" \
+               "$(echo "${buckets[$sectors]}" / "$cat_ios * 100" | bc -l)" \
+               "$(echo "${buckets[$sectors]}" / "$total_ios * 100" | bc -l)"
     done
 }
 
@@ -83,8 +103,23 @@ printf '\n\n'
 echo "SUMMARY (512-byte sectors)"
 printSeparator
 
-total_sectors="$(( read_sectors + write_sectors ))"
-printf 'Total read sectors : %-11d(%-7.3fMB, %.3f%%)' "$read_sectors" "$(echo "$read_sectors" / 2 / 1024 | bc -l)" "$(echo "$read_sectors" / "$total_sectors * 100" | bc -l)"
+printf 'Total read I/Os : %-14d [%7.3f%%]' \
+       "$reads" \
+       "$(echo "$reads" / "$total_ios * 100" | bc -l)"
 echo
-printf 'Total write sectors: %-11d(%-7.3fMB, %.3f%%)' "$write_sectors" "$(echo "$write_sectors" / 2 / 1024 | bc -l)" "$(echo "$write_sectors" / "$total_sectors * 100" | bc -l)"
+printf 'Total write I/Os: %-14d [%7.3f%%]' \
+       "$writes" \
+       "$(echo "$writes" / "$total_ios * 100" | bc -l)"
+echo
+
+total_sectors="$(( read_sectors + write_sectors ))"
+printf 'Total read sectors : %-11d [%7.3f%%, %11.3fMB]' \
+       "$read_sectors" \
+       "$(echo "$read_sectors" / "$total_sectors * 100" | bc -l)" \
+       "$(echo "$read_sectors" / 2 / 1024 | bc -l)"
+echo
+printf 'Total write sectors: %-11d [%7.3f%%, %11.3fMB]' \
+       "$write_sectors" \
+       "$(echo "$write_sectors" / "$total_sectors * 100" | bc -l)" \
+       "$(echo "$write_sectors" / 2 / 1024 | bc -l)"
 echo
