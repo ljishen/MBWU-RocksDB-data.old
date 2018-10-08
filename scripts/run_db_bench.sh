@@ -34,7 +34,7 @@ Usage: $0 [--backup] BENCHMARK
 
 BENCHMARK:
     Currently available benchmarks: fillseq, randomread.
-    It could also be any of these meta operations: stats, levelstats, sstables.
+    It could also be any of these meta operations: stats, levelstats, sstables, count_only.
 
 --backup:
     Backup the output files to a time stamped folder.
@@ -85,7 +85,7 @@ randomread_command="$benchmark_comm \
 # Check if an item is in a bash array
 #   https://unix.stackexchange.com/a/177589
 declare -a non_benchmarks=(
-    stats levelstats sstables
+    stats levelstats sstables count_only
 )
 declare -A non_benchmarks_map
 for key in "${!non_benchmarks[@]}"; do
@@ -97,10 +97,11 @@ done
 for run_benchmark; do true; done
 
 if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
-    run_command="$db_bench_exe \
-        --db=$data_dir \
-        --benchmarks=$run_benchmark"
-    eval "$run_command"
+    if [ "$run_benchmark" = "count_only" ]; then
+        eval "$rocksdb_dir/ldb --db=$data_dir dump --count_only"
+    else
+        eval "$db_bench_exe --db=$data_dir --benchmarks=$run_benchmark"
+    fi
     exit 0
 fi
 
