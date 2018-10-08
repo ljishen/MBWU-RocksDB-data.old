@@ -19,7 +19,7 @@ num_keys="${NUM_KEYS:-$(( 1 * M ))}"
 KEY_SIZE=16
 VALUE_SIZE="$(( 8 * K ))"
 
-OUTPUT_BASE=../data/db_bench
+OUTPUT_BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../data/db_bench"
 DB_BENCH_LOG="$OUTPUT_BASE"/db_bench.log
 IOSTAT_LOG="$OUTPUT_BASE"/iostat.log
 MPSTAT_LOG="$OUTPUT_BASE"/mpstat.log
