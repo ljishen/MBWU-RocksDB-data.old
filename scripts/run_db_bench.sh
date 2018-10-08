@@ -40,9 +40,16 @@ ENDOFMESSAGE
     exit
 fi
 
+db_bench_exe="$rocksdb_dir"/db_bench
+if [ ! -f "$db_bench_exe" ]; then
+    echo "Please check if the ROCKSDB_DIR ($rocksdb_dir) is correct and \
+make sure the source is proper compiled to generate the 'db_bench' program."
+    exit 1
+fi
+
 mkdir --parents "$OUTPUT_BASE"
 
-benchmark_comm="$rocksdb_dir/db_bench \
+benchmark_comm="$db_bench_exe \
     --options_file=$rocksdb_options_file \
     --db=$data_dir \
     --wal_dir=$data_dir \
@@ -88,7 +95,7 @@ done
 for run_benchmark; do true; done
 
 if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
-    run_command="$rocksdb_dir/db_bench \
+    run_command="$db_bench_exe \
         --db=$data_dir \
         --benchmarks=$run_benchmark"
     eval "$run_command"
