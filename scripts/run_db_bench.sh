@@ -64,7 +64,7 @@ benchmark_comm="$db_bench_exe \
 
 suffix_params="2>&1 | tee -a $DB_BENCH_LOG"
 
-fillseq_command="rm -rf $data_dir && mkdir $data_dir && $benchmark_comm \
+fillseq_command="rm -rf $data_dir && mkdir --parents $data_dir && $benchmark_comm \
     --use_existing_db=0 \
     --benchmarks=fillseq \
     --num=$num_keys \
