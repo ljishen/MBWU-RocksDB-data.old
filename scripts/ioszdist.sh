@@ -4,7 +4,7 @@ set -eu -o pipefail
 
 if [ "$#" -ne 1 ]; then
     cat <<-ENDOFMESSAGE
-Usage: ./ioszdist.sh TRACE_FILE
+Usage: $0 TRACE_FILE
 
 TRACE_FILE:
     The trace file is the output from 'trace-cmd record' command.

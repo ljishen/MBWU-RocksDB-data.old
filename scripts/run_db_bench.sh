@@ -27,8 +27,17 @@ DISKSTATS_LOG_B="$OUTPUT_BASE"/diskstats_b.log     # log the before stats
 DISKSTATS_LOG_A="$OUTPUT_BASE"/diskstats_a.log     # log the after stats
 
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--backup] BENCHMARK"
-    exit 1
+    cat <<-ENDOFMESSAGE
+Usage: $0 [--backup] BENCHMARK
+
+BENCHMARK:
+    Currently available benchmarks: fillrandom, randomread.
+    It could also be any of these meta operations: stats, levelstats, sstables.
+
+--backup:
+    Backup the output files to a time stamped folder.
+ENDOFMESSAGE
+    exit
 fi
 
 mkdir --parents "$OUTPUT_BASE"
