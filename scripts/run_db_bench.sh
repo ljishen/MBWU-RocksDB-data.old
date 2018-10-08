@@ -15,9 +15,8 @@ db_on_device_name="${DB_ON_DEVICE_NAME:-sda1}"
 data_dir="${DATA_DIR:-/mnt/sda1/rocksdb_data}"
 num_threads="${NUM_THREADS:-1}"
 num_keys="${NUM_KEYS:-$(( 1 * M ))}"
-
-KEY_SIZE=16
-VALUE_SIZE="$(( 8 * K ))"
+key_size="${KEY_SIZE:-16}"
+value_size="${VALUE_SIZE:-$(( 8 * K ))}"
 
 OUTPUT_BASE="$(realpath "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../data/db_bench")"
 DB_BENCH_LOG="$OUTPUT_BASE"/db_bench.log
@@ -56,8 +55,8 @@ benchmark_comm="$db_bench_exe \
     --options_file=$rocksdb_options_file \
     --db=$data_dir \
     --wal_dir=$data_dir \
-    --key_size=$KEY_SIZE \
-    --value_size=$VALUE_SIZE \
+    --key_size=$key_size \
+    --value_size=$value_size \
     --disable_wal=0 \
     --stats_per_interval=1 \
     --stats_interval_seconds=60 \
