@@ -19,7 +19,7 @@ num_keys="${NUM_KEYS:-$(( 1 * M ))}"
 KEY_SIZE=16
 VALUE_SIZE="$(( 8 * K ))"
 
-OUTPUT_BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../data/db_bench"
+OUTPUT_BASE="$(realpath "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../data/db_bench")"
 DB_BENCH_LOG="$OUTPUT_BASE"/db_bench.log
 IOSTAT_LOG="$OUTPUT_BASE"/iostat.log
 MPSTAT_LOG="$OUTPUT_BASE"/mpstat.log
@@ -38,7 +38,7 @@ BENCHMARK:
         stats, levelstats, sstables, count_only.
 
 --backup:
-    Backup the output files to a time stamped folder.
+    Backup the output files to a time stamped folder under $OUTPUT_BASE
 ENDOFMESSAGE
     exit
 fi
@@ -154,7 +154,7 @@ rm --force "$MPSTAT_PIDFILE"
 
 if [ "$1" = "--backup" ]; then
     backup_dir="$OUTPUT_BASE/$(date +%F_%T)"
-    newline_print "Backuping files to dir $(realpath "$backup_dir")"
+    newline_print "Backuping files to dir $backup_dir"
     mkdir "$backup_dir"
     mv "$DB_BENCH_LOG" \
         "$IOSTAT_LOG" \
