@@ -34,7 +34,8 @@ Usage: $0 [--backup] BENCHMARK
 
 BENCHMARK:
     Currently available benchmarks: fillseq, randomread.
-    It could also be any of these meta operations: stats, levelstats, sstables, count_only.
+    It could also be any of these meta operations on the existing db:
+        stats, levelstats, sstables, count_only.
 
 --backup:
     Backup the output files to a time stamped folder.
@@ -100,7 +101,7 @@ if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
     if [ "$run_benchmark" = "count_only" ]; then
         eval "$rocksdb_dir/ldb --db=$data_dir dump --count_only"
     else
-        eval "$db_bench_exe --db=$data_dir --benchmarks=$run_benchmark"
+        eval "$db_bench_exe --db=$data_dir --use_existing_db=1 --benchmarks=$run_benchmark"
     fi
     exit 0
 fi
