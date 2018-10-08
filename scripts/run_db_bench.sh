@@ -13,16 +13,18 @@ rocksdb_dir="${ROCKSDB_DIR:-/home/ljishen/rocksdb-5.14.3}"
 rocksdb_options_file="${ROCKSDB_OPTIONS_FILE:-/home/ljishen/ycsb-rocksdb/analysis/data/workloadc/workloadc_21/OPTIONS}"
 db_on_device_name="${DB_ON_DEVICE_NAME:-sda1}"
 data_dir="${DATA_DIR:-/mnt/sda1/rocksdb_data}"
+num_threads="${NUM_THREADS:-1}"
+num_keys="${NUM_KEYS:-$(( 1 * M ))}"
 
-NUM_KEYS="$(( 1 * K ))"
 KEY_SIZE=16
 VALUE_SIZE="$(( 8 * K ))"
-NUM_THREADS=1
 
 OUTPUT_BASE=../data/db_bench
 DB_BENCH_LOG="$OUTPUT_BASE"/db_bench.log
 IOSTAT_LOG="$OUTPUT_BASE"/iostat.log
-PIDFILE=iostat.pid
+MPSTAT_LOG="$OUTPUT_BASE"/mpstat.log
+IOSTAT_PIDFILE=iostat.pid
+MPSTAT_PIDFILE=mpstat.pid
 DISKSTATS_LOG_B="$OUTPUT_BASE"/diskstats_b.log     # log the before stats
 DISKSTATS_LOG_A="$OUTPUT_BASE"/diskstats_a.log     # log the after stats
 
@@ -31,7 +33,7 @@ if [ "$#" -lt 1 ]; then
 Usage: $0 [--backup] BENCHMARK
 
 BENCHMARK:
-    Currently available benchmarks: fillrandom, randomread.
+    Currently available benchmarks: fillseq, randomread.
     It could also be any of these meta operations: stats, levelstats, sstables.
 
 --backup:
@@ -62,10 +64,10 @@ benchmark_comm="$db_bench_exe \
 
 suffix_params="2>&1 | tee -a $DB_BENCH_LOG"
 
-fillrandom_command="rm -rf $data_dir && mkdir $data_dir && $benchmark_comm \
+fillseq_command="rm -rf $data_dir && mkdir $data_dir && $benchmark_comm \
     --use_existing_db=0 \
-    --benchmarks=fillrandom \
-    --num=$NUM_KEYS \
+    --benchmarks=fillseq \
+    --num=$num_keys \
     --threads=1 \
     --seed=$( date +%s ) \
     $suffix_params"
@@ -74,9 +76,9 @@ randomread_command="$benchmark_comm \
     --use_existing_db=1 \
     --benchmarks=readrandom \
     --readonly=1 \
-    --threads=$NUM_THREADS \
-    --num=$NUM_KEYS \
-    --reads=$NUM_KEYS \
+    --threads=$num_threads \
+    --num=$num_keys \
+    --reads=$(( num_keys * 75 / 100 / num_threads )) \
     --seed=$( date +%s ) \
     $suffix_params"
 
@@ -102,8 +104,8 @@ if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
     exit 0
 fi
 
-if [ "$run_benchmark" = "fillrandom" ]; then
-    run_command="$fillrandom_command"
+if [ "$run_benchmark" = "fillseq" ]; then
+    run_command="$fillseq_command"
 elif [ "$run_benchmark" = "randomread" ]; then
     run_command="$randomread_command"
 else
@@ -115,10 +117,18 @@ function newline_print() {
     printf '\n%s\n' "$1"
 }
 
+newline_print "$run_command" | tee "$DB_BENCH_LOG"
+
 newline_print "Starting iostat deamon"
-pkill -SIGTERM --pidfile "$PIDFILE" &> /dev/null || true
-rm --force "$PIDFILE"
-nohup stdbuf -oL -eL iostat -dktxyzH -g /dev/"$db_on_device_name" 3 < /dev/null > "$IOSTAT_LOG" 2>&1 & echo $! > "$PIDFILE"
+pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" &> /dev/null || true
+rm --force "$IOSTAT_PIDFILE"
+nohup stdbuf -oL -eL iostat -dktxyzH -g /dev/"$db_on_device_name" 3 < /dev/null > "$IOSTAT_LOG" 2>&1 & echo $! > "$IOSTAT_PIDFILE"
+
+newline_print "Starting mpstat deamon"
+pkill -SIGTERM --pidfile "$MPSTAT_PIDFILE" &> /dev/null || true
+rm --force "$MPSTAT_PIDFILE"
+nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > "$MPSTAT_LOG" 2>&1 & echo $! > "$MPSTAT_PIDFILE"
+
 
 newline_print "Freeing the slab objects and pagecache"
 sync; sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
@@ -127,19 +137,27 @@ newline_print "Saving disk stats (before)"
 grep "$db_on_device_name" /proc/diskstats > "$DISKSTATS_LOG_B"
 
 echo
-printf "%s\\n\\n" "$run_command" | tee "$DB_BENCH_LOG"
 eval "$run_command"
 
 newline_print "Saving disk stats (after)"
 sync; grep "$db_on_device_name" /proc/diskstats > "$DISKSTATS_LOG_A"
 
 newline_print "Stopping iostat deamon"
-pkill -SIGTERM --pidfile "$PIDFILE" &> /dev/null
-rm --force "$PIDFILE"
+pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" &> /dev/null
+rm --force "$IOSTAT_PIDFILE"
+
+newline_print "Stopping mpstat deamon"
+pkill -SIGINT --pidfile "$MPSTAT_PIDFILE" &> /dev/null
+rm --force "$MPSTAT_PIDFILE"
 
 if [ "$1" = "--backup" ]; then
     backup_dir="$OUTPUT_BASE/$(date +%F_%T)"
     newline_print "Backuping files to dir $(realpath "$backup_dir")"
     mkdir "$backup_dir"
-    mv "$DB_BENCH_LOG" "$IOSTAT_LOG" "$DISKSTATS_LOG_B" "$DISKSTATS_LOG_A" "$backup_dir"
+    mv "$DB_BENCH_LOG" \
+        "$IOSTAT_LOG" \
+        "$MPSTAT_LOG" \
+        "$DISKSTATS_LOG_B" \
+        "$DISKSTATS_LOG_A" \
+        "$backup_dir"
 fi
