@@ -1,0 +1,32 @@
+Generating events file /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/2018-10-08_19:18:25/events.dat
+Extracting sectors from events file to /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/2018-10-08_19:18:25/sectors.dat
+Parsing results...
+
+SECTOR_SIZE   RW   COUNT         RATIO (in R/W)   RATIO (Overall)
+----------------------------------------------------------------------
+24            R    290520               55.750%           55.749%
+16            R    175392               33.657%           33.657%
+8             R    47605                 9.135%            9.135%
+256           R    4644                  0.891%            0.891%
+32            R    2916                  0.560%            0.560%
+144           R    20                    0.004%            0.004%
+128           R    5                     0.001%            0.001%
+40            R    4                     0.001%            0.001%
+0             W    4                    40.000%            0.001%
+96            R    1                     0.000%            0.000%
+8             W    1                    10.000%            0.000%
+3             W    1                    10.000%            0.000%
+32            W    1                    10.000%            0.000%
+24            W    1                    10.000%            0.000%
+248           R    1                     0.000%            0.000%
+1             R    1                     0.000%            0.000%
+16            W    1                    10.000%            0.000%
+11            W    1                    10.000%            0.000%
+
+
+SUMMARY (512-byte sectors)
+----------------------------------------------------------------------
+Total read I/Os : 521109         [ 99.998%]
+Total write I/Os: 10             [  0.002%]
+Total read sectors : 11445793    [ 99.999%,    5588.766MB]
+Total write sectors: 94          [  0.001%,       0.046MB]
