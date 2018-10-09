@@ -16,7 +16,12 @@ rocksdb_options_file="${ROCKSDB_OPTIONS_FILE:-$(realpath "$SCRIPT_DIR"/../data/w
 db_on_device_name="${DB_ON_DEVICE_NAME:-sda1}"
 db_on_device_fullname="/dev/$db_on_device_name"
 data_dir="${DATA_DIR:-/mnt/sda1/rocksdb_data}"
+
 num_threads="${NUM_THREADS:-1}"
+
+# e.g. 70 means 70% out of all read and merge operations are merges
+merge_read_ratio="${MERGE_READ_RATIO:-50}"
+
 num_keys="${NUM_KEYS:-$(( 1 * M ))}"
 key_size="${KEY_SIZE:-16}"
 value_size="${VALUE_SIZE:-$(( 8 * K ))}"
@@ -42,9 +47,20 @@ Usage: $0 [--trace_blk_rq] [--backup] BENCHMARK
 This script must be run as root.
 
 BENCHMARK:
-    Currently available benchmarks: fillseq, readrandom.
+    Currently available benchmarks: fillseq, readrandom, readrandommergerandom.
     It could also be any of these meta operations on the existing db:
         stats, levelstats, sstables, count_only.
+
+    fillseq:
+        Fill num_keys with 1 thread.
+
+    readrandom:
+        Read about 75% of num_keys from the existing db.
+        This workload is similar to the YCSB workloadc.
+
+    readrandommergerandom:
+        Read or merge all keys from the existing db under merge_read_ratio (default 50/50).
+        This workload is similar to the YCSB workloada.
 
 --trace_blk_rq:
     Trace the ftrace event block_rq_[issue|complete] during benchmarking.
@@ -110,6 +126,17 @@ readrandom_command="$bench_comm_command \
     --seed=$( date +%s ) \
     $suffix_params"
 
+readrandommergerandom_command="$bench_comm_command \
+    --use_existing_db=1 \
+    --benchmarks=readrandommergerandom \
+    --merge_operator='put' \
+    --merge_keys=$(( num_keys / num_threads )) \
+    --mergereadpercent=$merge_read_ratio \
+    --threads=$num_threads \
+    --num=$num_keys \
+    --seed=$( date +%s ) \
+    $suffix_params"
+
 # Get the last argument passed to this shell script
 #   https://stackoverflow.com/questions/1853946/getting-the-last-argument-passed-to-a-shell-script
 for run_benchmark; do true; done
@@ -143,6 +170,8 @@ if [ "$run_benchmark" = "fillseq" ]; then
     db_bench_command="$fillseq_command"
 elif [ "$run_benchmark" = "readrandom" ]; then
     db_bench_command="$readrandom_command"
+elif [ "$run_benchmark" = "readrandommergerandom" ]; then
+    db_bench_command="$readrandommergerandom_command"
 else
     echo "Benchmark '$run_benchmark' not found!"
     exit 1
