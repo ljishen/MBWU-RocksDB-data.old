@@ -42,7 +42,7 @@ Usage: $0 [--trace_blk_rq] [--backup] BENCHMARK
 This script must be run as root.
 
 BENCHMARK:
-    Currently available benchmarks: fillseq, randomread.
+    Currently available benchmarks: fillseq, readrandom.
     It could also be any of these meta operations on the existing db:
         stats, levelstats, sstables, count_only.
 
@@ -100,7 +100,7 @@ fillseq_command="$bench_comm_command \
     --seed=$( date +%s ) \
     $suffix_params"
 
-randomread_command="$bench_comm_command \
+readrandom_command="$bench_comm_command \
     --use_existing_db=1 \
     --benchmarks=readrandom \
     --readonly=1 \
@@ -141,8 +141,8 @@ fi
 if [ "$run_benchmark" = "fillseq" ]; then
     rm -rf "$data_dir" && mkdir --parents "$data_dir"
     db_bench_command="$fillseq_command"
-elif [ "$run_benchmark" = "randomread" ]; then
-    db_bench_command="$randomread_command"
+elif [ "$run_benchmark" = "readrandom" ]; then
+    db_bench_command="$readrandom_command"
 else
     echo "Benchmark '$run_benchmark' not found!"
     exit 1
