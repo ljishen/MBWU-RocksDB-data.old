@@ -9,8 +9,10 @@ M=$(( 1024 * K ))
 # shellcheck disable=SC2034
 G=$(( 1024 * M ))
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
 rocksdb_dir="${ROCKSDB_DIR:-/home/ljishen/rocksdb-5.14.3}"
-rocksdb_options_file="${ROCKSDB_OPTIONS_FILE:-/home/ljishen/ycsb-rocksdb/analysis/data/workloadc/workloadc_21/OPTIONS}"
+rocksdb_options_file="${ROCKSDB_OPTIONS_FILE:-$(realpath "$SCRIPT_DIR"/../data/workloadc/workloadc_21/OPTIONS)}"
 db_on_device_name="${DB_ON_DEVICE_NAME:-sda1}"
 db_on_device_fullname="/dev/$db_on_device_name"
 data_dir="${DATA_DIR:-/mnt/sda1/rocksdb_data}"
@@ -19,7 +21,6 @@ num_keys="${NUM_KEYS:-$(( 1 * M ))}"
 key_size="${KEY_SIZE:-16}"
 value_size="${VALUE_SIZE:-$(( 8 * K ))}"
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 OUTPUT_BASE="$(realpath "$SCRIPT_DIR/../data/db_bench")"
 
 DB_BENCH_LOG="$OUTPUT_BASE"/db_bench.log
