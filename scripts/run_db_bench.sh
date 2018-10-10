@@ -40,6 +40,10 @@ BLKSTAT_PIDFILE=blkstat.pid
 DISKSTATS_LOG_B="$OUTPUT_BASE"/diskstats_b.log     # log the before stats
 DISKSTATS_LOG_A="$OUTPUT_BASE"/diskstats_a.log     # log the after stats
 
+device_info="$("$SCRIPT_DIR"/../../playbooks/roles/run/files/devname2id.sh "$db_on_device_fullname")"
+pdevice_name="$(echo "$device_info" | head -1)"
+pdevice_id="$(echo "$device_info" | tail -1)"
+
 if [ "$#" -lt 1 ]; then
     cat <<-ENDOFMESSAGE
 Usage: $0 [--trace_blk_rq] [--backup] BENCHMARK
@@ -59,16 +63,22 @@ BENCHMARK:
         This workload is similar to the YCSB workloadc.
 
     readrandommergerandom:
-        Read or merge all keys from the existing db under merge_read_ratio (default 50/50).
-        This workload is similar to the YCSB workloada. The only difference is that the
-        atomic guarantee of the read-modify-write is handled by the RocksDB merge operator
-        instead of YCSB as the client.
+        Read or merge all keys from the existing db under merge_read_ratio
+        (default 50/50).
+        This workload is similar to the YCSB workloada. The only difference is
+        that the atomic guarantee of the read-modify-write is handled by the
+        RocksDB merge operator instead of YCSB as the client.
 
 --trace_blk_rq:
     Trace the ftrace event block_rq_[issue|complete] during benchmarking.
 
 --backup:
-    Backup the output files to a time stamped folder under $OUTPUT_BASE
+    Backup the output files to a time stamped folder under
+    $OUTPUT_BASE
+
+IMPORTANT NOTICE:
+    Please make sure that the current git repository does NOT reside in any
+    partition of $pdevice_name
 ENDOFMESSAGE
     exit
 fi
@@ -184,6 +194,7 @@ function newline_print() {
 }
 
 newline_print "Start $run_benchmark at $(date)" | tee "$DB_BENCH_LOG"
+echo "===============================================================================" | tee -a "$DB_BENCH_LOG"
 
 newline_print "$db_bench_command" | tee -a "$DB_BENCH_LOG"
 
@@ -203,10 +214,6 @@ newline_print "Freeing the slab objects and pagecache"
 sync; echo 3 > /proc/sys/vm/drop_caches
 
 if [ "$do_trace_blk_rq" = true ]; then
-    device_info="$("$SCRIPT_DIR"/../../playbooks/roles/run/files/devname2id.sh "$db_on_device_fullname")"
-    pdevice_name="$(echo "$device_info" | head -1)"
-    pdevice_id="$(echo "$device_info" | tail -1)"
-
     newline_print "Starting to trace the block events for device $pdevice_name"
     trace-cmd reset
     blk_trace_command="nohup trace-cmd record \
@@ -235,6 +242,14 @@ eval "$db_bench_command"
 newline_print "Saving disk stats (after)"
 sync; grep "$db_on_device_name" /proc/diskstats > "$DISKSTATS_LOG_A"
 
+newline_print "Stopping iostat deamon"
+pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" || true
+rm --force "$IOSTAT_PIDFILE"
+
+newline_print "Stopping mpstat deamon"
+pkill -SIGINT --pidfile "$MPSTAT_PIDFILE" || true
+rm --force "$MPSTAT_PIDFILE"
+
 if [ "$do_trace_blk_rq" = true ]; then
     newline_print "Stopping blkstat deamon"
     pkill -SIGINT --pidfile "$BLKSTAT_PIDFILE" &> /dev/null || true
@@ -258,14 +273,6 @@ if [ "$do_trace_blk_rq" = true ]; then
     "$SCRIPT_DIR"/ioszdist.sh "$BLKSTAT_LOG" | tee "$IOSZDIST_LOG"
     rm "$OUTPUT_BASE"/events.dat "$OUTPUT_BASE"/sectors.dat
 fi
-
-newline_print "Stopping iostat deamon"
-pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" || true
-rm --force "$IOSTAT_PIDFILE"
-
-newline_print "Stopping mpstat deamon"
-pkill -SIGINT --pidfile "$MPSTAT_PIDFILE" || true
-rm --force "$MPSTAT_PIDFILE"
 
 if [[ $* == *"--backup "* ]]; then
     backup_dir="$OUTPUT_BASE/$(date +%F_%T)"
