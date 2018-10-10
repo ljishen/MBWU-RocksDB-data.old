@@ -137,27 +137,25 @@ if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
     exit 0
 fi
 
+
 num_threads="${NUM_THREADS:-1}"
 
 if [ "$run_benchmark" = "fillseq" ]; then
     rm -rf "$data_dir" && mkdir --parents "$data_dir"
     num_threads=1
-    db_bench_command="
-        --use_existing_db=0 \
+    db_bench_command="--use_existing_db=0 \
         --benchmarks=fillseq \
         --num=$num_keys \
         --seed=$( date +%s )"
 elif [ "$run_benchmark" = "readrandom" ]; then
-    db_bench_command="
-        --use_existing_db=1 \
+    db_bench_command="--use_existing_db=1 \
         --benchmarks=readrandom \
         --readonly=1 \
         --num=$num_keys \
         --reads=$(( num_keys * 75 / 100 / num_threads )) \
         --seed=$( date +%s )"
 elif [ "$run_benchmark" = "readrandommergerandom" ]; then
-    db_bench_command="
-        --use_existing_db=1 \
+    db_bench_command="--use_existing_db=1 \
         --benchmarks=readrandommergerandom \
         --merge_operator='put' \
         --merge_keys=$(( num_keys / num_threads )) \
@@ -183,8 +181,17 @@ db_bench_command="$db_bench_exe \
     $db_bench_command \
     2>&1 | tee -a $DB_BENCH_LOG"
 
+
+function format_spaces() {
+    # replace multiple spaces with one space
+    #   https://stackoverflow.com/a/50259880
+    echo "$1" | tr --squeeze-repeats ' '
+}
+
 function newline_print() {
-    printf '\n%s\n' "$1" | tee -a "$DB_BENCH_LOG"
+    local str
+    str="$(format_spaces "$1")"
+    printf '\n[INFO | %s] %s\n' "$(date +"%F %T,%3N")" "$str" | tee -a "$DB_BENCH_LOG"
 }
 
 function print_separator() {
@@ -192,7 +199,9 @@ function print_separator() {
 }
 
 function print_var() {
-    echo "$1=${!1}" | tee -a "$DB_BENCH_LOG"
+    local val
+    val="$(format_spaces "${!1}")"
+    echo "$1=$val" | tee -a "$DB_BENCH_LOG"
 }
 
 newline_print "start benchmark $run_benchmark at $(date)" | tee "$DB_BENCH_LOG"
@@ -228,8 +237,7 @@ sync; echo 3 > /proc/sys/vm/drop_caches
 if [ "$do_trace_blk_rq" = true ]; then
     trace-cmd reset
 
-    blk_trace_command="
-        nohup trace-cmd record \
+    blk_trace_command="nohup trace-cmd record \
         -o $BLKSTAT_LOG \
         --date \
         -e block:block_rq_issue \
