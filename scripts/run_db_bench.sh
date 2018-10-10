@@ -17,8 +17,6 @@ db_on_device_name="${DB_ON_DEVICE_NAME:-sda1}"
 db_on_device_fullname="/dev/$db_on_device_name"
 data_dir="${DATA_DIR:-/mnt/sda1/rocksdb_data}"
 
-num_threads="${NUM_THREADS:-1}"
-
 # e.g. 70 means 70% out of all read and merge operations are merges
 merge_read_ratio="${MERGE_READ_RATIO:-50}"
 
@@ -77,20 +75,21 @@ BENCHMARK:
     $OUTPUT_BASE
 
 IMPORTANT NOTICE:
-    Please make sure that the current git repository does NOT reside in any
-    partition of $pdevice_name
+    Please make sure that the current git repository:
+        $(realpath "$SCRIPT_DIR"/../..)
+    does NOT reside in any partition of $pdevice_name
 ENDOFMESSAGE
     exit
 fi
 
 if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root."
+    echo "this script must be run as root."
     exit 1
 fi
 
 db_bench_exe="$rocksdb_dir"/db_bench
 if [ ! -f "$db_bench_exe" ]; then
-    echo "Please check if the ROCKSDB_DIR ($rocksdb_dir) is correct and \
+    echo "please check if the ROCKSDB_DIR ($rocksdb_dir) is correct and \
 make sure the source is proper compiled to generate the 'db_bench' program."
     exit 1
 fi
@@ -101,60 +100,18 @@ if [[ $* == *"--trace_blk_rq "* ]]; then
 fi
 
 if [ "$do_trace_blk_rq" = true ] && ! command -v trace-cmd &> /dev/null; then
-    echo "Program 'trace-cmd' is not available in this bash environment."
+    echo "program 'trace-cmd' is not available in this bash environment."
     exit 1
 fi
 
 mkdir --parents "$OUTPUT_BASE"
-
-bench_comm_command="$db_bench_exe \
-    --options_file=$rocksdb_options_file \
-    --db=$data_dir \
-    --wal_dir=$data_dir \
-    --key_size=$key_size \
-    --value_size=$value_size \
-    --disable_wal=0 \
-    --stats_per_interval=1 \
-    --stats_interval_seconds=60 \
-    --histogram=1"
-
-suffix_params="2>&1 | tee -a $DB_BENCH_LOG"
-
-fillseq_command="$bench_comm_command \
-    --use_existing_db=0 \
-    --benchmarks=fillseq \
-    --num=$num_keys \
-    --threads=1 \
-    --seed=$( date +%s ) \
-    $suffix_params"
-
-readrandom_command="$bench_comm_command \
-    --use_existing_db=1 \
-    --benchmarks=readrandom \
-    --readonly=1 \
-    --threads=$num_threads \
-    --num=$num_keys \
-    --reads=$(( num_keys * 75 / 100 / num_threads )) \
-    --seed=$( date +%s ) \
-    $suffix_params"
-
-readrandommergerandom_command="$bench_comm_command \
-    --use_existing_db=1 \
-    --benchmarks=readrandommergerandom \
-    --merge_operator='put' \
-    --merge_keys=$(( num_keys / num_threads )) \
-    --mergereadpercent=$merge_read_ratio \
-    --threads=$num_threads \
-    --num=$num_keys \
-    --seed=$( date +%s ) \
-    $suffix_params"
 
 # Get the last argument passed to this shell script
 #   https://stackoverflow.com/questions/1853946/getting-the-last-argument-passed-to-a-shell-script
 for run_benchmark; do true; done
 
 if [[ $run_benchmark == -* ]]; then
-    echo "Which benchmark do you want to run?"
+    echo "which benchmark do you want to run?"
     exit 1
 fi
 
@@ -172,51 +129,107 @@ if [[ -n "${non_benchmarks_map[$run_benchmark]+"check"}" ]]; then
     if [ "$run_benchmark" = "count_only" ]; then
         eval "$rocksdb_dir/ldb --db=$data_dir dump --count_only"
     else
-        eval "$db_bench_exe --db=$data_dir --use_existing_db=1 --benchmarks=$run_benchmark"
+        eval "$db_bench_exe \
+                --db=$data_dir \
+                --use_existing_db=1 \
+                --benchmarks=$run_benchmark"
     fi
     exit 0
 fi
 
+num_threads="${NUM_THREADS:-1}"
+
 if [ "$run_benchmark" = "fillseq" ]; then
     rm -rf "$data_dir" && mkdir --parents "$data_dir"
-    db_bench_command="$fillseq_command"
+    num_threads=1
+    db_bench_command="
+        --use_existing_db=0 \
+        --benchmarks=fillseq \
+        --num=$num_keys \
+        --seed=$( date +%s )"
 elif [ "$run_benchmark" = "readrandom" ]; then
-    db_bench_command="$readrandom_command"
+    db_bench_command="
+        --use_existing_db=1 \
+        --benchmarks=readrandom \
+        --readonly=1 \
+        --num=$num_keys \
+        --reads=$(( num_keys * 75 / 100 / num_threads )) \
+        --seed=$( date +%s )"
 elif [ "$run_benchmark" = "readrandommergerandom" ]; then
-    db_bench_command="$readrandommergerandom_command"
+    db_bench_command="
+        --use_existing_db=1 \
+        --benchmarks=readrandommergerandom \
+        --merge_operator='put' \
+        --merge_keys=$(( num_keys / num_threads )) \
+        --mergereadpercent=$merge_read_ratio \
+        --num=$num_keys \
+        --seed=$( date +%s )"
 else
-    echo "Benchmark '$run_benchmark' not found!"
+    echo "benchmark '$run_benchmark' is not found!"
     exit 1
 fi
 
+db_bench_command="$db_bench_exe \
+    --options_file=$rocksdb_options_file \
+    --db=$data_dir \
+    --wal_dir=$data_dir \
+    --key_size=$key_size \
+    --value_size=$value_size \
+    --threads=$num_threads \
+    --disable_wal=0 \
+    --stats_per_interval=1 \
+    --stats_interval_seconds=60 \
+    --histogram=1 \
+    $db_bench_command \
+    2>&1 | tee -a $DB_BENCH_LOG"
+
 function newline_print() {
-    echo; echo "$1"
+    printf '\n%s\n' "$1" | tee -a "$DB_BENCH_LOG"
 }
 
-newline_print "Start $run_benchmark at $(date)" | tee "$DB_BENCH_LOG"
-echo "===============================================================================" | tee -a "$DB_BENCH_LOG"
+function print_separator() {
+    (for _ in $(seq 80); do printf "="; done; echo) | tee -a "$DB_BENCH_LOG"
+}
 
-newline_print "$db_bench_command" | tee -a "$DB_BENCH_LOG"
+function print_var() {
+    echo "$1=${!1}" | tee -a "$DB_BENCH_LOG"
+}
 
-newline_print "Starting iostat deamon"
+newline_print "start benchmark $run_benchmark at $(date)" | tee "$DB_BENCH_LOG"
+vars_to_print=(
+    rocksdb_dir
+    db_on_device_fullname
+    data_dir
+    key_size
+    value_size
+    db_bench_command)
+
+print_separator
+for v in "${vars_to_print[@]}"; do
+    print_var "$v"
+done
+print_separator
+
 pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" &> /dev/null || true
 rm --force "$IOSTAT_PIDFILE"
 nohup stdbuf -oL -eL iostat -dktxyzH -g "$db_on_device_fullname" 3 < /dev/null > "$IOSTAT_LOG" 2>&1 &
 echo $! > "$IOSTAT_PIDFILE"
+newline_print "iostat daemon is running (PID=$(cat $IOSTAT_PIDFILE))"
 
-newline_print "Starting mpstat deamon"
 pkill -SIGTERM --pidfile "$MPSTAT_PIDFILE" &> /dev/null || true
 rm --force "$MPSTAT_PIDFILE"
 nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > "$MPSTAT_LOG" 2>&1 &
 echo $! > "$MPSTAT_PIDFILE"
+newline_print "mpstat daemon is running (PID=$(cat $MPSTAT_PIDFILE))"
 
-newline_print "Freeing the slab objects and pagecache"
+newline_print "freeing the slab objects and pagecache"
 sync; echo 3 > /proc/sys/vm/drop_caches
 
 if [ "$do_trace_blk_rq" = true ]; then
-    newline_print "Starting to trace the block events for device $pdevice_name"
     trace-cmd reset
-    blk_trace_command="nohup trace-cmd record \
+
+    blk_trace_command="
+        nohup trace-cmd record \
         -o $BLKSTAT_LOG \
         --date \
         -e block:block_rq_issue \
@@ -228,55 +241,56 @@ if [ "$do_trace_blk_rq" = true ]; then
 
     eval "$blk_trace_command"
     echo $! > "$BLKSTAT_PIDFILE"
+    newline_print "starting the block events for device $pdevice_name (PID=$(cat $BLKSTAT_PIDFILE))"
 
-    newline_print "Pause 7 seconds to wait for the tracer to start..."
+    newline_print "pause 7 seconds to wait for the tracer to start..."
     sleep 7
 fi
 
-newline_print "Saving disk stats (before)"
+newline_print "saving stats for disk $db_on_device_fullname (before)"
 grep "$db_on_device_name" /proc/diskstats > "$DISKSTATS_LOG_B"
 
 echo | tee -a "$DB_BENCH_LOG"
 eval "$db_bench_command"
 
-newline_print "Saving disk stats (after)"
+newline_print "saving stats for disk $db_on_device_fullname (after)"
 sync; grep "$db_on_device_name" /proc/diskstats > "$DISKSTATS_LOG_A"
 
-newline_print "Stopping iostat deamon"
+newline_print "stopping iostat daemon"
 pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" || true
 rm --force "$IOSTAT_PIDFILE"
 
-newline_print "Stopping mpstat deamon"
+newline_print "stopping mpstat daemon"
 pkill -SIGINT --pidfile "$MPSTAT_PIDFILE" || true
 rm --force "$MPSTAT_PIDFILE"
 
 if [ "$do_trace_blk_rq" = true ]; then
-    newline_print "Stopping blkstat deamon"
+    newline_print "stopping blkstat daemon"
     pkill -SIGINT --pidfile "$BLKSTAT_PIDFILE" &> /dev/null || true
 
-    newline_print "Pause 20 seconds to wait for the tracer to finish..."
+    newline_print "pause 20 seconds to wait for the tracer to finish..."
     sleep 20
 
     rm --force "$BLKSTAT_PIDFILE"
 
     if command -v gzip &> /dev/null; then
         BLKSTAT_LOG_GZ="${BLKSTAT_LOG}".gz
-        newline_print "Compressing the output from block event tracer to ${BLKSTAT_LOG_GZ}"
+        newline_print "compressing the output from block event tracer to ${BLKSTAT_LOG_GZ}"
         gzip --force --keep --name "${BLKSTAT_LOG}"
     else
-        newline_print "Did not compress the output from block event tracer \
+        newline_print "did not compress the output from block event tracer \
             because program 'gzip' is not found."
     fi
 
     IOSZDIST_LOG="$OUTPUT_BASE"/ioszdist.log
-    newline_print "Generating I/O size distribution to $IOSZDIST_LOG"
+    newline_print "generating I/O size distribution to $IOSZDIST_LOG"
     "$SCRIPT_DIR"/ioszdist.sh "$BLKSTAT_LOG" | tee "$IOSZDIST_LOG"
     rm "$OUTPUT_BASE"/events.dat "$OUTPUT_BASE"/sectors.dat
 fi
 
 if [[ $* == *"--backup "* ]]; then
     backup_dir="$OUTPUT_BASE/$(date +%F_%T)"
-    newline_print "Backuping files to dir $backup_dir"
+    newline_print "backuping files to dir $backup_dir"
     mkdir "$backup_dir"
     mv "$DB_BENCH_LOG" \
         "$IOSTAT_LOG" \
