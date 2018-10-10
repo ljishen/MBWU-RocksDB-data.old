@@ -60,7 +60,9 @@ BENCHMARK:
 
     readrandommergerandom:
         Read or merge all keys from the existing db under merge_read_ratio (default 50/50).
-        This workload is similar to the YCSB workloada.
+        This workload is similar to the YCSB workloada. The only difference is that the
+        atomic guarantee of the read-modify-write is handled by the RocksDB merge operator
+        instead of YCSB as the client.
 
 --trace_blk_rq:
     Trace the ftrace event block_rq_[issue|complete] during benchmarking.
@@ -178,10 +180,12 @@ else
 fi
 
 function newline_print() {
-    printf '\n%s\n' "$1"
+    echo; echo "$1"
 }
 
-newline_print "$db_bench_command" | tee "$DB_BENCH_LOG"
+newline_print "Start $run_benchmark at $(date)" | tee "$DB_BENCH_LOG"
+
+newline_print "$db_bench_command" | tee -a "$DB_BENCH_LOG"
 
 newline_print "Starting iostat deamon"
 pkill -SIGTERM --pidfile "$IOSTAT_PIDFILE" &> /dev/null || true
@@ -239,6 +243,20 @@ if [ "$do_trace_blk_rq" = true ]; then
     sleep 20
 
     rm --force "$BLKSTAT_PIDFILE"
+
+    if command -v gzip &> /dev/null; then
+        BLKSTAT_LOG_GZ="${BLKSTAT_LOG}".gz
+        newline_print "Compressing the output from block event tracer to ${BLKSTAT_LOG_GZ}"
+        gzip --force --keep --name "${BLKSTAT_LOG}"
+    else
+        newline_print "Did not compress the output from block event tracer \
+            because program 'gzip' is not found."
+    fi
+
+    IOSZDIST_LOG="$OUTPUT_BASE"/ioszdist.log
+    newline_print "Generating I/O size distribution to $IOSZDIST_LOG"
+    "$SCRIPT_DIR"/ioszdist.sh "$BLKSTAT_LOG" | tee "$IOSZDIST_LOG"
+    rm "$OUTPUT_BASE"/events.dat "$OUTPUT_BASE"/sectors.dat
 fi
 
 newline_print "Stopping iostat deamon"
@@ -256,8 +274,15 @@ if [[ $* == *"--backup "* ]]; then
     mv "$DB_BENCH_LOG" \
         "$IOSTAT_LOG" \
         "$MPSTAT_LOG" \
-        "$BLKSTAT_LOG" \
         "$DISKSTATS_LOG_B" \
         "$DISKSTATS_LOG_A" \
         "$backup_dir"
+
+    if [ "$do_trace_blk_rq" = true ]; then
+        mv "$BLKSTAT_LOG" "$IOSZDIST_LOG" "$backup_dir"
+
+        if [[ -n "${BLKSTAT_LOG_GZ+"check"}" ]]; then
+            mv "$BLKSTAT_LOG_GZ" "$backup_dir"
+        fi
+    fi
 fi
