@@ -1,5 +1,5 @@
-Generating events file /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/events.dat
-Extracting sectors from events file to /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/sectors.dat
+Generating events file /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/readrandom/2018-10-13_08:39:53/events.dat
+Extracting sectors from events file to /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/readrandom/2018-10-13_08:39:53/sectors.dat
 Parsing results...
 
 SECTOR_SIZE   RW   COUNT         RATIO (in R/W)   RATIO (Overall)
@@ -12,29 +12,29 @@ SECTOR_SIZE   RW   COUNT         RATIO (in R/W)   RATIO (Overall)
 32            R    585                   0.004%            0.004%
 80            R    485                   0.003%            0.003%
 152           R    388                   0.003%            0.003%
-64            W    21                   39.623%            0.000%
-0             W    11                   20.755%            0.000%
+0             W    29                   42.647%            0.000%
+64            W    21                   30.882%            0.000%
 128           R    6                     0.000%            0.000%
-8             W    4                     7.547%            0.000%
-72            W    4                     7.547%            0.000%
+8             W    4                     5.882%            0.000%
 40            R    4                     0.000%            0.000%
-2             W    4                     7.547%            0.000%
-32            W    3                     5.660%            0.000%
+2             W    4                     5.882%            0.000%
+32            W    3                     4.412%            0.000%
 248           R    3                     0.000%            0.000%
 1             R    3                     0.000%            0.000%
-1             W    2                     3.774%            0.000%
+1             W    2                     2.941%            0.000%
 176           R    2                     0.000%            0.000%
-5             W    1                     1.887%            0.000%
-448           W    1                     1.887%            0.000%
-16            W    1                     1.887%            0.000%
+72            W    1                     1.471%            0.000%
+5             W    1                     1.471%            0.000%
+448           W    1                     1.471%            0.000%
+16            W    1                     1.471%            0.000%
 144           R    1                     0.000%            0.000%
 136           R    1                     0.000%            0.000%
-1024          W    1                     1.887%            0.000%
+1024          W    1                     1.471%            0.000%
 
 
 SUMMARY (512-byte sectors)
 ----------------------------------------------------------------------
 Total read I/Os : 14772507       [100.000%]
-Total write I/Os: 53             [  0.000%]
+Total write I/Os: 68             [  0.000%]
 Total read sectors : 201965627   [ 99.998%,   98616.029MB]
-Total write sectors: 3263        [  0.002%,       1.593MB]
+Total write sectors: 3047        [  0.002%,       1.488MB]
