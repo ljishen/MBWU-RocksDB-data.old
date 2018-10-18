@@ -1,41 +1,90 @@
 
-[INFO | 2018-10-17 17:59:05,942] start benchmark readrandom at 2018-10-17_17:59:05
+[INFO | 2018-10-17 20:41:05,810] start benchmark readrandom at 2018-10-17_20:41:05
 ================================================================================
 operation_keys_ratio=100
 data_dir=/mnt/ramdisk/rocksdb_data
 device_fullname=tmpfs
 daemon_report_interval_sec=3
-db_bench_command=( time /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --threads=15 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/ramdisk/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=snappy --max_write_buffer_number=50 --hard_pending_compaction_bytes_limit=274877906944 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=16384 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=3 --min_level_to_compress=2 --max_bytes_for_level_base=1073741824 --level0_file_num_compaction_trigger=2 --write_buffer_size=536870912 --min_write_buffer_number_to_merge=1 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=30 --level0_stop_writes_trigger=54 --target_file_size_base=67108864 --bytes_per_sync=1048576 --use_existing_db=1 --readonly=1 --num=5242880 --reads=349525 --seed=1539824345 ) 2>&1 | tee -a /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/db_bench.log
+db_bench_command=( time /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --threads=15 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/ramdisk/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=snappy --max_write_buffer_number=50 --hard_pending_compaction_bytes_limit=274877906944 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=16384 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=3 --min_level_to_compress=2 --max_bytes_for_level_base=1073741824 --level0_file_num_compaction_trigger=2 --write_buffer_size=536870912 --min_write_buffer_number_to_merge=1 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=30 --level0_stop_writes_trigger=54 --target_file_size_base=67108864 --bytes_per_sync=1048576 --use_existing_db=1 --readonly=1 --num=5242880 --reads=349525 --seed=1539834065 ) 2>&1 | tee -a /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/db_bench.log
 ================================================================================
 
-[INFO | 2018-10-17 17:59:05,962] configuring scaling governor to performance for online CPUs
+[INFO | 2018-10-17 20:41:05,831] configuring scaling governor to performance for online CPUs
 Successfully updated scaling governor for CPUs [0-23].
 
-[INFO | 2018-10-17 17:59:06,034] set the nofile soft limit to 63536
+[INFO | 2018-10-17 20:41:05,895] set the nofile soft limit to 63536
 
-[INFO | 2018-10-17 17:59:06,039] mpstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/mpstat.log 2>&1 &
+[INFO | 2018-10-17 20:41:05,899] mpstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/mpstat.log 2>&1 &
 
-[INFO | 2018-10-17 17:59:06,043] mpstat daemon is running (PID=40656)
+[INFO | 2018-10-17 20:41:05,903] mpstat daemon is running (PID=50014)
 
-[INFO | 2018-10-17 17:59:06,047] iostat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL iostat -dktxyzH -g tmpfs 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/iostat.log 2>&1 &
+[INFO | 2018-10-17 20:41:05,907] iostat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL iostat -dktxyzH -g tmpfs 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/iostat.log 2>&1 &
 
-[INFO | 2018-10-17 17:59:06,051] iostat daemon is running (PID=40671)
+[INFO | 2018-10-17 20:41:05,911] iostat daemon is running (PID=50029)
 
-[INFO | 2018-10-17 17:59:06,055] pidstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL pidstat -G db_bench -ult 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/pidstat.log 2>&1 &
+[INFO | 2018-10-17 20:41:05,914] pidstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL pidstat -G db_bench -ult 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/pidstat.log 2>&1 &
 
-[INFO | 2018-10-17 17:59:06,059] pidstat daemon is running (PID=40686)
+[INFO | 2018-10-17 20:41:05,919] pidstat daemon is running (PID=50044)
 
-[INFO | 2018-10-17 17:59:06,062] freeing the slab objects and pagecache
+[INFO | 2018-10-17 20:41:05,922] freeing the slab objects and pagecache
 
 RocksDB:    version 5.14
-Date:       Wed Oct 17 17:59:08 2018
+Date:       Wed Oct 17 20:41:07 2018
 CPU:        24 * Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
 CPUCache:   15360 KB
-Received signal 11 (Segmentation fault)
-./run_db_bench.sh: line 451: 40719 Segmentation fault      (core dumped) /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --threads=15 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/ramdisk/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=snappy --max_write_buffer_number=50 --hard_pending_compaction_bytes_limit=274877906944 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=16384 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=3 --min_level_to_compress=2 --max_bytes_for_level_base=1073741824 --level0_file_num_compaction_trigger=2 --write_buffer_size=536870912 --min_write_buffer_number_to_merge=1 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=30 --level0_stop_writes_trigger=54 --target_file_size_base=67108864 --bytes_per_sync=1048576 --use_existing_db=1 --readonly=1 --num=5242880 --reads=349525 --seed=1539824345
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+Keys:       16 bytes each
+Values:     4096 bytes each (2048 bytes after compression)
+Entries:    5242880
+Prefix:    0 bytes
+Keys per prefix:    0
+RawSize:    20560.0 MB (estimated)
+FileSize:   10320.0 MB (estimated)
+Write rate: 0 bytes/second
+Read rate: 0 ops/second
+Compression: Snappy
+Memtablerep: skip_list
+Perf Level: 1
+------------------------------------------------
+DB path: [/mnt/ramdisk/rocksdb_data]
+readrandom   :       1.353 micros/op 739314 ops/sec; 2899.2 MB/s (349525 of 349525 found)
 
-[INFO | 2018-10-17 17:59:09,959] stopping mpstat daemon
+Microseconds per read:
+Count: 5242875 Average: 19.3076  StdDev: 13.64
+Min: 2  Median: 18.9131  Max: 11108
+Percentiles: P50: 18.91 P75: 23.35 P99: 33.95 P99.9: 65.41 P99.99: 222.80
+------------------------------------------------------
+(       1,       2 ]       17   0.000%   0.000% 
+(       2,       3 ]      722   0.014%   0.014% 
+(       3,       4 ]     3990   0.076%   0.090% 
+(       4,       6 ]    18954   0.362%   0.452% 
+(       6,      10 ]    39093   0.746%   1.197% 
+(      10,      15 ]  1100644  20.993%  22.190% ####
+(      15,      22 ]  2608205  49.748%  71.938% ##########
+(      22,      34 ]  1424510  27.170%  99.109% #####
+(      34,      51 ]    39471   0.753%  99.861% 
+(      51,      76 ]     3514   0.067%  99.928% 
+(      76,     110 ]     1830   0.035%  99.963% 
+(     110,     170 ]     1107   0.021%  99.984% 
+(     170,     250 ]      445   0.008%  99.993% 
+(     250,     380 ]      176   0.003%  99.996% 
+(     380,     580 ]       52   0.001%  99.997% 
+(     580,     870 ]       31   0.001%  99.998% 
+(     870,    1300 ]       42   0.001%  99.999% 
+(    1300,    1900 ]       20   0.000%  99.999% 
+(    1900,    2900 ]       29   0.001% 100.000% 
+(    2900,    4400 ]       14   0.000% 100.000% 
+(    4400,    6600 ]        7   0.000% 100.000% 
+(    6600,    9900 ]        1   0.000% 100.000% 
+(    9900,   14000 ]        1   0.000% 100.000% 
 
-[INFO | 2018-10-17 17:59:10,132] stopping iostat daemon
 
-[INFO | 2018-10-17 17:59:10,155] stopping pidstat daemon
+real	0m7.960s
+user	1m14.832s
+sys	0m26.256s
+
+[INFO | 2018-10-17 20:41:15,127] stopping mpstat daemon
+
+[INFO | 2018-10-17 20:41:15,382] stopping iostat daemon
+
+[INFO | 2018-10-17 20:41:15,414] stopping pidstat daemon

@@ -1,14 +1,52 @@
 Linux 4.4.132-0404132-generic (pl2) 	2018-10-17 	_x86_64_	(24 CPU)
 
-05:59:06 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
-05:59:09 PM     0     40559         -    0.33   28.15    0.00   28.48     5  /bin/bash ./run_db_bench.sh readrandom 
-05:59:09 PM     0         -     40559    0.33   28.15    0.00   28.48     5  |__/bin/bash ./run_db_bench.sh readrandom 
-05:59:09 PM     0     40719         -   14.57   12.91    0.00   27.48    15  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
-05:59:09 PM     0         -     40719   10.60    9.27    0.00   19.87    15  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:05 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+08:41:08 PM     0     49916         -    0.00   16.89    0.00   16.89     6  /bin/bash ./run_db_bench.sh readrandom 
+08:41:08 PM     0         -     49916    0.00   16.89    0.00   16.89     6  |__/bin/bash ./run_db_bench.sh readrandom 
+08:41:08 PM     0     50063         -  410.60  144.04    0.00  554.64     2  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50063    3.31    9.27    0.00   12.58     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50144   25.83    9.93    0.00   35.76    20  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50145   27.81    7.95    0.00   35.76    15  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50146   26.49    8.61    0.00   35.10     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50147   26.49    9.27    0.00   35.76     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50148   27.15    8.61    0.00   35.76     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50149   27.15    8.61    0.00   35.76     3  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50150   26.82    8.61    0.00   35.43    12  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50151   26.82    8.94    0.00   35.76    14  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50152   27.81    7.62    0.00   35.43    18  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50153   27.15    8.28    0.00   35.43     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50154   26.49    9.27    0.00   35.76    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50155   25.83    9.60    0.00   35.43    23  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50156   27.15    7.95    0.00   35.10     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50157   26.49    9.27    0.00   35.76     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:08 PM     0         -     50158   27.48    7.95    0.00   35.43    21  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+
+08:41:08 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+08:41:11 PM     0     50063         - 1099.33  389.67    0.00 1489.00     2  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50144   77.00   22.00    0.00   99.00    18  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50145   70.67   28.67    0.00   99.33    23  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50146   72.33   27.33    0.00   99.67    12  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50147   76.00   23.33    0.00   99.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50148   74.67   24.33    0.00   99.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50149   73.00   26.00    0.00   99.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50150   72.00   27.33    0.00   99.33     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50151   72.67   26.67    0.00   99.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50152   70.67   29.00    0.00   99.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50153   73.67   25.67    0.00   99.33    15  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50154   75.00   24.33    0.00   99.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50155   73.33   26.33    0.00   99.67     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50156   71.67   27.67    0.00   99.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50157   74.67   24.67    0.00   99.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:11 PM     0         -     50158   73.00   26.00    0.00   99.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+
+08:41:11 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+08:41:14 PM     0     50063         -  980.67  339.67    0.00 1320.33     2  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+08:41:14 PM     0         -     50156   71.00   27.67    0.00   98.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
 
 
 Average:      UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
-Average:        0     40559         -    0.33   28.15    0.00   28.48     -  /bin/bash ./run_db_bench.sh readrandom 
-Average:        0         -     40559    0.33   28.15    0.00   28.48     -  |__/bin/bash ./run_db_bench.sh readrandom 
-Average:        0     40719         -   14.57   12.91    0.00   27.48     -  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
-Average:        0         -     40719   10.60    9.27    0.00   19.87     -  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+Average:        0     49916         -    0.00    5.65    0.00    5.65     -  /bin/bash ./run_db_bench.sh readrandom 
+Average:        0         -     49916    0.00    5.65    0.00    5.65     -  |__/bin/bash ./run_db_bench.sh readrandom 
+Average:        0     50063         -  829.27  290.80    0.00 1120.07     -  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+Average:        0         -     50063    1.11    3.10    0.00    4.21     -  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+Average:        0         -     50156   56.54   21.06    0.00   77.61     -  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --

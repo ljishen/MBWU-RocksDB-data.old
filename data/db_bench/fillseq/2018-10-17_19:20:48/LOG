@@ -1,0 +1,695 @@
+2018/10/17-19:20:50.874470 7f0ff1f73a00 RocksDB version: 5.14.3
+2018/10/17-19:20:50.874508 7f0ff1f73a00 Git sha rocksdb_build_git_sha:
+2018/10/17-19:20:50.874510 7f0ff1f73a00 Compile date Oct  7 2018
+2018/10/17-19:20:50.874512 7f0ff1f73a00 DB SUMMARY
+2018/10/17-19:20:50.874525 7f0ff1f73a00 SST files in /mnt/sdb1/rocksdb_data dir, Total Num: 0, files: 
+2018/10/17-19:20:50.874527 7f0ff1f73a00 Write Ahead Log file in /mnt/sdb1/rocksdb_data: 
+2018/10/17-19:20:50.874529 7f0ff1f73a00                         Options.error_if_exists: 0
+2018/10/17-19:20:50.874530 7f0ff1f73a00                       Options.create_if_missing: 1
+2018/10/17-19:20:50.874531 7f0ff1f73a00                         Options.paranoid_checks: 1
+2018/10/17-19:20:50.874532 7f0ff1f73a00                                     Options.env: 0xb24bc0
+2018/10/17-19:20:50.874533 7f0ff1f73a00                                Options.info_log: 0x2c47660
+2018/10/17-19:20:50.874534 7f0ff1f73a00                Options.max_file_opening_threads: 16
+2018/10/17-19:20:50.874535 7f0ff1f73a00                              Options.statistics: (nil)
+2018/10/17-19:20:50.874536 7f0ff1f73a00                               Options.use_fsync: 0
+2018/10/17-19:20:50.874537 7f0ff1f73a00                       Options.max_log_file_size: 0
+2018/10/17-19:20:50.874538 7f0ff1f73a00                  Options.max_manifest_file_size: 18446744073709551615
+2018/10/17-19:20:50.874539 7f0ff1f73a00                   Options.log_file_time_to_roll: 0
+2018/10/17-19:20:50.874540 7f0ff1f73a00                       Options.keep_log_file_num: 1000
+2018/10/17-19:20:50.874541 7f0ff1f73a00                    Options.recycle_log_file_num: 0
+2018/10/17-19:20:50.874542 7f0ff1f73a00                         Options.allow_fallocate: 1
+2018/10/17-19:20:50.874543 7f0ff1f73a00                        Options.allow_mmap_reads: 0
+2018/10/17-19:20:50.874544 7f0ff1f73a00                       Options.allow_mmap_writes: 0
+2018/10/17-19:20:50.874545 7f0ff1f73a00                        Options.use_direct_reads: 0
+2018/10/17-19:20:50.874545 7f0ff1f73a00                        Options.use_direct_io_for_flush_and_compaction: 0
+2018/10/17-19:20:50.874546 7f0ff1f73a00          Options.create_missing_column_families: 0
+2018/10/17-19:20:50.874547 7f0ff1f73a00                              Options.db_log_dir: 
+2018/10/17-19:20:50.874548 7f0ff1f73a00                                 Options.wal_dir: /mnt/sdb1/rocksdb_data
+2018/10/17-19:20:50.874549 7f0ff1f73a00                Options.table_cache_numshardbits: 6
+2018/10/17-19:20:50.874550 7f0ff1f73a00                      Options.max_subcompactions: 3
+2018/10/17-19:20:50.874551 7f0ff1f73a00                  Options.max_background_flushes: 24
+2018/10/17-19:20:50.874551 7f0ff1f73a00                         Options.WAL_ttl_seconds: 0
+2018/10/17-19:20:50.874552 7f0ff1f73a00                       Options.WAL_size_limit_MB: 0
+2018/10/17-19:20:50.874553 7f0ff1f73a00             Options.manifest_preallocation_size: 4194304
+2018/10/17-19:20:50.874554 7f0ff1f73a00                     Options.is_fd_close_on_exec: 1
+2018/10/17-19:20:50.874555 7f0ff1f73a00                   Options.advise_random_on_open: 1
+2018/10/17-19:20:50.874556 7f0ff1f73a00                    Options.db_write_buffer_size: 0
+2018/10/17-19:20:50.874557 7f0ff1f73a00                    Options.write_buffer_manager: 0x2c3ebb0
+2018/10/17-19:20:50.874557 7f0ff1f73a00         Options.access_hint_on_compaction_start: 1
+2018/10/17-19:20:50.874558 7f0ff1f73a00  Options.new_table_reader_for_compaction_inputs: 0
+2018/10/17-19:20:50.874559 7f0ff1f73a00           Options.random_access_max_buffer_size: 1048576
+2018/10/17-19:20:50.874560 7f0ff1f73a00                      Options.use_adaptive_mutex: 0
+2018/10/17-19:20:50.874561 7f0ff1f73a00                            Options.rate_limiter: (nil)
+2018/10/17-19:20:50.874562 7f0ff1f73a00     Options.sst_file_manager.rate_bytes_per_sec: 0
+2018/10/17-19:20:50.874562 7f0ff1f73a00                       Options.wal_recovery_mode: 2
+2018/10/17-19:20:50.874563 7f0ff1f73a00                  Options.enable_thread_tracking: 0
+2018/10/17-19:20:50.874564 7f0ff1f73a00                  Options.enable_pipelined_write: 1
+2018/10/17-19:20:50.874572 7f0ff1f73a00         Options.allow_concurrent_memtable_write: 1
+2018/10/17-19:20:50.874573 7f0ff1f73a00      Options.enable_write_thread_adaptive_yield: 1
+2018/10/17-19:20:50.874574 7f0ff1f73a00             Options.write_thread_max_yield_usec: 100
+2018/10/17-19:20:50.874575 7f0ff1f73a00            Options.write_thread_slow_yield_usec: 3
+2018/10/17-19:20:50.874575 7f0ff1f73a00                               Options.row_cache: None
+2018/10/17-19:20:50.874576 7f0ff1f73a00                              Options.wal_filter: None
+2018/10/17-19:20:50.874577 7f0ff1f73a00             Options.avoid_flush_during_recovery: 0
+2018/10/17-19:20:50.874578 7f0ff1f73a00             Options.allow_ingest_behind: 0
+2018/10/17-19:20:50.874579 7f0ff1f73a00             Options.preserve_deletes: 0
+2018/10/17-19:20:50.874580 7f0ff1f73a00             Options.two_write_queues: 0
+2018/10/17-19:20:50.874581 7f0ff1f73a00             Options.manual_wal_flush: 0
+2018/10/17-19:20:50.874581 7f0ff1f73a00             Options.max_background_jobs: 24
+2018/10/17-19:20:50.874582 7f0ff1f73a00             Options.max_background_compactions: 24
+2018/10/17-19:20:50.874583 7f0ff1f73a00             Options.avoid_flush_during_shutdown: 0
+2018/10/17-19:20:50.874584 7f0ff1f73a00           Options.writable_file_max_buffer_size: 1048576
+2018/10/17-19:20:50.874585 7f0ff1f73a00             Options.delayed_write_rate : 16777216
+2018/10/17-19:20:50.874586 7f0ff1f73a00             Options.max_total_wal_size: 0
+2018/10/17-19:20:50.874587 7f0ff1f73a00             Options.delete_obsolete_files_period_micros: 21600000000
+2018/10/17-19:20:50.874588 7f0ff1f73a00                   Options.stats_dump_period_sec: 600
+2018/10/17-19:20:50.874588 7f0ff1f73a00                          Options.max_open_files: -1
+2018/10/17-19:20:50.874589 7f0ff1f73a00                          Options.bytes_per_sync: 1048576
+2018/10/17-19:20:50.874590 7f0ff1f73a00                      Options.wal_bytes_per_sync: 0
+2018/10/17-19:20:50.874591 7f0ff1f73a00       Options.compaction_readahead_size: 0
+2018/10/17-19:20:50.874592 7f0ff1f73a00 Compression algorithms supported:
+2018/10/17-19:20:50.874593 7f0ff1f73a00 	kZSTDNotFinalCompression supported: 1
+2018/10/17-19:20:50.874594 7f0ff1f73a00 	kZSTD supported: 0
+2018/10/17-19:20:50.874595 7f0ff1f73a00 	kXpressCompression supported: 0
+2018/10/17-19:20:50.874596 7f0ff1f73a00 	kLZ4HCCompression supported: 1
+2018/10/17-19:20:50.874597 7f0ff1f73a00 	kLZ4Compression supported: 1
+2018/10/17-19:20:50.874598 7f0ff1f73a00 	kBZip2Compression supported: 1
+2018/10/17-19:20:50.874599 7f0ff1f73a00 	kZlibCompression supported: 1
+2018/10/17-19:20:50.874600 7f0ff1f73a00 	kSnappyCompression supported: 1
+2018/10/17-19:20:50.874603 7f0ff1f73a00 Fast CRC32 supported: Supported on x86
+2018/10/17-19:20:50.874643 7f0ff1f73a00 [db/db_impl_open.cc:222] Creating manifest 1 
+2018/10/17-19:20:52.294068 7f0ff1f73a00 [db/version_set.cc:3085] Recovering from manifest file: MANIFEST-000001
+2018/10/17-19:20:52.294131 7f0ff1f73a00 [db/column_family.cc:475] --------------- Options for column family [default]:
+2018/10/17-19:20:52.294134 7f0ff1f73a00               Options.comparator: leveldb.BytewiseComparator
+2018/10/17-19:20:52.294135 7f0ff1f73a00           Options.merge_operator: None
+2018/10/17-19:20:52.294136 7f0ff1f73a00        Options.compaction_filter: None
+2018/10/17-19:20:52.294137 7f0ff1f73a00        Options.compaction_filter_factory: None
+2018/10/17-19:20:52.294138 7f0ff1f73a00         Options.memtable_factory: SkipListFactory
+2018/10/17-19:20:52.294139 7f0ff1f73a00            Options.table_factory: BlockBasedTable
+2018/10/17-19:20:52.294163 7f0ff1f73a00            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0x2c48250)
+  cache_index_and_filter_blocks: 0
+  cache_index_and_filter_blocks_with_high_priority: 0
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  index_type: 0
+  hash_index_allow_collision: 1
+  checksum: 1
+  no_block_cache: 0
+  block_cache: 0x2c34cc0
+  block_cache_name: LRUCache
+  block_cache_options:
+    capacity : 8388608
+    num_shard_bits : 6
+    strict_capacity_limit : 0
+    high_pri_pool_ratio: 0.000
+  block_cache_compressed: (nil)
+  persistent_cache: (nil)
+  block_size: 16384
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  metadata_block_size: 4096
+  partition_filters: 0
+  use_delta_encoding: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  verify_compression: 0
+  read_amp_bytes_per_bit: 0
+  format_version: 2
+  enable_index_compression: 1
+  block_align: 0
+2018/10/17-19:20:52.294176 7f0ff1f73a00        Options.write_buffer_size: 536870912
+2018/10/17-19:20:52.294178 7f0ff1f73a00  Options.max_write_buffer_number: 50
+2018/10/17-19:20:52.294179 7f0ff1f73a00        Options.compression[0]: NoCompression
+2018/10/17-19:20:52.294180 7f0ff1f73a00        Options.compression[1]: NoCompression
+2018/10/17-19:20:52.294181 7f0ff1f73a00        Options.compression[2]: Snappy
+2018/10/17-19:20:52.294182 7f0ff1f73a00        Options.compression[3]: Snappy
+2018/10/17-19:20:52.294195 7f0ff1f73a00        Options.compression[4]: Snappy
+2018/10/17-19:20:52.294196 7f0ff1f73a00        Options.compression[5]: Snappy
+2018/10/17-19:20:52.294197 7f0ff1f73a00        Options.compression[6]: Snappy
+2018/10/17-19:20:52.294198 7f0ff1f73a00                  Options.bottommost_compression: Disabled
+2018/10/17-19:20:52.294199 7f0ff1f73a00       Options.prefix_extractor: nullptr
+2018/10/17-19:20:52.294200 7f0ff1f73a00   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2018/10/17-19:20:52.294201 7f0ff1f73a00             Options.num_levels: 7
+2018/10/17-19:20:52.294202 7f0ff1f73a00        Options.min_write_buffer_number_to_merge: 1
+2018/10/17-19:20:52.294202 7f0ff1f73a00     Options.max_write_buffer_number_to_maintain: 0
+2018/10/17-19:20:52.294203 7f0ff1f73a00            Options.compression_opts.window_bits: -14
+2018/10/17-19:20:52.294204 7f0ff1f73a00                  Options.compression_opts.level: -1
+2018/10/17-19:20:52.294205 7f0ff1f73a00               Options.compression_opts.strategy: 0
+2018/10/17-19:20:52.294206 7f0ff1f73a00         Options.compression_opts.max_dict_bytes: 0
+2018/10/17-19:20:52.294207 7f0ff1f73a00         Options.compression_opts.zstd_max_train_bytes: 0
+2018/10/17-19:20:52.294207 7f0ff1f73a00      Options.level0_file_num_compaction_trigger: 2
+2018/10/17-19:20:52.294208 7f0ff1f73a00          Options.level0_slowdown_writes_trigger: 30
+2018/10/17-19:20:52.294209 7f0ff1f73a00              Options.level0_stop_writes_trigger: 54
+2018/10/17-19:20:52.294210 7f0ff1f73a00                   Options.target_file_size_base: 67108864
+2018/10/17-19:20:52.294211 7f0ff1f73a00             Options.target_file_size_multiplier: 1
+2018/10/17-19:20:52.294212 7f0ff1f73a00                Options.max_bytes_for_level_base: 1073741824
+2018/10/17-19:20:52.294212 7f0ff1f73a00 Options.level_compaction_dynamic_level_bytes: 0
+2018/10/17-19:20:52.294213 7f0ff1f73a00          Options.max_bytes_for_level_multiplier: 10.000000
+2018/10/17-19:20:52.294216 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2018/10/17-19:20:52.294217 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2018/10/17-19:20:52.294217 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2018/10/17-19:20:52.294218 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2018/10/17-19:20:52.294219 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2018/10/17-19:20:52.294220 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2018/10/17-19:20:52.294221 7f0ff1f73a00 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2018/10/17-19:20:52.294222 7f0ff1f73a00       Options.max_sequential_skip_in_iterations: 8
+2018/10/17-19:20:52.294222 7f0ff1f73a00                    Options.max_compaction_bytes: 1677721600
+2018/10/17-19:20:52.294223 7f0ff1f73a00                        Options.arena_block_size: 67108864
+2018/10/17-19:20:52.294224 7f0ff1f73a00   Options.soft_pending_compaction_bytes_limit: 68719476736
+2018/10/17-19:20:52.294225 7f0ff1f73a00   Options.hard_pending_compaction_bytes_limit: 274877906944
+2018/10/17-19:20:52.294232 7f0ff1f73a00       Options.rate_limit_delay_max_milliseconds: 1000
+2018/10/17-19:20:52.294233 7f0ff1f73a00                Options.disable_auto_compactions: 0
+2018/10/17-19:20:52.294234 7f0ff1f73a00                        Options.compaction_style: kCompactionStyleLevel
+2018/10/17-19:20:52.294236 7f0ff1f73a00                          Options.compaction_pri: kByCompensatedSize
+2018/10/17-19:20:52.294237 7f0ff1f73a00 Options.compaction_options_universal.size_ratio: 1
+2018/10/17-19:20:52.294237 7f0ff1f73a00 Options.compaction_options_universal.min_merge_width: 2
+2018/10/17-19:20:52.294238 7f0ff1f73a00 Options.compaction_options_universal.max_merge_width: 4294967295
+2018/10/17-19:20:52.294239 7f0ff1f73a00 Options.compaction_options_universal.max_size_amplification_percent: 200
+2018/10/17-19:20:52.294240 7f0ff1f73a00 Options.compaction_options_universal.compression_size_percent: -1
+2018/10/17-19:20:52.294241 7f0ff1f73a00 Options.compaction_options_universal.stop_style: kCompactionStopStyleTotalSize
+2018/10/17-19:20:52.294242 7f0ff1f73a00 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2018/10/17-19:20:52.294243 7f0ff1f73a00 Options.compaction_options_fifo.allow_compaction: 0
+2018/10/17-19:20:52.294244 7f0ff1f73a00 Options.compaction_options_fifo.ttl: 0
+2018/10/17-19:20:52.294245 7f0ff1f73a00                   Options.table_properties_collectors: 
+2018/10/17-19:20:52.294245 7f0ff1f73a00                   Options.inplace_update_support: 0
+2018/10/17-19:20:52.294246 7f0ff1f73a00                 Options.inplace_update_num_locks: 10000
+2018/10/17-19:20:52.294247 7f0ff1f73a00               Options.memtable_prefix_bloom_size_ratio: 0.000000
+2018/10/17-19:20:52.294249 7f0ff1f73a00   Options.memtable_huge_page_size: 0
+2018/10/17-19:20:52.294249 7f0ff1f73a00                           Options.bloom_locality: 0
+2018/10/17-19:20:52.294250 7f0ff1f73a00                    Options.max_successive_merges: 0
+2018/10/17-19:20:52.294251 7f0ff1f73a00                Options.optimize_filters_for_hits: 0
+2018/10/17-19:20:52.294252 7f0ff1f73a00                Options.paranoid_file_checks: 0
+2018/10/17-19:20:52.294253 7f0ff1f73a00                Options.force_consistency_checks: 0
+2018/10/17-19:20:52.294254 7f0ff1f73a00                Options.report_bg_io_stats: 0
+2018/10/17-19:20:52.294254 7f0ff1f73a00                               Options.ttl: 0
+2018/10/17-19:20:52.294941 7f0ff1f73a00 [db/version_set.cc:3361] Recovered from manifest file:/mnt/sdb1/rocksdb_data/MANIFEST-000001 succeeded,manifest_file_number is 1, next_file_number is 3, last_sequence is 0, log_number is 0,prev_log_number is 0,max_column_family is 0,min_log_number_to_keep is 0
+2018/10/17-19:20:52.294949 7f0ff1f73a00 [db/version_set.cc:3369] Column family [default] (ID 0), log number is 0
+2018/10/17-19:20:53.055472 7f0ff1f73a00 [db/db_impl_open.cc:1219] DB pointer 0x2c44cc0
+2018/10/17-19:20:54.434173 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #6. Immutable memtables: 0.
+2018/10/17-19:20:54.434251 7f0f2dffb700 [db/db_impl_compaction_flush.cc:80] [JOB 2] Syncing log #3
+2018/10/17-19:20:55.841180 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #8. Immutable memtables: 1.
+2018/10/17-19:20:57.201679 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #10. Immutable memtables: 2.
+2018/10/17-19:20:58.698575 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #12. Immutable memtables: 3.
+2018/10/17-19:21:00.166373 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #14. Immutable memtables: 4.
+2018/10/17-19:21:01.644974 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #16. Immutable memtables: 5.
+2018/10/17-19:21:03.095052 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #18. Immutable memtables: 6.
+2018/10/17-19:21:04.542802 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #20. Immutable memtables: 7.
+2018/10/17-19:21:05.963845 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #22. Immutable memtables: 8.
+2018/10/17-19:21:07.405781 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #24. Immutable memtables: 9.
+2018/10/17-19:21:08.862610 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #26. Immutable memtables: 10.
+2018/10/17-19:21:10.316657 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #28. Immutable memtables: 11.
+2018/10/17-19:21:11.764528 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #30. Immutable memtables: 12.
+2018/10/17-19:21:13.252432 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #32. Immutable memtables: 13.
+2018/10/17-19:21:14.810118 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #34. Immutable memtables: 14.
+2018/10/17-19:21:15.620174 7f0f927fc700 [db/db_impl_compaction_flush.cc:80] [JOB 4] Syncing log #6
+2018/10/17-19:21:15.620184 7f0f2dffb700 (Original Log Time 2018/10/17-19:20:54.434236) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 1, compaction slots scheduled 0
+2018/10/17-19:21:15.620218 7f0f2dffb700 [db/flush_job.cc:301] [default] [JOB 2] Flushing memtable with next log file: 6
+2018/10/17-19:21:15.620474 7f0f2dffb700 EVENT_LOG_v1 {"time_micros": 1539829275620453, "job": 2, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520129840, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:21:15.620481 7f0f2dffb700 [db/flush_job.cc:331] [default] [JOB 2] Level-0 flush table #7: started
+2018/10/17-19:21:16.404667 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #36. Immutable memtables: 15.
+2018/10/17-19:21:17.955745 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #38. Immutable memtables: 16.
+2018/10/17-19:21:19.529538 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #40. Immutable memtables: 17.
+2018/10/17-19:21:21.109721 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #42. Immutable memtables: 18.
+2018/10/17-19:21:29.243872 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #44. Immutable memtables: 19.
+2018/10/17-19:21:52.648114 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #46. Immutable memtables: 20.
+2018/10/17-19:21:54.152297 7f0f927fc700 [db/db_impl_compaction_flush.cc:80] [JOB 4] Syncing log #8
+2018/10/17-19:22:04.195805 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #48. Immutable memtables: 21.
+2018/10/17-19:22:15.509985 7f0f2dffb700 EVENT_LOG_v1 {"time_micros": 1539829335509960, "cf_name": "default", "job": 2, "event": "table_file_creation", "file_number": 7, "file_size": 518143786, "table_properties": {"data_size": 517187350, "index_size": 955507, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:22:15.510004 7f0f2dffb700 [db/flush_job.cc:371] [default] [JOB 2] Level-0 flush table #7: 518143786 bytes OK
+2018/10/17-19:22:15.510031 7f0f2dffb700 [db/version_set.cc:2847] Creating manifest 50
+2018/10/17-19:22:21.461990 7f0f927fc700 (Original Log Time 2018/10/17-19:20:57.201829) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 3, compaction slots scheduled 0
+2018/10/17-19:22:21.462011 7f0fef819700 (Original Log Time 2018/10/17-19:20:55.841326) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 2, compaction slots scheduled 0
+2018/10/17-19:22:21.462023 7f0f927fc700 [db/flush_job.cc:301] [default] [JOB 4] Flushing memtable with next log file: 10
+2018/10/17-19:22:21.462013 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 6] Syncing log #10
+2018/10/17-19:22:21.462039 7f0fef819700 [db/flush_job.cc:301] [default] [JOB 3] Flushing memtable with next log file: 8
+2018/10/17-19:22:21.462061 7f0f927fc700 EVENT_LOG_v1 {"time_micros": 1539829341462046, "job": 4, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130248, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:22:21.462067 7f0f927fc700 [db/flush_job.cc:331] [default] [JOB 4] Level-0 flush table #11: started
+2018/10/17-19:22:21.462077 7f0fef819700 EVENT_LOG_v1 {"time_micros": 1539829341462068, "job": 3, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520129968, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:22:21.462081 7f0fef819700 [db/flush_job.cc:331] [default] [JOB 3] Level-0 flush table #9: started
+2018/10/17-19:22:24.763479 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #51. Immutable memtables: 22.
+2018/10/17-19:22:36.023437 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #53. Immutable memtables: 23.
+2018/10/17-19:22:41.797366 7f0f2dffb700 (Original Log Time 2018/10/17-19:22:15.510015) [db/memtable_list.cc:377] [default] Level-0 commit table #7 started
+2018/10/17-19:22:41.797370 7f0f2dffb700 (Original Log Time 2018/10/17-19:22:41.797271) [db/memtable_list.cc:409] [default] Level-0 commit table #7: memtable #1 done
+2018/10/17-19:22:41.797371 7f0f2dffb700 (Original Log Time 2018/10/17-19:22:41.797316) EVENT_LOG_v1 {"time_micros": 1539829361797302, "job": 2, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [1, 0, 0, 0, 0, 0, 0], "immutable_memtables": 23}
+2018/10/17-19:22:41.797373 7f0f2dffb700 (Original Log Time 2018/10/17-19:22:41.797345) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[1 0 0 0 0 0 0] max score 0.50
+2018/10/17-19:22:41.797384 7f0f2dffb700 [db/db_impl_files.cc:347] [JOB 2] Try to delete WAL files size 517940160, prev total WAL file size 12498741888, number of live WAL files 25.
+2018/10/17-19:22:57.650373 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 6] Syncing log #12
+2018/10/17-19:23:06.923843 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #55. Immutable memtables: 23.
+2018/10/17-19:23:25.977372 7f0f917fa700 (Original Log Time 2018/10/17-19:21:00.166492) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 5, compaction slots scheduled 0
+2018/10/17-19:23:25.977402 7f0f917fa700 [db/flush_job.cc:301] [default] [JOB 6] Flushing memtable with next log file: 14
+2018/10/17-19:23:25.977382 7f0f90ff9700 [db/db_impl_compaction_flush.cc:80] [JOB 7] Syncing log #14
+2018/10/17-19:23:25.977440 7f0f917fa700 EVENT_LOG_v1 {"time_micros": 1539829405977425, "job": 6, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130952, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:23:25.977446 7f0f917fa700 [db/flush_job.cc:331] [default] [JOB 6] Level-0 flush table #15: started
+2018/10/17-19:23:25.977489 7f0f91ffb700 (Original Log Time 2018/10/17-19:20:58.698682) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 4, compaction slots scheduled 0
+2018/10/17-19:23:25.977494 7f0f91ffb700 [db/flush_job.cc:301] [default] [JOB 5] Flushing memtable with next log file: 12
+2018/10/17-19:23:25.977511 7f0f91ffb700 EVENT_LOG_v1 {"time_micros": 1539829405977503, "job": 5, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130424, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:23:25.977514 7f0f91ffb700 [db/flush_job.cc:331] [default] [JOB 5] Level-0 flush table #13: started
+2018/10/17-19:23:30.950979 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #57. Immutable memtables: 24.
+2018/10/17-19:24:01.581734 7f0fef819700 EVENT_LOG_v1 {"time_micros": 1539829441581703, "cf_name": "default", "job": 3, "event": "table_file_creation", "file_number": 9, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:24:01.581736 7f0f927fc700 EVENT_LOG_v1 {"time_micros": 1539829441581703, "cf_name": "default", "job": 4, "event": "table_file_creation", "file_number": 11, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:24:01.581763 7f0fef819700 [db/flush_job.cc:371] [default] [JOB 3] Level-0 flush table #9: 518148886 bytes OK
+2018/10/17-19:24:01.581769 7f0f927fc700 [db/flush_job.cc:371] [default] [JOB 4] Level-0 flush table #11: 518153004 bytes OK
+2018/10/17-19:24:01.581853 7f0f927fc700 (Original Log Time 2018/10/17-19:24:01.581817) EVENT_LOG_v1 {"time_micros": 1539829441581808, "job": 4, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [1, 0, 0, 0, 0, 0, 0], "immutable_memtables": 25}
+2018/10/17-19:24:01.581855 7f0f927fc700 (Original Log Time 2018/10/17-19:24:01.581838) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[1 0 0 0 0 0 0] max score 0.50
+2018/10/17-19:24:05.399381 7f0f90ff9700 (Original Log Time 2018/10/17-19:21:01.645065) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 6, compaction slots scheduled 0
+2018/10/17-19:24:05.399374 7f0f7ffff700 [db/db_impl_compaction_flush.cc:80] [JOB 8] Syncing log #16
+2018/10/17-19:24:05.399390 7f0f90ff9700 [db/flush_job.cc:301] [default] [JOB 7] Flushing memtable with next log file: 16
+2018/10/17-19:24:05.399429 7f0f90ff9700 EVENT_LOG_v1 {"time_micros": 1539829445399413, "job": 7, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130184, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:24:05.399435 7f0f90ff9700 [db/flush_job.cc:331] [default] [JOB 7] Level-0 flush table #17: started
+2018/10/17-19:24:07.591315 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #59. Immutable memtables: 25.
+2018/10/17-19:24:33.030843 7f0fef819700 (Original Log Time 2018/10/17-19:24:01.581779) [db/memtable_list.cc:377] [default] Level-0 commit table #9 started
+2018/10/17-19:24:33.030847 7f0fef819700 (Original Log Time 2018/10/17-19:24:14.676629) [db/memtable_list.cc:409] [default] Level-0 commit table #9: memtable #1 done
+2018/10/17-19:24:33.030849 7f0fef819700 (Original Log Time 2018/10/17-19:24:14.676632) [db/memtable_list.cc:377] [default] Level-0 commit table #11 started
+2018/10/17-19:24:33.030851 7f0fef819700 (Original Log Time 2018/10/17-19:24:33.030754) [db/memtable_list.cc:409] [default] Level-0 commit table #11: memtable #1 done
+2018/10/17-19:24:33.030852 7f0fef819700 (Original Log Time 2018/10/17-19:24:33.030788) EVENT_LOG_v1 {"time_micros": 1539829473030777, "job": 3, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 0, 0, 0, 0, 0, 0], "immutable_memtables": 24}
+2018/10/17-19:24:33.030854 7f0fef819700 (Original Log Time 2018/10/17-19:24:33.030823) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[3 0 0 0 0 0 0] max score 1.50
+2018/10/17-19:24:33.030868 7f0fef819700 [db/db_impl_files.cc:347] [JOB 3] Try to delete WAL files size 1035892704, prev total WAL file size 13833935232, number of live WAL files 27.
+2018/10/17-19:24:33.031048 7f0ff001a700 [WARN] [db/db_impl.cc:491] ------- DUMPING STATS -------
+2018/10/17-19:24:33.031073 7f0ff001a700 [WARN] [db/db_impl.cc:492] 
+** DB Stats **
+Uptime(secs): 220.7 total, 39.2 interval
+Cumulative writes: 3476K writes, 3476K keys, 3476K commit groups, 1.0 writes per commit group, ingest: 13.37 GB, 62.01 MB/s
+Cumulative WAL: 3476K writes, 0 syncs, 3476714.00 writes per sync, written: 13.37 GB, 62.01 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 123K writes, 123K keys, 123K commit groups, 1.0 writes per commit group, ingest: 487.04 MB, 12.43 MB/s
+Interval WAL: 123K writes, 0 syncs, 123714.00 writes per sync, written: 0.48 MB, 12.43 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      3/0    1.45 GB   1.5      0.0     0.0      0.0       1.4      1.4       0.0   1.0      0.0      5.7       260         3   86.710       0      0
+ Sum      3/0    1.45 GB   0.0      0.0     0.0      0.0       1.4      1.4       0.0   1.0      0.0      5.7       260         3   86.710       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       1.0      1.0       0.0   1.0      0.0      4.9       200         2  100.120       0      0
+Uptime(secs): 220.7 total, 39.2 interval
+Flush(GB): cumulative 1.448, interval 0.965
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 1.45 GB write, 6.72 MB/s write, 0.00 GB read, 0.00 MB/s read, 260.1 seconds
+Interval compaction: 0.97 GB write, 25.22 MB/s write, 0.00 GB read, 0.00 MB/s read, 200.2 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      3/0    1.45 GB   1.5      0.0     0.0      0.0       1.4      1.4       0.0   1.0      0.0      5.7       260         3   86.710       0      0
+ Sum      3/0    1.45 GB   0.0      0.0     0.0      0.0       1.4      1.4       0.0   1.0      0.0      5.7       260         3   86.710       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 220.7 total, 0.0 interval
+Flush(GB): cumulative 1.448, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 1.45 GB write, 6.72 MB/s write, 0.00 GB read, 0.00 MB/s read, 260.1 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+2018/10/17-19:24:40.447081 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #61. Immutable memtables: 24.
+2018/10/17-19:24:48.373700 7f0f7f7fe700 [db/db_impl_compaction_flush.cc:80] [JOB 9] Syncing log #18
+2018/10/17-19:24:48.373707 7f0f7ffff700 (Original Log Time 2018/10/17-19:21:03.095178) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 7, compaction slots scheduled 0
+2018/10/17-19:24:48.373740 7f0f7ffff700 [db/flush_job.cc:301] [default] [JOB 8] Flushing memtable with next log file: 18
+2018/10/17-19:24:48.373782 7f0f7ffff700 EVENT_LOG_v1 {"time_micros": 1539829488373766, "job": 8, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130888, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:24:48.373788 7f0f7ffff700 [db/flush_job.cc:331] [default] [JOB 8] Level-0 flush table #19: started
+2018/10/17-19:24:54.466923 7f0ff001a700 (Original Log Time 2018/10/17-19:24:33.031135) [db/db_impl_compaction_flush.cc:1835] [default] Moving #11 to level-1 518153004 bytes
+2018/10/17-19:24:54.466928 7f0ff001a700 (Original Log Time 2018/10/17-19:24:54.466865) EVENT_LOG_v1 {"time_micros": 1539829494466854, "job": 28, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518153004}
+2018/10/17-19:24:54.466929 7f0ff001a700 (Original Log Time 2018/10/17-19:24:54.466883) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518153004 bytes OK: base level 1 max bytes base 1073741824 files[2 1 0 0 0 0 0] max score 1.00
+2018/10/17-19:25:04.739090 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #62. Immutable memtables: 25.
+2018/10/17-19:25:11.496861 7f0ff001a700 (Original Log Time 2018/10/17-19:24:54.467068) [db/db_impl_compaction_flush.cc:1835] [default] Moving #9 to level-1 518148886 bytes
+2018/10/17-19:25:11.496866 7f0ff001a700 (Original Log Time 2018/10/17-19:25:11.496820) EVENT_LOG_v1 {"time_micros": 1539829511496810, "job": 30, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518148886}
+2018/10/17-19:25:11.496868 7f0ff001a700 (Original Log Time 2018/10/17-19:25:11.496836) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518148886 bytes OK: base level 1 max bytes base 1073741824 files[1 2 0 0 0 0 0] max score 0.97
+2018/10/17-19:25:27.211297 7f0f7f7fe700 (Original Log Time 2018/10/17-19:21:04.542935) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 8, compaction slots scheduled 0
+2018/10/17-19:25:27.211312 7f0f7effd700 [db/db_impl_compaction_flush.cc:80] [JOB 10] Syncing log #20
+2018/10/17-19:25:27.211324 7f0f7f7fe700 [db/flush_job.cc:301] [default] [JOB 9] Flushing memtable with next log file: 20
+2018/10/17-19:25:27.211382 7f0f7f7fe700 EVENT_LOG_v1 {"time_micros": 1539829527211366, "job": 9, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520132432, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:25:27.211388 7f0f7f7fe700 [db/flush_job.cc:331] [default] [JOB 9] Level-0 flush table #21: started
+2018/10/17-19:25:44.774924 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #63. Immutable memtables: 26.
+2018/10/17-19:25:57.964487 7f0f7e7fc700 [db/db_impl_compaction_flush.cc:80] [JOB 11] Syncing log #22
+2018/10/17-19:25:57.964494 7f0f7effd700 (Original Log Time 2018/10/17-19:21:05.963972) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 9, compaction slots scheduled 0
+2018/10/17-19:25:57.964528 7f0f7effd700 [db/flush_job.cc:301] [default] [JOB 10] Flushing memtable with next log file: 22
+2018/10/17-19:25:57.964565 7f0f7effd700 EVENT_LOG_v1 {"time_micros": 1539829557964549, "job": 10, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130200, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:25:57.964570 7f0f7effd700 [db/flush_job.cc:331] [default] [JOB 10] Level-0 flush table #23: started
+2018/10/17-19:26:19.209628 7f0f91ffb700 EVENT_LOG_v1 {"time_micros": 1539829579209600, "cf_name": "default", "job": 5, "event": "table_file_creation", "file_number": 13, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:26:19.209648 7f0f91ffb700 [db/flush_job.cc:371] [default] [JOB 5] Level-0 flush table #13: 518153004 bytes OK
+2018/10/17-19:26:20.315212 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #64. Immutable memtables: 27.
+2018/10/17-19:26:36.422869 7f0f91ffb700 (Original Log Time 2018/10/17-19:26:19.209662) [db/memtable_list.cc:377] [default] Level-0 commit table #13 started
+2018/10/17-19:26:36.422875 7f0f91ffb700 (Original Log Time 2018/10/17-19:26:36.422770) [db/memtable_list.cc:409] [default] Level-0 commit table #13: memtable #1 done
+2018/10/17-19:26:36.422877 7f0f91ffb700 (Original Log Time 2018/10/17-19:26:36.422807) EVENT_LOG_v1 {"time_micros": 1539829596422794, "job": 5, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [2, 2, 0, 0, 0, 0, 0], "immutable_memtables": 27}
+2018/10/17-19:26:36.422879 7f0f91ffb700 (Original Log Time 2018/10/17-19:26:36.422843) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[2 2 0 0 0 0 0] max score 1.00
+2018/10/17-19:26:36.422891 7f0f91ffb700 [db/db_impl_files.cc:347] [JOB 5] Try to delete WAL files size 517948416, prev total WAL file size 14588785440, number of live WAL files 29.
+2018/10/17-19:26:49.177878 7f0f917fa700 EVENT_LOG_v1 {"time_micros": 1539829609177857, "cf_name": "default", "job": 6, "event": "table_file_creation", "file_number": 15, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:26:49.177897 7f0f917fa700 [db/flush_job.cc:371] [default] [JOB 6] Level-0 flush table #15: 518148886 bytes OK
+2018/10/17-19:26:49.974435 7f0fee817700 (Original Log Time 2018/10/17-19:26:36.422919) [db/db_impl_compaction_flush.cc:1835] [default] Moving #13 to level-1 518153004 bytes
+2018/10/17-19:26:49.974440 7f0fee817700 (Original Log Time 2018/10/17-19:26:49.974393) EVENT_LOG_v1 {"time_micros": 1539829609974384, "job": 31, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518153004}
+2018/10/17-19:26:49.974441 7f0fee817700 (Original Log Time 2018/10/17-19:26:49.974409) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518153004 bytes OK: base level 1 max bytes base 1073741824 files[1 3 0 0 0 0 0] max score 1.45
+2018/10/17-19:26:49.974514 7f0fee817700 [db/compaction_job.cc:1531] [default] [JOB 33] Compacting 1@1 files to L2, score 1.45
+2018/10/17-19:26:49.974528 7f0fee817700 [db/compaction_job.cc:1535] [default] Compaction start summary: Base version 8 Base level 1, inputs: [13(494MB)]
+2018/10/17-19:26:49.974556 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829609974533, "job": 33, "event": "compaction_started", "compaction_reason": "LevelMaxLevelSize", "files_L1": [13], "score": 1.4477, "input_data_size": 518153004}
+2018/10/17-19:26:53.131072 7f0f7d7fa700 [db/db_impl_compaction_flush.cc:80] [JOB 13] Syncing log #24
+2018/10/17-19:26:53.131075 7f0f7e7fc700 (Original Log Time 2018/10/17-19:21:07.405914) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 10, compaction slots scheduled 0
+2018/10/17-19:26:53.131082 7f0f7e7fc700 [db/flush_job.cc:301] [default] [JOB 11] Flushing memtable with next log file: 24
+2018/10/17-19:26:53.131116 7f0f7e7fc700 EVENT_LOG_v1 {"time_micros": 1539829613131102, "job": 11, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130152, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:26:53.131122 7f0f7e7fc700 [db/flush_job.cc:331] [default] [JOB 11] Level-0 flush table #25: started
+2018/10/17-19:26:59.744592 7f0f917fa700 (Original Log Time 2018/10/17-19:26:49.177909) [db/memtable_list.cc:377] [default] Level-0 commit table #15 started
+2018/10/17-19:26:59.744596 7f0f917fa700 (Original Log Time 2018/10/17-19:26:59.744515) [db/memtable_list.cc:409] [default] Level-0 commit table #15: memtable #1 done
+2018/10/17-19:26:59.744597 7f0f917fa700 (Original Log Time 2018/10/17-19:26:59.744546) EVENT_LOG_v1 {"time_micros": 1539829619744535, "job": 6, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [2, 3, 0, 0, 0, 0, 0], "immutable_memtables": 26}
+2018/10/17-19:26:59.744599 7f0f917fa700 (Original Log Time 2018/10/17-19:26:59.744571) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[2 3 0 0 0 0 0] max score 1.00
+2018/10/17-19:26:59.744610 7f0f917fa700 [db/db_impl_files.cc:347] [JOB 6] Try to delete WAL files size 517944288, prev total WAL file size 14471686464, number of live WAL files 28.
+2018/10/17-19:27:00.927211 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #67. Immutable memtables: 26.
+2018/10/17-19:27:08.609010 7f0f90ff9700 EVENT_LOG_v1 {"time_micros": 1539829628608986, "cf_name": "default", "job": 7, "event": "table_file_creation", "file_number": 17, "file_size": 518143785, "table_properties": {"data_size": 517187350, "index_size": 955506, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:27:08.609029 7f0f90ff9700 [db/flush_job.cc:371] [default] [JOB 7] Level-0 flush table #17: 518143785 bytes OK
+2018/10/17-19:27:31.174996 7f0f90ff9700 (Original Log Time 2018/10/17-19:27:08.609044) [db/memtable_list.cc:377] [default] Level-0 commit table #17 started
+2018/10/17-19:27:31.175000 7f0f90ff9700 (Original Log Time 2018/10/17-19:27:31.174916) [db/memtable_list.cc:409] [default] Level-0 commit table #17: memtable #1 done
+2018/10/17-19:27:31.175001 7f0f90ff9700 (Original Log Time 2018/10/17-19:27:31.174948) EVENT_LOG_v1 {"time_micros": 1539829651174937, "job": 7, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 3, 0, 0, 0, 0, 0], "immutable_memtables": 26}
+2018/10/17-19:27:31.175003 7f0f90ff9700 (Original Log Time 2018/10/17-19:27:31.174970) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[3 3 0 0 0 0 0] max score 1.50
+2018/10/17-19:27:31.175014 7f0f90ff9700 [db/db_impl_files.cc:347] [JOB 7] Try to delete WAL files size 517940160, prev total WAL file size 14317559328, number of live WAL files 28.
+2018/10/17-19:27:37.995060 7f0f7d7fa700 [db/db_impl_compaction_flush.cc:80] [JOB 13] Syncing log #26
+2018/10/17-19:27:40.211140 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #69. Immutable memtables: 26.
+2018/10/17-19:27:43.818605 7f0fee817700 [db/compaction_job.cc:1211] [default] [JOB 33] Generated table #66: 29481 keys, 67224264 bytes
+2018/10/17-19:27:43.818678 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829663818643, "cf_name": "default", "job": 33, "event": "table_file_creation", "file_number": 66, "file_size": 67224264, "table_properties": {"data_size": 67117433, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:28:15.787515 7f0f7d7fa700 (Original Log Time 2018/10/17-19:21:10.316762) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 12, compaction slots scheduled 0
+2018/10/17-19:28:15.787531 7f0f7cff9700 [db/db_impl_compaction_flush.cc:80] [JOB 14] Syncing log #28
+2018/10/17-19:28:15.787536 7f0f7d7fa700 [db/flush_job.cc:301] [default] [JOB 13] Flushing memtable with next log file: 28
+2018/10/17-19:28:15.787568 7f0f7dffb700 (Original Log Time 2018/10/17-19:21:08.862745) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 11, compaction slots scheduled 0
+2018/10/17-19:28:15.787573 7f0f7dffb700 [db/flush_job.cc:301] [default] [JOB 12] Flushing memtable with next log file: 26
+2018/10/17-19:28:15.787593 7f0f7dffb700 EVENT_LOG_v1 {"time_micros": 1539829695787581, "job": 12, "event": "flush_started", "num_memtables": 1, "num_entries": 125473, "num_deletes": 0, "memory_usage": 520130568, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:28:15.787594 7f0f7d7fa700 EVENT_LOG_v1 {"time_micros": 1539829695787579, "job": 13, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130936, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:28:15.787598 7f0f7dffb700 [db/flush_job.cc:331] [default] [JOB 12] Level-0 flush table #27: started
+2018/10/17-19:28:15.787598 7f0f7d7fa700 [db/flush_job.cc:331] [default] [JOB 13] Level-0 flush table #29: started
+2018/10/17-19:28:16.367264 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #72. Immutable memtables: 27.
+2018/10/17-19:28:48.265065 7f0fee817700 [db/compaction_job.cc:1211] [default] [JOB 33] Generated table #71: 29481 keys, 67224709 bytes
+2018/10/17-19:28:48.265116 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829728265097, "cf_name": "default", "job": 33, "event": "table_file_creation", "file_number": 71, "file_size": 67224709, "table_properties": {"data_size": 67117430, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:28:49.774562 7f0f7ffff700 EVENT_LOG_v1 {"time_micros": 1539829729774535, "cf_name": "default", "job": 8, "event": "table_file_creation", "file_number": 19, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:28:49.774582 7f0f7ffff700 [db/flush_job.cc:371] [default] [JOB 8] Level-0 flush table #19: 518148886 bytes OK
+2018/10/17-19:29:01.409419 7f0f7cff9700 (Original Log Time 2018/10/17-19:21:11.764617) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 13, compaction slots scheduled 0
+2018/10/17-19:29:01.409438 7f0f47fff700 [db/db_impl_compaction_flush.cc:80] [JOB 15] Syncing log #30
+2018/10/17-19:29:01.409450 7f0f7cff9700 [db/flush_job.cc:301] [default] [JOB 14] Flushing memtable with next log file: 30
+2018/10/17-19:29:01.409504 7f0f7cff9700 EVENT_LOG_v1 {"time_micros": 1539829741409489, "job": 14, "event": "flush_started", "num_memtables": 1, "num_entries": 125468, "num_deletes": 0, "memory_usage": 520130392, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:29:01.409509 7f0f7cff9700 [db/flush_job.cc:331] [default] [JOB 14] Level-0 flush table #31: started
+2018/10/17-19:29:04.447604 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #74. Immutable memtables: 28.
+2018/10/17-19:29:13.080484 7f0f7ffff700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:29:13.080541 7f0f7ffff700 (Original Log Time 2018/10/17-19:28:57.908760) [db/memtable_list.cc:377] [default] Level-0 commit table #19 started
+2018/10/17-19:29:13.080544 7f0f7ffff700 (Original Log Time 2018/10/17-19:29:13.080437) [db/memtable_list.cc:409] [default] Level-0 commit table #19: memtable #1 done
+2018/10/17-19:29:13.080546 7f0f7ffff700 (Original Log Time 2018/10/17-19:29:13.080473) EVENT_LOG_v1 {"time_micros": 1539829753080460, "job": 8, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [4, 3, 0, 0, 0, 0, 0], "immutable_memtables": 28}
+2018/10/17-19:29:13.080548 7f0f7ffff700 (Original Log Time 2018/10/17-19:29:13.080516) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[4 3 0 0 0 0 0] max score 2.00
+2018/10/17-19:29:13.080561 7f0f7ffff700 [db/db_impl_files.cc:347] [JOB 8] Try to delete WAL files size 517944288, prev total WAL file size 15252898080, number of live WAL files 30.
+2018/10/17-19:29:13.080666 7f0fed014700 (Original Log Time 2018/10/17-19:29:13.080657) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:29:30.497162 7f0fed815700 (Original Log Time 2018/10/17-19:29:13.080604) [db/db_impl_compaction_flush.cc:1835] [default] Moving #15 to level-1 518148886 bytes
+2018/10/17-19:29:30.497166 7f0fed815700 (Original Log Time 2018/10/17-19:29:30.497125) EVENT_LOG_v1 {"time_micros": 1539829770497114, "job": 36, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518148886}
+2018/10/17-19:29:30.497168 7f0fed815700 (Original Log Time 2018/10/17-19:29:30.497136) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518148886 bytes OK: base level 1 max bytes base 1073741824 files[3 4 0 0 0 0 0] max score 1.50
+2018/10/17-19:29:31.881486 7f0f7f7fe700 EVENT_LOG_v1 {"time_micros": 1539829771881459, "cf_name": "default", "job": 9, "event": "table_file_creation", "file_number": 21, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:29:31.881505 7f0f7f7fe700 [db/flush_job.cc:371] [default] [JOB 9] Level-0 flush table #21: 518153004 bytes OK
+2018/10/17-19:29:40.915633 7f0f467fc700 [db/db_impl_compaction_flush.cc:80] [JOB 18] Syncing log #32
+2018/10/17-19:29:40.915632 7f0f47fff700 (Original Log Time 2018/10/17-19:21:13.252520) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 14, compaction slots scheduled 0
+2018/10/17-19:29:40.915659 7f0f47fff700 [db/flush_job.cc:301] [default] [JOB 15] Flushing memtable with next log file: 32
+2018/10/17-19:29:40.915693 7f0f47fff700 EVENT_LOG_v1 {"time_micros": 1539829780915679, "job": 15, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130504, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:29:40.915698 7f0f47fff700 [db/flush_job.cc:331] [default] [JOB 15] Level-0 flush table #33: started
+2018/10/17-19:29:43.160661 7f0f7f7fe700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:29:43.160728 7f0f7f7fe700 (Original Log Time 2018/10/17-19:29:31.881520) [db/memtable_list.cc:377] [default] Level-0 commit table #21 started
+2018/10/17-19:29:43.160731 7f0f7f7fe700 (Original Log Time 2018/10/17-19:29:43.160610) [db/memtable_list.cc:409] [default] Level-0 commit table #21: memtable #1 done
+2018/10/17-19:29:43.160732 7f0f7f7fe700 (Original Log Time 2018/10/17-19:29:43.160650) EVENT_LOG_v1 {"time_micros": 1539829783160638, "job": 9, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [4, 4, 0, 0, 0, 0, 0], "immutable_memtables": 27}
+2018/10/17-19:29:43.160734 7f0f7f7fe700 (Original Log Time 2018/10/17-19:29:43.160707) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[4 4 0 0 0 0 0] max score 2.00
+2018/10/17-19:29:43.160746 7f0f7f7fe700 [db/db_impl_files.cc:347] [JOB 9] Try to delete WAL files size 517948416, prev total WAL file size 15020388480, number of live WAL files 29.
+2018/10/17-19:29:43.160866 7f0fec813700 (Original Log Time 2018/10/17-19:29:43.160856) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:29:53.180725 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #76. Immutable memtables: 28.
+2018/10/17-19:29:53.180764 7f0f0f7f6700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:29:53.180853 7f0fcffff700 (Original Log Time 2018/10/17-19:29:53.180836) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:30:03.427247 7f0f937fe700 (Original Log Time 2018/10/17-19:29:43.160790) [db/db_impl_compaction_flush.cc:1835] [default] Moving #21 to level-1 518153004 bytes
+2018/10/17-19:30:03.427251 7f0f937fe700 (Original Log Time 2018/10/17-19:30:03.427209) EVENT_LOG_v1 {"time_micros": 1539829803427197, "job": 39, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518153004}
+2018/10/17-19:30:03.427253 7f0f937fe700 (Original Log Time 2018/10/17-19:30:03.427221) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518153004 bytes OK: base level 1 max bytes base 1073741824 files[3 5 0 0 0 0 0] max score 1.93
+2018/10/17-19:30:13.934657 7f0fee817700 [db/compaction_job.cc:1211] [default] [JOB 33] Generated table #73: 29481 keys, 67225120 bytes
+2018/10/17-19:30:13.934737 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829813934717, "cf_name": "default", "job": 33, "event": "table_file_creation", "file_number": 73, "file_size": 67225120, "table_properties": {"data_size": 67118632, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:30:24.591969 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #79. Immutable memtables: 28.
+2018/10/17-19:30:25.950055 7f0f467fc700 [db/db_impl_compaction_flush.cc:80] [JOB 18] Syncing log #34
+2018/10/17-19:31:00.594430 7f0f7effd700 EVENT_LOG_v1 {"time_micros": 1539829860594403, "cf_name": "default", "job": 10, "event": "table_file_creation", "file_number": 23, "file_size": 518144770, "table_properties": {"data_size": 517187843, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:31:00.594453 7f0f7effd700 [db/flush_job.cc:371] [default] [JOB 10] Level-0 flush table #23: 518144770 bytes OK
+2018/10/17-19:31:04.278316 7f0f467fc700 [db/db_impl_compaction_flush.cc:80] [JOB 18] Syncing log #36
+2018/10/17-19:31:06.398149 7f0f7effd700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:31:06.398209 7f0f7effd700 (Original Log Time 2018/10/17-19:31:00.594468) [db/memtable_list.cc:377] [default] Level-0 commit table #23 started
+2018/10/17-19:31:06.398211 7f0f7effd700 (Original Log Time 2018/10/17-19:31:06.398106) [db/memtable_list.cc:409] [default] Level-0 commit table #23: memtable #1 done
+2018/10/17-19:31:06.398213 7f0f7effd700 (Original Log Time 2018/10/17-19:31:06.398138) EVENT_LOG_v1 {"time_micros": 1539829866398125, "job": 10, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [4, 5, 0, 0, 0, 0, 0], "immutable_memtables": 28}
+2018/10/17-19:31:06.398215 7f0f7effd700 (Original Log Time 2018/10/17-19:31:06.398182) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[4 5 0 0 0 0 0] max score 2.00
+2018/10/17-19:31:06.398228 7f0f7effd700 [db/db_impl_files.cc:347] [JOB 10] Try to delete WAL files size 517940160, prev total WAL file size 15489663648, number of live WAL files 30.
+2018/10/17-19:31:06.398332 7f0fceffd700 [db/compaction_job.cc:1531] [default] [JOB 44] Compacting 1@1 files to L2, score 1.93
+2018/10/17-19:31:06.398342 7f0fceffd700 [db/compaction_job.cc:1535] [default] Compaction start summary: Base version 15 Base level 1, inputs: [21(494MB)]
+2018/10/17-19:31:06.398365 7f0fceffd700 EVENT_LOG_v1 {"time_micros": 1539829866398348, "job": 44, "event": "compaction_started", "compaction_reason": "LevelMaxLevelSize", "files_L1": [21], "score": 1.93026, "input_data_size": 518153004}
+2018/10/17-19:31:06.398397 7f0fce7fc700 (Original Log Time 2018/10/17-19:31:06.398387) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:31:07.839864 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #82. Immutable memtables: 28.
+2018/10/17-19:31:07.839884 7f0f0f7f6700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:31:07.840027 7f0fcdffb700 (Original Log Time 2018/10/17-19:31:07.840007) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:31:15.407734 7f0fee817700 [db/compaction_job.cc:1211] [default] [JOB 33] Generated table #78: 29481 keys, 67223765 bytes
+2018/10/17-19:31:15.407786 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829875407767, "cf_name": "default", "job": 33, "event": "table_file_creation", "file_number": 78, "file_size": 67223765, "table_properties": {"data_size": 67117290, "index_size": 213411, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:31:27.677237 7f0fcf7fe700 (Original Log Time 2018/10/17-19:31:06.398268) [db/db_impl_compaction_flush.cc:1835] [default] Moving #19 to level-1 518148886 bytes
+2018/10/17-19:31:27.677241 7f0fcf7fe700 (Original Log Time 2018/10/17-19:31:27.677194) EVENT_LOG_v1 {"time_micros": 1539829887677183, "job": 43, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518148886}
+2018/10/17-19:31:27.677243 7f0fcf7fe700 (Original Log Time 2018/10/17-19:31:27.677207) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518148886 bytes OK: base level 1 max bytes base 1073741824 files[3 6 0 0 0 0 0] max score 1.93
+2018/10/17-19:31:41.635369 7f0fee817700 [db/compaction_job.cc:1211] [default] [JOB 33] Generated table #83: 7548 keys, 17212021 bytes
+2018/10/17-19:31:41.635422 7f0fee817700 EVENT_LOG_v1 {"time_micros": 1539829901635402, "cf_name": "default", "job": 33, "event": "table_file_creation", "file_number": 83, "file_size": 17212021, "table_properties": {"data_size": 17184035, "index_size": 54491, "filter_size": 0, "raw_key_size": 181152, "raw_average_key_size": 24, "raw_value_size": 30916608, "raw_average_value_size": 4096, "num_data_blocks": 1887, "num_entries": 7548, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:31:41.635462 7f0fee817700 [db/compaction_job.cc:1287] [default] [JOB 33] Compacted 1@1 files to L2 => 286109879 bytes
+2018/10/17-19:31:46.645289 7f0f467fc700 (Original Log Time 2018/10/17-19:21:17.955863) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 17, compaction slots scheduled 0
+2018/10/17-19:31:46.645312 7f0f467fc700 [db/flush_job.cc:301] [default] [JOB 18] Flushing memtable with next log file: 38
+2018/10/17-19:31:46.645314 7f0f46ffd700 (Original Log Time 2018/10/17-19:21:16.404766) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 16, compaction slots scheduled 0
+2018/10/17-19:31:46.645320 7f0f46ffd700 [db/flush_job.cc:301] [default] [JOB 17] Flushing memtable with next log file: 36
+2018/10/17-19:31:46.645355 7f0f477fe700 (Original Log Time 2018/10/17-19:21:14.810243) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 15, compaction slots scheduled 0
+2018/10/17-19:31:46.645350 7f0f467fc700 EVENT_LOG_v1 {"time_micros": 1539829906645337, "job": 18, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130432, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:31:46.645361 7f0f477fe700 [db/flush_job.cc:301] [default] [JOB 16] Flushing memtable with next log file: 34
+2018/10/17-19:31:46.645350 7f0f46ffd700 EVENT_LOG_v1 {"time_micros": 1539829906645337, "job": 17, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520131560, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:31:46.645364 7f0f467fc700 [db/flush_job.cc:331] [default] [JOB 18] Level-0 flush table #39: started
+2018/10/17-19:31:46.645367 7f0f46ffd700 [db/flush_job.cc:331] [default] [JOB 17] Level-0 flush table #37: started
+2018/10/17-19:31:46.645379 7f0f477fe700 EVENT_LOG_v1 {"time_micros": 1539829906645372, "job": 16, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130824, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:31:46.645382 7f0f45ffb700 [db/db_impl_compaction_flush.cc:80] [JOB 19] Syncing log #38
+2018/10/17-19:31:46.645382 7f0f477fe700 [db/flush_job.cc:331] [default] [JOB 16] Level-0 flush table #35: started
+2018/10/17-19:31:50.619619 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #84. Immutable memtables: 29.
+2018/10/17-19:32:09.884113 7f0fee817700 (Original Log Time 2018/10/17-19:32:09.884018) [db/compaction_job.cc:685] [default] compacted to: base level 1 max bytes base 1073741824 files[3 5 5 0 0 0 0] max score 1.93, MB/sec: 1.8 rd, 1.0 wr, level 2, files in(1, 0) out(5) MB in(494.1, 0.0) out(272.9), read-write-amplify(1.6) write-amplify(0.6) OK, records in: 125472, records dropped: 0 output_compression: Snappy
+2018/10/17-19:32:09.884120 7f0fee817700 (Original Log Time 2018/10/17-19:32:09.884056) EVENT_LOG_v1 {"time_micros": 1539829929884040, "job": 33, "event": "compaction_finished", "compaction_time_micros": 291660879, "output_level": 2, "num_output_files": 5, "total_output_size": 286109879, "num_input_records": 125472, "num_output_records": 125472, "num_subcompactions": 1, "output_compression": "Snappy", "num_single_delete_mismatches": 0, "num_single_delete_fallthrough": 0, "lsm_state": [3, 5, 5, 0, 0, 0, 0]}
+2018/10/17-19:32:28.600911 7f0fceffd700 [db/compaction_job.cc:1211] [default] [JOB 44] Generated table #80: 29481 keys, 67224191 bytes
+2018/10/17-19:32:28.600965 7f0fceffd700 EVENT_LOG_v1 {"time_micros": 1539829948600946, "cf_name": "default", "job": 44, "event": "table_file_creation", "file_number": 80, "file_size": 67224191, "table_properties": {"data_size": 67117391, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:32:28.601064 7f0f7e7fc700 EVENT_LOG_v1 {"time_micros": 1539829948601050, "cf_name": "default", "job": 11, "event": "table_file_creation", "file_number": 25, "file_size": 518144769, "table_properties": {"data_size": 517187842, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:32:28.601085 7f0f7e7fc700 [db/flush_job.cc:371] [default] [JOB 11] Level-0 flush table #25: 518144769 bytes OK
+2018/10/17-19:32:28.735020 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #86. Immutable memtables: 30.
+2018/10/17-19:32:34.031388 7f0f45ffb700 (Original Log Time 2018/10/17-19:21:19.529666) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 18, compaction slots scheduled 0
+2018/10/17-19:32:34.031410 7f0f45ffb700 [db/flush_job.cc:301] [default] [JOB 19] Flushing memtable with next log file: 40
+2018/10/17-19:32:34.031416 7f0f2f7fe700 [db/db_impl_compaction_flush.cc:80] [JOB 23] Syncing log #40
+2018/10/17-19:32:34.031442 7f0f45ffb700 EVENT_LOG_v1 {"time_micros": 1539829954031430, "job": 19, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130728, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:32:34.031448 7f0f45ffb700 [db/flush_job.cc:331] [default] [JOB 19] Level-0 flush table #41: started
+2018/10/17-19:32:43.935941 7f0f7e7fc700 [db/column_family.cc:837] [default] Increasing compaction threads because we have 4 level-0 files 
+2018/10/17-19:32:43.936000 7f0f7e7fc700 (Original Log Time 2018/10/17-19:32:31.611918) [db/memtable_list.cc:377] [default] Level-0 commit table #25 started
+2018/10/17-19:32:43.936002 7f0f7e7fc700 (Original Log Time 2018/10/17-19:32:43.935899) [db/memtable_list.cc:409] [default] Level-0 commit table #25: memtable #1 done
+2018/10/17-19:32:43.936004 7f0f7e7fc700 (Original Log Time 2018/10/17-19:32:43.935932) EVENT_LOG_v1 {"time_micros": 1539829963935919, "job": 11, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [4, 5, 5, 0, 0, 0, 0], "immutable_memtables": 30}
+2018/10/17-19:32:43.936005 7f0f7e7fc700 (Original Log Time 2018/10/17-19:32:43.935974) [db/db_impl_compaction_flush.cc:177] [default] Level summary: base level 1 max bytes base 1073741824 files[4 5 5 0 0 0 0] max score 2.00
+2018/10/17-19:32:43.936018 7f0f7e7fc700 [db/db_impl_files.cc:347] [JOB 11] Try to delete WAL files size 517940160, prev total WAL file size 16296146880, number of live WAL files 32.
+2018/10/17-19:32:43.936133 7f0fccff9700 [db/compaction_job.cc:1531] [default] [JOB 49] Compacting 1@1 files to L2, score 1.93
+2018/10/17-19:32:43.936143 7f0fccff9700 [db/compaction_job.cc:1535] [default] Compaction start summary: Base version 18 Base level 1, inputs: [11(494MB)]
+2018/10/17-19:32:43.936164 7f0fccff9700 EVENT_LOG_v1 {"time_micros": 1539829963936148, "job": 49, "event": "compaction_started", "compaction_reason": "LevelMaxLevelSize", "files_L1": [11], "score": 1.93026, "input_data_size": 518153004}
+2018/10/17-19:32:43.936203 7f0fabfff700 (Original Log Time 2018/10/17-19:32:43.936192) [db/db_impl_compaction_flush.cc:1781] Compaction nothing to do
+2018/10/17-19:33:06.371029 7f0fcd7fa700 (Original Log Time 2018/10/17-19:32:43.936053) [db/db_impl_compaction_flush.cc:1835] [default] Moving #23 to level-1 518144770 bytes
+2018/10/17-19:33:06.371034 7f0fcd7fa700 (Original Log Time 2018/10/17-19:33:06.370984) EVENT_LOG_v1 {"time_micros": 1539829986370974, "job": 48, "event": "trivial_move", "destination_level": 1, "files": 1, "total_files_size": 518144770}
+2018/10/17-19:33:06.371035 7f0fcd7fa700 (Original Log Time 2018/10/17-19:33:06.370998) [db/db_impl_compaction_flush.cc:1864] [default] Moved #1 files to level-1 518144770 bytes OK: base level 1 max bytes base 1073741824 files[3 6 5 0 0 0 0] max score 1.93
+2018/10/17-19:33:09.222605 7f0f2f7fe700 [db/db_impl_compaction_flush.cc:80] [JOB 23] Syncing log #42
+2018/10/17-19:33:19.841279 7f0f0f7f6700 [db/db_impl_write.cc:1373] [default] New memtable created with log file: #89. Immutable memtables: 30.
+2018/10/17-19:33:36.302307 7f0f2f7fe700 [db/db_impl_compaction_flush.cc:80] [JOB 23] Syncing log #44
+2018/10/17-19:33:43.271434 7f0ff1f73a00 [db/db_impl.cc:252] Shutdown: canceling all background work
+2018/10/17-19:33:50.768211 7f0fceffd700 [db/compaction_job.cc:1211] [default] [JOB 44] Generated table #85: 29481 keys, 67224721 bytes
+2018/10/17-19:33:50.768271 7f0fceffd700 EVENT_LOG_v1 {"time_micros": 1539830030768251, "cf_name": "default", "job": 44, "event": "table_file_creation", "file_number": 85, "file_size": 67224721, "table_properties": {"data_size": 67117475, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:33:57.933795 7f0fceffd700 (Original Log Time 2018/10/17-19:33:57.933654) [db/compaction_job.cc:685] [default] compacted to: base level 1 max bytes base 1073741824 files[3 6 5 0 0 0 0] max score 1.93, MB/sec: 3.0 rd, 0.8 wr, level 2, files in(1, 0) out(3) MB in(494.1, 0.0) out(128.2), read-write-amplify(1.3) write-amplify(0.3) Shutdown in progress: Database shutdown or Column family drop during compaction, records in: 125472, records dropped: 0 output_compression: Snappy
+2018/10/17-19:33:57.933803 7f0fceffd700 (Original Log Time 2018/10/17-19:33:57.933723) EVENT_LOG_v1 {"time_micros": 1539830037933675, "job": 44, "event": "compaction_finished", "compaction_time_micros": 171535233, "output_level": 2, "num_output_files": 3, "total_output_size": 134448912, "num_input_records": 58963, "num_output_records": 58963, "num_subcompactions": 1, "output_compression": "Snappy", "num_single_delete_mismatches": 0, "num_single_delete_fallthrough": 0, "lsm_state": [3, 6, 5, 0, 0, 0, 0]}
+2018/10/17-19:34:06.592202 7f0fccff9700 [db/compaction_job.cc:1211] [default] [JOB 49] Generated table #87: 29481 keys, 67224279 bytes
+2018/10/17-19:34:06.592254 7f0fccff9700 EVENT_LOG_v1 {"time_micros": 1539830046592235, "cf_name": "default", "job": 49, "event": "table_file_creation", "file_number": 87, "file_size": 67224279, "table_properties": {"data_size": 67117425, "index_size": 213527, "filter_size": 0, "raw_key_size": 707544, "raw_average_key_size": 24, "raw_value_size": 120754176, "raw_average_value_size": 4096, "num_data_blocks": 7371, "num_entries": 29481, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:34:08.883279 7f0fccff9700 (Original Log Time 2018/10/17-19:34:08.883183) [db/compaction_job.cc:685] [default] compacted to: base level 1 max bytes base 1073741824 files[3 6 5 0 0 0 0] max score 1.93, MB/sec: 6.1 rd, 0.8 wr, level 2, files in(1, 0) out(2) MB in(494.1, 0.0) out(64.1), read-write-amplify(1.1) write-amplify(0.1) Shutdown in progress: Database shutdown or Column family drop during compaction, records in: 125472, records dropped: 0 output_compression: Snappy
+2018/10/17-19:34:08.883287 7f0fccff9700 (Original Log Time 2018/10/17-19:34:08.883239) EVENT_LOG_v1 {"time_micros": 1539830048883203, "job": 49, "event": "compaction_finished", "compaction_time_micros": 84946973, "output_level": 2, "num_output_files": 2, "total_output_size": 67224279, "num_input_records": 29482, "num_output_records": 29482, "num_subcompactions": 1, "output_compression": "Snappy", "num_single_delete_mismatches": 0, "num_single_delete_fallthrough": 0, "lsm_state": [3, 6, 5, 0, 0, 0, 0]}
+2018/10/17-19:34:11.171360 7f0f2f7fe700 [db/db_impl_compaction_flush.cc:80] [JOB 23] Syncing log #46
+2018/10/17-19:34:11.172094 7f0f7d7fa700 EVENT_LOG_v1 {"time_micros": 1539830051172069, "cf_name": "default", "job": 13, "event": "table_file_creation", "file_number": 29, "file_size": 518148885, "table_properties": {"data_size": 517191958, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:34:11.172119 7f0f7d7fa700 [db/flush_job.cc:371] [default] [JOB 13] Level-0 flush table #29: 518148885 bytes OK
+2018/10/17-19:34:11.172174 7f0f7d7fa700 (Original Log Time 2018/10/17-19:34:11.172149) EVENT_LOG_v1 {"time_micros": 1539830051172138, "job": 13, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:34:38.429437 7f0f7dffb700 EVENT_LOG_v1 {"time_micros": 1539830078429408, "cf_name": "default", "job": 12, "event": "table_file_creation", "file_number": 27, "file_size": 518157171, "table_properties": {"data_size": 517200213, "index_size": 956029, "filter_size": 0, "raw_key_size": 3011352, "raw_average_key_size": 24, "raw_value_size": 513937408, "raw_average_value_size": 4096, "num_data_blocks": 31369, "num_entries": 125473, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:34:38.429458 7f0f7dffb700 [db/flush_job.cc:371] [default] [JOB 12] Level-0 flush table #27: 518157171 bytes OK
+2018/10/17-19:34:38.429525 7f0f7dffb700 (Original Log Time 2018/10/17-19:34:38.429488) EVENT_LOG_v1 {"time_micros": 1539830078429476, "job": 12, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:34:53.906402 7f0f2effd700 [db/db_impl_compaction_flush.cc:80] [JOB 24] Syncing log #48
+2018/10/17-19:34:53.906402 7f0f457fa700 (Original Log Time 2018/10/17-19:21:21.109849) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 19, compaction slots scheduled 0
+2018/10/17-19:34:53.906432 7f0f457fa700 [db/flush_job.cc:301] [default] [JOB 20] Flushing memtable with next log file: 42
+2018/10/17-19:34:53.906444 7f0f44ff9700 (Original Log Time 2018/10/17-19:21:29.244007) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 20, compaction slots scheduled 0
+2018/10/17-19:34:53.906449 7f0f44ff9700 [db/flush_job.cc:301] [default] [JOB 21] Flushing memtable with next log file: 44
+2018/10/17-19:34:53.906495 7f0f2f7fe700 (Original Log Time 2018/10/17-19:22:04.195955) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 22, compaction slots scheduled 0
+2018/10/17-19:34:53.906503 7f0f2f7fe700 [db/flush_job.cc:301] [default] [JOB 23] Flushing memtable with next log file: 48
+2018/10/17-19:34:53.906544 7f0f2f7fe700 EVENT_LOG_v1 {"time_micros": 1539830093906521, "job": 23, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130392, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:34:53.906549 7f0f2f7fe700 [db/flush_job.cc:331] [default] [JOB 23] Level-0 flush table #49: started
+2018/10/17-19:34:53.906469 7f0f457fa700 EVENT_LOG_v1 {"time_micros": 1539830093906455, "job": 20, "event": "flush_started", "num_memtables": 1, "num_entries": 125473, "num_deletes": 0, "memory_usage": 520129896, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:34:53.906576 7f0f457fa700 [db/flush_job.cc:331] [default] [JOB 20] Level-0 flush table #43: started
+2018/10/17-19:34:53.906469 7f0f44ff9700 EVENT_LOG_v1 {"time_micros": 1539830093906457, "job": 21, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130152, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:34:53.906604 7f0f44ff9700 [db/flush_job.cc:331] [default] [JOB 21] Level-0 flush table #45: started
+2018/10/17-19:34:53.906782 7f0f2ffff700 (Original Log Time 2018/10/17-19:21:52.648256) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 21, compaction slots scheduled 0
+2018/10/17-19:34:53.906789 7f0f2ffff700 [db/flush_job.cc:301] [default] [JOB 22] Flushing memtable with next log file: 46
+2018/10/17-19:34:53.906805 7f0f2ffff700 EVENT_LOG_v1 {"time_micros": 1539830093906799, "job": 22, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520129880, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:34:53.906808 7f0f2ffff700 [db/flush_job.cc:331] [default] [JOB 22] Level-0 flush table #47: started
+2018/10/17-19:35:11.110349 7f0f7cff9700 EVENT_LOG_v1 {"time_micros": 1539830111110320, "cf_name": "default", "job": 14, "event": "table_file_creation", "file_number": 31, "file_size": 518136485, "table_properties": {"data_size": 517179588, "index_size": 955968, "filter_size": 0, "raw_key_size": 3011232, "raw_average_key_size": 24, "raw_value_size": 513916928, "raw_average_value_size": 4096, "num_data_blocks": 31367, "num_entries": 125468, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:35:11.110391 7f0f7cff9700 [db/flush_job.cc:371] [default] [JOB 14] Level-0 flush table #31: 518136485 bytes OK
+2018/10/17-19:35:11.110449 7f0f7cff9700 (Original Log Time 2018/10/17-19:35:11.110423) EVENT_LOG_v1 {"time_micros": 1539830111110412, "job": 14, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:35:22.348741 7f0f2effd700 (Original Log Time 2018/10/17-19:22:24.763576) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 23, compaction slots scheduled 0
+2018/10/17-19:35:22.348749 7f0f2e7fc700 [db/db_impl_compaction_flush.cc:80] [JOB 25] Syncing log #51
+2018/10/17-19:35:22.348766 7f0f2effd700 [db/flush_job.cc:301] [default] [JOB 24] Flushing memtable with next log file: 51
+2018/10/17-19:35:22.348825 7f0f2effd700 EVENT_LOG_v1 {"time_micros": 1539830122348809, "job": 24, "event": "flush_started", "num_memtables": 1, "num_entries": 125470, "num_deletes": 0, "memory_usage": 520130680, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:35:22.348831 7f0f2effd700 [db/flush_job.cc:331] [default] [JOB 24] Level-0 flush table #52: started
+2018/10/17-19:35:57.418863 7f0f2e7fc700 (Original Log Time 2018/10/17-19:22:36.023528) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 0
+2018/10/17-19:35:57.418886 7f0f2e7fc700 [db/flush_job.cc:301] [default] [JOB 25] Flushing memtable with next log file: 53
+2018/10/17-19:35:57.418888 7f0f927fc700 [db/db_impl_compaction_flush.cc:80] [JOB 27] Syncing log #53
+2018/10/17-19:35:57.418930 7f0f2e7fc700 EVENT_LOG_v1 {"time_micros": 1539830157418917, "job": 25, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130648, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:35:57.418936 7f0f2e7fc700 [db/flush_job.cc:331] [default] [JOB 25] Level-0 flush table #54: started
+2018/10/17-19:36:36.879829 7f0f927fc700 [db/db_impl_compaction_flush.cc:80] [JOB 27] Syncing log #55
+2018/10/17-19:36:54.182728 7f0f47fff700 EVENT_LOG_v1 {"time_micros": 1539830214182690, "cf_name": "default", "job": 15, "event": "table_file_creation", "file_number": 33, "file_size": 518144769, "table_properties": {"data_size": 517187842, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:36:54.182751 7f0f47fff700 [db/flush_job.cc:371] [default] [JOB 15] Level-0 flush table #33: 518144769 bytes OK
+2018/10/17-19:36:54.182798 7f0f47fff700 (Original Log Time 2018/10/17-19:36:54.182778) EVENT_LOG_v1 {"time_micros": 1539830214182768, "job": 15, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:37:15.743534 7f0f927fc700 (Original Log Time 2018/10/17-19:24:01.581930) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 0
+2018/10/17-19:37:15.743537 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #57
+2018/10/17-19:37:15.743559 7f0f927fc700 [db/flush_job.cc:301] [default] [JOB 27] Flushing memtable with next log file: 57
+2018/10/17-19:37:15.743615 7f0f927fc700 EVENT_LOG_v1 {"time_micros": 1539830235743603, "job": 27, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130984, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:37:15.743621 7f0f927fc700 [db/flush_job.cc:331] [default] [JOB 27] Level-0 flush table #58: started
+2018/10/17-19:37:15.743663 7f0f2dffb700 (Original Log Time 2018/10/17-19:23:06.923923) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 0
+2018/10/17-19:37:15.743668 7f0f2dffb700 [db/flush_job.cc:301] [default] [JOB 26] Flushing memtable with next log file: 55
+2018/10/17-19:37:15.743686 7f0f2dffb700 EVENT_LOG_v1 {"time_micros": 1539830235743681, "job": 26, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520130360, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:37:15.743690 7f0f2dffb700 [db/flush_job.cc:331] [default] [JOB 26] Level-0 flush table #56: started
+2018/10/17-19:37:54.620484 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #59
+2018/10/17-19:38:26.334785 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #61
+2018/10/17-19:38:57.728349 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #62
+2018/10/17-19:39:20.419197 7f0f46ffd700 EVENT_LOG_v1 {"time_micros": 1539830360419168, "cf_name": "default", "job": 17, "event": "table_file_creation", "file_number": 37, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:39:20.419223 7f0f46ffd700 [db/flush_job.cc:371] [default] [JOB 17] Level-0 flush table #37: 518153004 bytes OK
+2018/10/17-19:39:20.419280 7f0f46ffd700 (Original Log Time 2018/10/17-19:39:20.419255) EVENT_LOG_v1 {"time_micros": 1539830360419242, "job": 17, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:39:21.192886 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #63
+2018/10/17-19:39:34.331563 7f0f467fc700 EVENT_LOG_v1 {"time_micros": 1539830374331538, "cf_name": "default", "job": 18, "event": "table_file_creation", "file_number": 39, "file_size": 518144770, "table_properties": {"data_size": 517187843, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:39:34.331588 7f0f467fc700 [db/flush_job.cc:371] [default] [JOB 18] Level-0 flush table #39: 518144770 bytes OK
+2018/10/17-19:39:34.331641 7f0f467fc700 (Original Log Time 2018/10/17-19:39:34.331618) EVENT_LOG_v1 {"time_micros": 1539830374331607, "job": 18, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:39:44.526826 7f0f477fe700 EVENT_LOG_v1 {"time_micros": 1539830384526798, "cf_name": "default", "job": 16, "event": "table_file_creation", "file_number": 35, "file_size": 518144769, "table_properties": {"data_size": 517187842, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:39:44.526847 7f0f477fe700 [db/flush_job.cc:371] [default] [JOB 16] Level-0 flush table #35: 518144769 bytes OK
+2018/10/17-19:39:44.526900 7f0f477fe700 (Original Log Time 2018/10/17-19:39:44.526876) EVENT_LOG_v1 {"time_micros": 1539830384526864, "job": 16, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:39:57.687827 7f0f917fa700 [db/db_impl_compaction_flush.cc:80] [JOB 34] Syncing log #64
+2018/10/17-19:40:25.864267 7f0f917fa700 (Original Log Time 2018/10/17-19:27:00.927282) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 1
+2018/10/17-19:40:25.864280 7f0f90ff9700 [db/db_impl_compaction_flush.cc:80] [JOB 35] Syncing log #67
+2018/10/17-19:40:25.864301 7f0fef819700 (Original Log Time 2018/10/17-19:24:33.175726) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 1
+2018/10/17-19:40:25.864291 7f0f917fa700 [db/flush_job.cc:301] [default] [JOB 34] Flushing memtable with next log file: 67
+2018/10/17-19:40:25.864317 7f0fef819700 [db/flush_job.cc:301] [default] [JOB 29] Flushing memtable with next log file: 59
+2018/10/17-19:40:25.864354 7f0fef819700 EVENT_LOG_v1 {"time_micros": 1539830425864342, "job": 29, "event": "flush_started", "num_memtables": 1, "num_entries": 125471, "num_deletes": 0, "memory_usage": 520131168, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:40:25.864354 7f0f917fa700 EVENT_LOG_v1 {"time_micros": 1539830425864344, "job": 34, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130120, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:40:25.864360 7f0f917fa700 [db/flush_job.cc:331] [default] [JOB 34] Level-0 flush table #68: started
+2018/10/17-19:40:25.864360 7f0fef819700 [db/flush_job.cc:331] [default] [JOB 29] Level-0 flush table #60: started
+2018/10/17-19:40:25.864419 7f0f91ffb700 (Original Log Time 2018/10/17-19:26:36.518602) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 1
+2018/10/17-19:40:25.864424 7f0f91ffb700 [db/flush_job.cc:301] [default] [JOB 32] Flushing memtable with next log file: 61
+2018/10/17-19:40:25.864429 7f0f91ffb700 [db/flush_job.cc:301] [default] [JOB 32] Flushing memtable with next log file: 62
+2018/10/17-19:40:25.864434 7f0f91ffb700 [db/flush_job.cc:301] [default] [JOB 32] Flushing memtable with next log file: 63
+2018/10/17-19:40:25.864439 7f0f91ffb700 [db/flush_job.cc:301] [default] [JOB 32] Flushing memtable with next log file: 64
+2018/10/17-19:40:25.864450 7f0f91ffb700 EVENT_LOG_v1 {"time_micros": 1539830425864445, "job": 32, "event": "flush_started", "num_memtables": 4, "num_entries": 501883, "num_deletes": 0, "memory_usage": 2080521768, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:40:25.864461 7f0f91ffb700 [db/flush_job.cc:331] [default] [JOB 32] Level-0 flush table #65: started
+2018/10/17-19:40:55.218190 7f0f90ff9700 (Original Log Time 2018/10/17-19:27:40.211225) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 1, flush slots scheduled 24, compaction slots scheduled 1
+2018/10/17-19:40:55.218218 7f0f90ff9700 [db/flush_job.cc:301] [default] [JOB 35] Flushing memtable with next log file: 69
+2018/10/17-19:40:55.218223 7f0f7effd700 [db/db_impl_compaction_flush.cc:80] [JOB 46] Syncing log #69
+2018/10/17-19:40:55.218256 7f0f90ff9700 EVENT_LOG_v1 {"time_micros": 1539830455218244, "job": 35, "event": "flush_started", "num_memtables": 1, "num_entries": 125473, "num_deletes": 0, "memory_usage": 520130792, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:40:55.218261 7f0f90ff9700 [db/flush_job.cc:331] [default] [JOB 35] Level-0 flush table #70: started
+2018/10/17-19:41:22.198753 7f0f7effd700 [db/db_impl_compaction_flush.cc:80] [JOB 46] Syncing log #72
+2018/10/17-19:41:29.125014 7f0f45ffb700 EVENT_LOG_v1 {"time_micros": 1539830489124987, "cf_name": "default", "job": 19, "event": "table_file_creation", "file_number": 41, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:41:29.125035 7f0f45ffb700 [db/flush_job.cc:371] [default] [JOB 19] Level-0 flush table #41: 518153004 bytes OK
+2018/10/17-19:41:29.125087 7f0f45ffb700 (Original Log Time 2018/10/17-19:41:29.125064) EVENT_LOG_v1 {"time_micros": 1539830489125052, "job": 19, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:41:38.256352 7f0f7effd700 [db/db_impl_compaction_flush.cc:80] [JOB 46] Syncing log #74
+2018/10/17-19:41:55.356566 7f0f7effd700 [db/db_impl_compaction_flush.cc:80] [JOB 46] Syncing log #76
+2018/10/17-19:42:19.403437 7f0f7effd700 (Original Log Time 2018/10/17-19:31:06.469728) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 24, flush slots scheduled 24, compaction slots scheduled 3
+2018/10/17-19:42:19.403458 7f0f7effd700 [db/flush_job.cc:301] [default] [JOB 46] Flushing memtable with next log file: 79
+2018/10/17-19:42:19.403462 7f0f7e7fc700 [db/db_impl_compaction_flush.cc:80] [JOB 51] Syncing log #79
+2018/10/17-19:42:19.403494 7f0f7effd700 EVENT_LOG_v1 {"time_micros": 1539830539403482, "job": 46, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520130552, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:42:19.403499 7f0f7effd700 [db/flush_job.cc:331] [default] [JOB 46] Level-0 flush table #81: started
+2018/10/17-19:42:19.403504 7f0f7ffff700 (Original Log Time 2018/10/17-19:29:13.151245) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 24, flush slots scheduled 24, compaction slots scheduled 2
+2018/10/17-19:42:19.403510 7f0f7ffff700 [db/flush_job.cc:301] [default] [JOB 38] Flushing memtable with next log file: 72
+2018/10/17-19:42:19.403515 7f0f7f7fe700 (Original Log Time 2018/10/17-19:29:53.249093) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 24, flush slots scheduled 24, compaction slots scheduled 2
+2018/10/17-19:42:19.403521 7f0f7f7fe700 [db/flush_job.cc:301] [default] [JOB 42] Flushing memtable with next log file: 76
+2018/10/17-19:42:19.403522 7f0f7ffff700 [db/flush_job.cc:301] [default] [JOB 38] Flushing memtable with next log file: 74
+2018/10/17-19:42:19.403536 7f0f7f7fe700 EVENT_LOG_v1 {"time_micros": 1539830539403531, "job": 42, "event": "flush_started", "num_memtables": 1, "num_entries": 125472, "num_deletes": 0, "memory_usage": 520129496, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:42:19.403538 7f0f7ffff700 EVENT_LOG_v1 {"time_micros": 1539830539403533, "job": 38, "event": "flush_started", "num_memtables": 2, "num_entries": 250940, "num_deletes": 0, "memory_usage": 1040260664, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:42:19.403539 7f0f7f7fe700 [db/flush_job.cc:331] [default] [JOB 42] Level-0 flush table #77: started
+2018/10/17-19:42:19.403543 7f0f7ffff700 [db/flush_job.cc:331] [default] [JOB 38] Level-0 flush table #75: started
+2018/10/17-19:42:35.263980 7f0f7e7fc700 [db/db_impl_compaction_flush.cc:80] [JOB 51] Syncing log #82
+2018/10/17-19:42:49.397058 7f0f7e7fc700 [db/db_impl_compaction_flush.cc:80] [JOB 51] Syncing log #84
+2018/10/17-19:42:53.479589 7f0f7e7fc700 (Original Log Time 2018/10/17-19:32:58.347118) [db/db_impl_compaction_flush.cc:1424] Calling FlushMemTableToOutputFile with column family [default], flush slots available 24, compaction slots available 24, flush slots scheduled 24, compaction slots scheduled 3
+2018/10/17-19:42:53.479597 7f0f7e7fc700 [db/flush_job.cc:301] [default] [JOB 51] Flushing memtable with next log file: 82
+2018/10/17-19:42:53.479606 7f0f7e7fc700 [db/flush_job.cc:301] [default] [JOB 51] Flushing memtable with next log file: 84
+2018/10/17-19:42:53.479609 7f0f7e7fc700 [db/flush_job.cc:301] [default] [JOB 51] Flushing memtable with next log file: 86
+2018/10/17-19:42:53.479639 7f0f7e7fc700 EVENT_LOG_v1 {"time_micros": 1539830573479627, "job": 51, "event": "flush_started", "num_memtables": 3, "num_entries": 376411, "num_deletes": 0, "memory_usage": 1560391304, "flush_reason": "Write Buffer Full"}
+2018/10/17-19:42:53.479646 7f0f7e7fc700 [db/flush_job.cc:331] [default] [JOB 51] Level-0 flush table #88: started
+2018/10/17-19:43:21.889336 7f0f44ff9700 EVENT_LOG_v1 {"time_micros": 1539830601889307, "cf_name": "default", "job": 21, "event": "table_file_creation", "file_number": 45, "file_size": 518152020, "table_properties": {"data_size": 517195584, "index_size": 955507, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:21.889339 7f0f457fa700 EVENT_LOG_v1 {"time_micros": 1539830601889307, "cf_name": "default", "job": 20, "event": "table_file_creation", "file_number": 43, "file_size": 518157171, "table_properties": {"data_size": 517200213, "index_size": 956029, "filter_size": 0, "raw_key_size": 3011352, "raw_average_key_size": 24, "raw_value_size": 513937408, "raw_average_value_size": 4096, "num_data_blocks": 31369, "num_entries": 125473, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:21.889359 7f0f44ff9700 [db/flush_job.cc:371] [default] [JOB 21] Level-0 flush table #45: 518152020 bytes OK
+2018/10/17-19:43:21.889365 7f0f457fa700 [db/flush_job.cc:371] [default] [JOB 20] Level-0 flush table #43: 518157171 bytes OK
+2018/10/17-19:43:21.889410 7f0f44ff9700 (Original Log Time 2018/10/17-19:43:21.889387) EVENT_LOG_v1 {"time_micros": 1539830601889378, "job": 21, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:43:21.889430 7f0f2f7fe700 EVENT_LOG_v1 {"time_micros": 1539830601889409, "cf_name": "default", "job": 23, "event": "table_file_creation", "file_number": 49, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:21.889458 7f0f2f7fe700 [db/flush_job.cc:371] [default] [JOB 23] Level-0 flush table #49: 518148886 bytes OK
+2018/10/17-19:43:21.889435 7f0f457fa700 (Original Log Time 2018/10/17-19:43:21.889423) EVENT_LOG_v1 {"time_micros": 1539830601889418, "job": 20, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:43:21.889510 7f0f2f7fe700 (Original Log Time 2018/10/17-19:43:21.889492) EVENT_LOG_v1 {"time_micros": 1539830601889484, "job": 23, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:43:24.127204 7f0f2ffff700 EVENT_LOG_v1 {"time_micros": 1539830604127178, "cf_name": "default", "job": 22, "event": "table_file_creation", "file_number": 47, "file_size": 518147902, "table_properties": {"data_size": 517191467, "index_size": 955506, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:24.127224 7f0f2ffff700 [db/flush_job.cc:371] [default] [JOB 22] Level-0 flush table #47: 518147902 bytes OK
+2018/10/17-19:43:24.127275 7f0f2ffff700 (Original Log Time 2018/10/17-19:43:24.127252) EVENT_LOG_v1 {"time_micros": 1539830604127242, "job": 22, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:43:44.849290 7f0f2effd700 EVENT_LOG_v1 {"time_micros": 1539830624849264, "cf_name": "default", "job": 24, "event": "table_file_creation", "file_number": 52, "file_size": 518144769, "table_properties": {"data_size": 517187842, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011280, "raw_average_key_size": 24, "raw_value_size": 513925120, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125470, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:44.849311 7f0f2effd700 [db/flush_job.cc:371] [default] [JOB 24] Level-0 flush table #52: 518144769 bytes OK
+2018/10/17-19:43:44.849361 7f0f2effd700 (Original Log Time 2018/10/17-19:43:44.849338) EVENT_LOG_v1 {"time_micros": 1539830624849328, "job": 24, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:43:51.215895 7f0f2e7fc700 EVENT_LOG_v1 {"time_micros": 1539830631215867, "cf_name": "default", "job": 25, "event": "table_file_creation", "file_number": 54, "file_size": 518152021, "table_properties": {"data_size": 517195584, "index_size": 955508, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:43:51.215917 7f0f2e7fc700 [db/flush_job.cc:371] [default] [JOB 25] Level-0 flush table #54: 518152021 bytes OK
+2018/10/17-19:43:51.216080 7f0f2e7fc700 (Original Log Time 2018/10/17-19:43:51.216052) EVENT_LOG_v1 {"time_micros": 1539830631216042, "job": 25, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:02.030874 7f0f2dffb700 EVENT_LOG_v1 {"time_micros": 1539830702030845, "cf_name": "default", "job": 26, "event": "table_file_creation", "file_number": 56, "file_size": 518147901, "table_properties": {"data_size": 517191467, "index_size": 955505, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:02.030895 7f0f2dffb700 [db/flush_job.cc:371] [default] [JOB 26] Level-0 flush table #56: 518147901 bytes OK
+2018/10/17-19:45:02.030976 7f0f2dffb700 (Original Log Time 2018/10/17-19:45:02.030925) EVENT_LOG_v1 {"time_micros": 1539830702030913, "job": 26, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:03.056285 7f0f927fc700 EVENT_LOG_v1 {"time_micros": 1539830703056256, "cf_name": "default", "job": 27, "event": "table_file_creation", "file_number": 58, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:03.056289 7f0f917fa700 EVENT_LOG_v1 {"time_micros": 1539830703056256, "cf_name": "default", "job": 34, "event": "table_file_creation", "file_number": 68, "file_size": 518152020, "table_properties": {"data_size": 517195584, "index_size": 955507, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:03.056297 7f0f917fa700 [db/flush_job.cc:371] [default] [JOB 34] Level-0 flush table #68: 518152020 bytes OK
+2018/10/17-19:45:03.056311 7f0f927fc700 [db/flush_job.cc:371] [default] [JOB 27] Level-0 flush table #58: 518148886 bytes OK
+2018/10/17-19:45:03.056373 7f0f917fa700 (Original Log Time 2018/10/17-19:45:03.056351) EVENT_LOG_v1 {"time_micros": 1539830703056341, "job": 34, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:03.056410 7f0f927fc700 (Original Log Time 2018/10/17-19:45:03.056397) EVENT_LOG_v1 {"time_micros": 1539830703056391, "job": 27, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:04.446141 7f0fef819700 EVENT_LOG_v1 {"time_micros": 1539830704446112, "cf_name": "default", "job": 29, "event": "table_file_creation", "file_number": 60, "file_size": 518148886, "table_properties": {"data_size": 517191959, "index_size": 955998, "filter_size": 0, "raw_key_size": 3011304, "raw_average_key_size": 24, "raw_value_size": 513929216, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125471, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:04.446159 7f0fef819700 [db/flush_job.cc:371] [default] [JOB 29] Level-0 flush table #60: 518148886 bytes OK
+2018/10/17-19:45:04.446224 7f0fef819700 (Original Log Time 2018/10/17-19:45:04.446201) EVENT_LOG_v1 {"time_micros": 1539830704446184, "job": 29, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:14.284998 7f0f90ff9700 EVENT_LOG_v1 {"time_micros": 1539830714284969, "cf_name": "default", "job": 35, "event": "table_file_creation", "file_number": 70, "file_size": 518156186, "table_properties": {"data_size": 517199721, "index_size": 955536, "filter_size": 0, "raw_key_size": 3011352, "raw_average_key_size": 24, "raw_value_size": 513937408, "raw_average_value_size": 4096, "num_data_blocks": 31369, "num_entries": 125473, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:14.285019 7f0f90ff9700 [db/flush_job.cc:371] [default] [JOB 35] Level-0 flush table #70: 518156186 bytes OK
+2018/10/17-19:45:14.285072 7f0f90ff9700 (Original Log Time 2018/10/17-19:45:14.285053) EVENT_LOG_v1 {"time_micros": 1539830714285043, "job": 35, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:30.490640 7f0f7effd700 EVENT_LOG_v1 {"time_micros": 1539830730490613, "cf_name": "default", "job": 46, "event": "table_file_creation", "file_number": 81, "file_size": 518153004, "table_properties": {"data_size": 517196076, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:30.490678 7f0f7effd700 [db/flush_job.cc:371] [default] [JOB 46] Level-0 flush table #81: 518153004 bytes OK
+2018/10/17-19:45:30.490734 7f0f7effd700 (Original Log Time 2018/10/17-19:45:30.490717) EVENT_LOG_v1 {"time_micros": 1539830730490704, "job": 46, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:45:37.704209 7f0f7f7fe700 EVENT_LOG_v1 {"time_micros": 1539830737704181, "cf_name": "default", "job": 42, "event": "table_file_creation", "file_number": 77, "file_size": 518153003, "table_properties": {"data_size": 517196075, "index_size": 955999, "filter_size": 0, "raw_key_size": 3011328, "raw_average_key_size": 24, "raw_value_size": 513933312, "raw_average_value_size": 4096, "num_data_blocks": 31368, "num_entries": 125472, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:45:37.704230 7f0f7f7fe700 [db/flush_job.cc:371] [default] [JOB 42] Level-0 flush table #77: 518153003 bytes OK
+2018/10/17-19:45:37.704283 7f0f7f7fe700 (Original Log Time 2018/10/17-19:45:37.704264) EVENT_LOG_v1 {"time_micros": 1539830737704253, "job": 42, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:46:22.109653 7f0f7ffff700 EVENT_LOG_v1 {"time_micros": 1539830782109626, "cf_name": "default", "job": 38, "event": "table_file_creation", "file_number": 75, "file_size": 1036304969, "table_properties": {"data_size": 1034375664, "index_size": 1928376, "filter_size": 0, "raw_key_size": 6022560, "raw_average_key_size": 24, "raw_value_size": 1027850240, "raw_average_value_size": 4096, "num_data_blocks": 62735, "num_entries": 250940, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:46:22.109677 7f0f7ffff700 [db/flush_job.cc:371] [default] [JOB 38] Level-0 flush table #75: 1036304969 bytes OK
+2018/10/17-19:46:22.109734 7f0f7ffff700 (Original Log Time 2018/10/17-19:46:22.109717) EVENT_LOG_v1 {"time_micros": 1539830782109706, "job": 38, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:47:08.736754 7f0f7e7fc700 EVENT_LOG_v1 {"time_micros": 1539830828736718, "cf_name": "default", "job": 51, "event": "table_file_creation", "file_number": 88, "file_size": 1554469336, "table_properties": {"data_size": 1551567623, "index_size": 2900783, "filter_size": 0, "raw_key_size": 9033864, "raw_average_key_size": 24, "raw_value_size": 1541779456, "raw_average_value_size": 4096, "num_data_blocks": 94103, "num_entries": 376411, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:47:08.736781 7f0f7e7fc700 [db/flush_job.cc:371] [default] [JOB 51] Level-0 flush table #88: 1554469336 bytes OK
+2018/10/17-19:47:08.736862 7f0f7e7fc700 (Original Log Time 2018/10/17-19:47:08.736840) EVENT_LOG_v1 {"time_micros": 1539830828736827, "job": 51, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:47:20.427631 7f0f91ffb700 EVENT_LOG_v1 {"time_micros": 1539830840427606, "cf_name": "default", "job": 32, "event": "table_file_creation", "file_number": 65, "file_size": 2072637820, "table_properties": {"data_size": 2068763699, "index_size": 3873191, "filter_size": 0, "raw_key_size": 12045192, "raw_average_key_size": 24, "raw_value_size": 2055712768, "raw_average_value_size": 4096, "num_data_blocks": 125471, "num_entries": 501883, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2018/10/17-19:47:20.427653 7f0f91ffb700 [db/flush_job.cc:371] [default] [JOB 32] Level-0 flush table #65: 2072637820 bytes OK
+2018/10/17-19:47:20.427705 7f0f91ffb700 (Original Log Time 2018/10/17-19:47:20.427692) EVENT_LOG_v1 {"time_micros": 1539830840427682, "job": 32, "event": "flush_finished", "output_compression": "NoCompression", "lsm_state": [3, 6, 5, 0, 0, 0, 0], "immutable_memtables": 31}
+2018/10/17-19:47:20.477224 7f0f91ffb700 EVENT_LOG_v1 {"time_micros": 1539830840477214, "job": 32, "event": "table_file_deletion", "file_number": 13}
+2018/10/17-19:47:20.477585 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840477570, "job": 52, "event": "table_file_deletion", "file_number": 91}
+2018/10/17-19:47:20.477615 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840477613, "job": 52, "event": "table_file_deletion", "file_number": 90}
+2018/10/17-19:47:20.626542 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840626534, "job": 52, "event": "table_file_deletion", "file_number": 88}
+2018/10/17-19:47:20.633672 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840633669, "job": 52, "event": "table_file_deletion", "file_number": 87}
+2018/10/17-19:47:20.640645 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840640643, "job": 52, "event": "table_file_deletion", "file_number": 85}
+2018/10/17-19:47:20.697835 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840697828, "job": 52, "event": "table_file_deletion", "file_number": 81}
+2018/10/17-19:47:20.705106 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840705104, "job": 52, "event": "table_file_deletion", "file_number": 80}
+2018/10/17-19:47:20.755633 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840755626, "job": 52, "event": "table_file_deletion", "file_number": 77}
+2018/10/17-19:47:20.854871 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840854863, "job": 52, "event": "table_file_deletion", "file_number": 75}
+2018/10/17-19:47:20.913910 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840913902, "job": 52, "event": "table_file_deletion", "file_number": 70}
+2018/10/17-19:47:20.965014 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830840965007, "job": 52, "event": "table_file_deletion", "file_number": 68}
+2018/10/17-19:47:21.172623 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841172616, "job": 52, "event": "table_file_deletion", "file_number": 65}
+2018/10/17-19:47:21.224204 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841224197, "job": 52, "event": "table_file_deletion", "file_number": 60}
+2018/10/17-19:47:21.274038 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841274031, "job": 52, "event": "table_file_deletion", "file_number": 58}
+2018/10/17-19:47:21.351383 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841351375, "job": 52, "event": "table_file_deletion", "file_number": 56}
+2018/10/17-19:47:21.401242 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841401237, "job": 52, "event": "table_file_deletion", "file_number": 54}
+2018/10/17-19:47:21.449609 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841449601, "job": 52, "event": "table_file_deletion", "file_number": 52}
+2018/10/17-19:47:21.503420 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841503412, "job": 52, "event": "table_file_deletion", "file_number": 49}
+2018/10/17-19:47:21.552935 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841552928, "job": 52, "event": "table_file_deletion", "file_number": 47}
+2018/10/17-19:47:21.603497 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841603489, "job": 52, "event": "table_file_deletion", "file_number": 45}
+2018/10/17-19:47:21.652152 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841652147, "job": 52, "event": "table_file_deletion", "file_number": 43}
+2018/10/17-19:47:21.701589 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841701582, "job": 52, "event": "table_file_deletion", "file_number": 41}
+2018/10/17-19:47:21.752830 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841752822, "job": 52, "event": "table_file_deletion", "file_number": 39}
+2018/10/17-19:47:21.803007 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841803001, "job": 52, "event": "table_file_deletion", "file_number": 37}
+2018/10/17-19:47:21.853943 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841853935, "job": 52, "event": "table_file_deletion", "file_number": 35}
+2018/10/17-19:47:21.906062 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841906054, "job": 52, "event": "table_file_deletion", "file_number": 33}
+2018/10/17-19:47:21.972305 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830841972296, "job": 52, "event": "table_file_deletion", "file_number": 31}
+2018/10/17-19:47:22.027417 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830842027410, "job": 52, "event": "table_file_deletion", "file_number": 29}
+2018/10/17-19:47:22.081976 7f0ff1f73a00 EVENT_LOG_v1 {"time_micros": 1539830842081969, "job": 52, "event": "table_file_deletion", "file_number": 27}
+2018/10/17-19:47:22.618451 7f0ff1f73a00 [db/db_impl.cc:398] Shutdown complete
