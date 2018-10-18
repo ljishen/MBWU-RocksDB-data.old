@@ -1,0 +1,166 @@
+
+[INFO | 2018-10-17 17:54:32,215] start benchmark readrandommergerandom at 2018-10-17_17:54:32
+================================================================================
+operation_keys_ratio=100
+merge_read_ratio=50
+data_dir=/mnt/ramdisk/rocksdb_data
+device_fullname=tmpfs
+daemon_report_interval_sec=3
+db_bench_command=( time /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandommergerandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --threads=15 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/ramdisk/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=snappy --max_write_buffer_number=50 --hard_pending_compaction_bytes_limit=274877906944 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=16384 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=3 --min_level_to_compress=2 --max_bytes_for_level_base=1073741824 --level0_file_num_compaction_trigger=2 --write_buffer_size=536870912 --min_write_buffer_number_to_merge=1 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=30 --level0_stop_writes_trigger=54 --target_file_size_base=67108864 --bytes_per_sync=1048576 --use_existing_db=1 --merge_keys=5242880 --merge_operator='put' --num=349525 --seed=1539824072 --mergereadpercent=50 ) 2>&1 | tee -a /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/db_bench.log
+================================================================================
+
+[INFO | 2018-10-17 17:54:32,238] configuring scaling governor to performance for online CPUs
+Successfully updated scaling governor for CPUs [0-23].
+
+[INFO | 2018-10-17 17:54:32,323] set the nofile soft limit to 63536
+
+[INFO | 2018-10-17 17:54:32,327] mpstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/mpstat.log 2>&1 &
+
+[INFO | 2018-10-17 17:54:32,331] mpstat daemon is running (PID=40226)
+
+[INFO | 2018-10-17 17:54:32,334] iostat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL iostat -dktxyzH -g tmpfs 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/iostat.log 2>&1 &
+
+[INFO | 2018-10-17 17:54:32,338] iostat daemon is running (PID=40241)
+
+[INFO | 2018-10-17 17:54:32,342] pidstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL pidstat -G db_bench -ult 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/pidstat.log 2>&1 &
+
+[INFO | 2018-10-17 17:54:32,346] pidstat daemon is running (PID=40256)
+
+[INFO | 2018-10-17 17:54:32,349] freeing the slab objects and pagecache
+
+RocksDB:    version 5.14
+Date:       Wed Oct 17 17:54:34 2018
+CPU:        24 * Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+CPUCache:   15360 KB
+2018/10/17-17:55:34  ... thread 6: (289000,289000) ops and (4815.7,4815.7) ops/second in (60.012593,60.012593) seconds
+2018/10/17-17:55:34  ... thread 4: (288000,288000) ops and (4795.8,4795.8) ops/second in (60.052973,60.052973) seconds
+2018/10/17-17:55:35  ... thread 13: (288000,288000) ops and (4789.5,4789.5) ops/second in (60.131403,60.131403) seconds
+2018/10/17-17:55:35  ... thread 12: (289000,289000) ops and (4805.9,4805.9) ops/second in (60.134826,60.134826) seconds
+2018/10/17-17:55:35  ... thread 14: (289000,289000) ops and (4800.5,4800.5) ops/second in (60.201714,60.201714) seconds
+2018/10/17-17:55:35  ... thread 10: (289000,289000) ops and (4798.7,4798.7) ops/second in (60.224651,60.224651) seconds
+2018/10/17-17:55:35  ... thread 8: (289000,289000) ops and (4796.3,4796.3) ops/second in (60.254716,60.254716) seconds
+2018/10/17-17:55:35  ... thread 5: (289000,289000) ops and (4795.6,4795.6) ops/second in (60.263800,60.263800) seconds
+2018/10/17-17:55:35  ... thread 2: (289000,289000) ops and (4790.4,4790.4) ops/second in (60.329616,60.329616) seconds
+2018/10/17-17:55:35  ... thread 9: (289000,289000) ops and (4788.8,4788.8) ops/second in (60.349143,60.349143) seconds
+2018/10/17-17:55:35  ... thread 0: (289000,289000) ops and (4783.0,4783.0) ops/second in (60.422176,60.422176) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      2/0   976.83 MB   1.0      0.0     0.0      0.0       8.5      8.5       0.0   1.0      0.0    992.4         9        18    0.486       0      0
+  L1     43/21   2.53 GB   1.3     17.0     9.0      8.1      16.2      8.1       0.0   1.8   1647.5   1569.3        11         6    1.762   4423K     12
+  L2    200/142  9.99 GB   0.2     46.4     7.0     39.3      39.8      0.5       0.0   5.7    160.6    137.9       296       115    2.570     20M      0
+  L3     35/0    1.82 GB   0.0      1.3     0.5      0.8       1.0      0.2       0.0   1.9    214.9    161.3         6         6    1.008    596K      0
+ Sum    280/163 15.30 GB   0.0     64.7    16.5     48.2      65.5     17.3       0.0   7.7    206.3    208.8       321       145    2.214     25M     12
+ Int      0/0    0.00 KB   0.0     64.7    16.5     48.2      65.1     16.9       0.0   8.0    206.5    207.8       321       144    2.227     25M     12
+Uptime(secs): 61.4 total, 60.4 interval
+Flush(GB): cumulative 8.480, interval 8.107
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 65.46 GB write, 1092.55 MB/s write, 64.65 GB read, 1079.09 MB/s read, 321.0 seconds
+Interval compaction: 65.08 GB write, 1102.98 MB/s write, 64.65 GB read, 1095.64 MB/s read, 320.7 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 61.4 total, 60.4 interval
+Cumulative writes: 2167K writes, 2167K keys, 2015K commit groups, 1.1 writes per commit group, ingest: 8.33 GB, 139.07 MB/s
+Cumulative WAL: 2167K writes, 0 syncs, 2167683.00 writes per sync, written: 8.33 GB, 139.07 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 2167K writes, 2167K keys, 2015K commit groups, 1.1 writes per commit group, ingest: 8531.93 MB, 141.20 MB/s
+Interval WAL: 2167K writes, 0 syncs, 2167683.00 writes per sync, written: 8.33 MB, 141.20 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/17-17:55:35  ... thread 3: (289000,289000) ops and (4765.5,4765.5) ops/second in (60.643581,60.643581) seconds
+2018/10/17-17:55:35  ... thread 11: (289000,289000) ops and (4764.5,4764.5) ops/second in (60.656605,60.656605) seconds
+2018/10/17-17:55:35  ... thread 1: (289000,289000) ops and (4759.0,4759.0) ops/second in (60.727252,60.727252) seconds
+2018/10/17-17:55:35  ... thread 7: (289000,289000) ops and (4758.1,4758.1) ops/second in (60.738817,60.738817) seconds
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+Keys:       16 bytes each
+Values:     4096 bytes each (2048 bytes after compression)
+Entries:    349525
+Prefix:    0 bytes
+Keys per prefix:    0
+RawSize:    1370.7 MB (estimated)
+FileSize:   688.0 MB (estimated)
+Write rate: 0 bytes/second
+Read rate: 0 ops/second
+Compression: Snappy
+Memtablerep: skip_list
+Perf Level: 1
+------------------------------------------------
+DB path: [/mnt/ramdisk/rocksdb_data]
+readrandommergerandom :      13.581 micros/op 73632 ops/sec; (reads:174900 merges:174625 total:349525 hits:174900 maxlength:4096)
+Microseconds per read:
+Count: 2621164 Average: 80.6255  StdDev: 104.08
+Min: 8  Median: 75.8864  Max: 45710
+Percentiles: P50: 75.89 P75: 97.63 P99: 165.79 P99.9: 236.18 P99.99: 848.79
+------------------------------------------------------
+(       6,      10 ]        7   0.000%   0.000% 
+(      10,      15 ]       47   0.002%   0.002% 
+(      15,      22 ]      170   0.006%   0.009% 
+(      22,      34 ]     8919   0.340%   0.349% 
+(      34,      51 ]   225836   8.616%   8.965% ##
+(      51,      76 ]  1080511  41.223%  50.187% ########
+(      76,     110 ]  1022373  39.005%  89.192% ########
+(     110,     170 ]   276499  10.549%  99.740% ##
+(     170,     250 ]     5054   0.193%  99.933% 
+(     250,     380 ]      886   0.034%  99.967% 
+(     380,     580 ]      421   0.016%  99.983% 
+(     580,     870 ]      193   0.007%  99.991% 
+(     870,    1300 ]       93   0.004%  99.994% 
+(    1300,    1900 ]       42   0.002%  99.996% 
+(    1900,    2900 ]       31   0.001%  99.997% 
+(    2900,    4400 ]       39   0.001%  99.998% 
+(    4400,    6600 ]        8   0.000%  99.999% 
+(    6600,    9900 ]       12   0.000%  99.999% 
+(    9900,   14000 ]        5   0.000%  99.999% 
+(   14000,   22000 ]        1   0.000%  99.999% 
+(   22000,   33000 ]        4   0.000% 100.000% 
+(   33000,   50000 ]       13   0.000% 100.000% 
+
+Microseconds per merge:
+Count: 2621711 Average: 326.6129  StdDev: 975.92
+Min: 10  Median: 224.6702  Max: 126274
+Percentiles: P50: 224.67 P75: 302.43 P99: 1806.84 P99.9: 3843.73 P99.99: 56280.91
+------------------------------------------------------
+(       6,      10 ]        1   0.000%   0.000% 
+(      10,      15 ]      166   0.006%   0.006% 
+(      15,      22 ]      382   0.015%   0.021% 
+(      22,      34 ]      550   0.021%   0.042% 
+(      34,      51 ]      440   0.017%   0.059% 
+(      51,      76 ]      868   0.033%   0.092% 
+(      76,     110 ]     4244   0.162%   0.254% 
+(     110,     170 ]   272478  10.393%  10.647% ##
+(     170,     250 ]  1509747  57.586%  68.233% ############
+(     250,     380 ]   439921  16.780%  85.013% ###
+(     380,     580 ]   175413   6.691%  91.704% #
+(     580,     870 ]    82490   3.146%  94.850% #
+(     870,    1300 ]    70116   2.674%  97.525% #
+(    1300,    1900 ]    45787   1.746%  99.271% 
+(    1900,    2900 ]    15401   0.587%  99.859% 
+(    2900,    4400 ]     1725   0.066%  99.924% 
+(    4400,    6600 ]      436   0.017%  99.941% 
+(    6600,    9900 ]      277   0.011%  99.952% 
+(    9900,   14000 ]      349   0.013%  99.965% 
+(   14000,   22000 ]      335   0.013%  99.978% 
+(   22000,   33000 ]      130   0.005%  99.983% 
+(   33000,   50000 ]      126   0.005%  99.987% 
+(   50000,   75000 ]      266   0.010%  99.998% 
+(   75000,  110000 ]       48   0.002%  99.999% 
+(  110000,  170000 ]       15   0.001% 100.000% 
+
+
+real	1m12.602s
+user	8m42.520s
+sys	3m40.476s
+
+[INFO | 2018-10-17 17:55:46,305] stopping mpstat daemon
+
+[INFO | 2018-10-17 17:55:46,552] stopping iostat daemon
+
+[INFO | 2018-10-17 17:55:46,576] stopping pidstat daemon

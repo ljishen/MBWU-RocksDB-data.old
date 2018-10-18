@@ -1,0 +1,87 @@
+
+[INFO | 2018-10-17 16:31:59,488] start benchmark fillseq at 2018-10-17_16:31:59
+================================================================================
+data_dir=/mnt/ramdisk/rocksdb_data
+device_fullname=tmpfs
+daemon_report_interval_sec=3
+db_bench_command=( time /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --threads=1 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/ramdisk/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=snappy --max_write_buffer_number=50 --hard_pending_compaction_bytes_limit=274877906944 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=16384 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=3 --min_level_to_compress=2 --max_bytes_for_level_base=1073741824 --level0_file_num_compaction_trigger=2 --write_buffer_size=536870912 --min_write_buffer_number_to_merge=1 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=30 --level0_stop_writes_trigger=54 --target_file_size_base=67108864 --bytes_per_sync=1048576 --use_existing_db=0 --num=5242880 --seed=1539819119 ) 2>&1 | tee -a /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/db_bench.log
+================================================================================
+
+[INFO | 2018-10-17 16:31:59,505] configuring scaling governor to performance for online CPUs
+Successfully updated scaling governor for CPUs [0-23].
+
+[INFO | 2018-10-17 16:31:59,538] set the nofile soft limit to 63536
+
+[INFO | 2018-10-17 16:31:59,542] mpstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/mpstat.log 2>&1 &
+
+[INFO | 2018-10-17 16:31:59,546] mpstat daemon is running (PID=36991)
+
+[INFO | 2018-10-17 16:31:59,549] iostat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL iostat -dktxyzH -g tmpfs 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/iostat.log 2>&1 &
+
+[INFO | 2018-10-17 16:31:59,553] iostat daemon is running (PID=37006)
+
+[INFO | 2018-10-17 16:31:59,557] pidstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL pidstat -G db_bench -ult 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/pidstat.log 2>&1 &
+
+[INFO | 2018-10-17 16:31:59,561] pidstat daemon is running (PID=37021)
+
+[INFO | 2018-10-17 16:31:59,563] freeing the slab objects and pagecache
+
+RocksDB:    version 5.14
+Date:       Wed Oct 17 16:32:01 2018
+CPU:        24 * Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+CPUCache:   15360 KB
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+Keys:       16 bytes each
+Values:     4096 bytes each (2048 bytes after compression)
+Entries:    5242880
+Prefix:    0 bytes
+Keys per prefix:    0
+RawSize:    20560.0 MB (estimated)
+FileSize:   10320.0 MB (estimated)
+Write rate: 0 bytes/second
+Read rate: 0 ops/second
+Compression: Snappy
+Memtablerep: skip_list
+Perf Level: 1
+------------------------------------------------
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+DB path: [/mnt/ramdisk/rocksdb_data]
+fillseq      :       8.136 micros/op 122915 ops/sec;  482.0 MB/s
+Microseconds per write:
+Count: 5242880 Average: 8.1356  StdDev: 176.37
+Min: 6  Median: 7.8422  Max: 74219
+Percentiles: P50: 7.84 P75: 8.97 P99: 12.94 P99.9: 20.20 P99.99: 56.76
+------------------------------------------------------
+(       4,       6 ]   475265   9.065%   9.065% ##
+(       6,      10 ]  4660036  88.883%  97.948% ##################
+(      10,      15 ]    93804   1.789%  99.737% 
+(      15,      22 ]    11479   0.219%  99.956% 
+(      22,      34 ]     1599   0.030%  99.987% 
+(      34,      51 ]      149   0.003%  99.990% 
+(      51,      76 ]      103   0.002%  99.992% 
+(      76,     110 ]       69   0.001%  99.993% 
+(     110,     170 ]        7   0.000%  99.993% 
+(     170,     250 ]        7   0.000%  99.993% 
+(     250,     380 ]       10   0.000%  99.993% 
+(     380,     580 ]        1   0.000%  99.993% 
+(     870,    1300 ]        1   0.000%  99.993% 
+(    1300,    1900 ]       25   0.000%  99.994% 
+(    1900,    2900 ]      220   0.004%  99.998% 
+(    2900,    4400 ]       45   0.001%  99.999% 
+(    4400,    6600 ]       15   0.000%  99.999% 
+(    9900,   14000 ]        2   0.000%  99.999% 
+(   14000,   22000 ]        1   0.000%  99.999% 
+(   50000,   75000 ]       42   0.001% 100.000% 
+
+
+real	0m43.379s
+user	0m57.196s
+sys	0m43.344s
+
+[INFO | 2018-10-17 16:32:44,196] stopping mpstat daemon
+
+[INFO | 2018-10-17 16:32:44,334] stopping iostat daemon
+
+[INFO | 2018-10-17 16:32:44,357] stopping pidstat daemon

@@ -1,0 +1,14 @@
+Linux 4.4.132-0404132-generic (pl2) 	2018-10-17 	_x86_64_	(24 CPU)
+
+05:59:06 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+05:59:09 PM     0     40559         -    0.33   28.15    0.00   28.48     5  /bin/bash ./run_db_bench.sh readrandom 
+05:59:09 PM     0         -     40559    0.33   28.15    0.00   28.48     5  |__/bin/bash ./run_db_bench.sh readrandom 
+05:59:09 PM     0     40719         -   14.57   12.91    0.00   27.48    15  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+05:59:09 PM     0         -     40719   10.60    9.27    0.00   19.87    15  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+
+
+Average:      UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+Average:        0     40559         -    0.33   28.15    0.00   28.48     -  /bin/bash ./run_db_bench.sh readrandom 
+Average:        0         -     40559    0.33   28.15    0.00   28.48     -  |__/bin/bash ./run_db_bench.sh readrandom 
+Average:        0     40719         -   14.57   12.91    0.00   27.48     -  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
+Average:        0         -     40719   10.60    9.27    0.00   19.87     -  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandom --db=/mnt/ramdisk/rocksdb_data --key_size=16 --value_size=4096 --
