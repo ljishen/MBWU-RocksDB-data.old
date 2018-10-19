@@ -1,0 +1,743 @@
+Linux 4.4.132-0404132-generic (pl2) 	2018-10-18 	_x86_64_	(24 CPU)
+
+10:09:05 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:08 PM     0     15041         -    0.00   71.52    0.00   71.52     8  /bin/bash ./run_db_bench.sh --backup fillseq 
+10:09:08 PM     0         -     15041    0.00   71.52    0.00   71.52     8  |__/bin/bash ./run_db_bench.sh --backup fillseq 
+
+10:09:08 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:11 PM     0     15224         -   30.00   52.00    0.00   82.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:11 PM     0         -     15224    0.00    0.33    0.00    0.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:11 PM     0         -     15273    0.00    1.67    0.00    1.67    23  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:11 PM     0         -     15306   30.00   49.67    0.00   79.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:11 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:14 PM     0     15224         -   38.33   72.67    0.00  111.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:14 PM     0         -     15226    0.00    1.67    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:14 PM     0         -     15273    2.00    6.33    0.00    8.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:14 PM     0         -     15306   35.67   64.33    0.00  100.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:14 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:17 PM     0     15224         -   41.67   78.67    0.00  120.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:17 PM     0         -     15226    2.00    4.67    0.00    6.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:17 PM     0         -     15250    0.00    1.33    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:17 PM     0         -     15273    2.67    9.67    0.00   12.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:17 PM     0         -     15306   37.00   63.00    0.00  100.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:17 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:20 PM     0     15224         -   39.67   73.33    0.00  113.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:20 PM     0         -     15226    1.33    2.00    0.00    3.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:20 PM     0         -     15250    0.67    2.67    0.00    3.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:20 PM     0         -     15251    0.00    1.67    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:20 PM     0         -     15273    2.00    2.67    0.00    4.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:20 PM     0         -     15306   35.67   64.00    0.00   99.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:20 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:23 PM     0     15224         -   42.33   72.00    0.00  114.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15226    1.67    1.33    0.00    3.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15250    1.00    1.67    0.00    2.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15251    0.67    2.33    0.00    3.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15253    0.00    1.33    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15273    1.33    2.33    0.00    3.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:23 PM     0         -     15306   37.33   62.67    0.00  100.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:23 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:26 PM     0     15224         -   40.33   67.33    0.00  107.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15226    0.67    0.33    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15250    0.67    0.67    0.00    1.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15251    0.33    1.33    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15253    0.00    3.00    0.00    3.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15273    0.67    0.67    0.00    1.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:26 PM     0         -     15306   38.33   61.67    0.00  100.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:26 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:29 PM     0     15224         -   43.67   71.67    0.00  115.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15226    1.00    1.67    0.00    2.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15250    0.67    1.67    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15251    1.00    1.33    0.00    2.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15252    1.33    0.67    0.00    2.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15253    1.00    1.67    0.00    2.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15255    0.00    1.33    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15273    0.67    0.67    0.00    1.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:29 PM     0         -     15306   38.33   61.67    0.00  100.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:29 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:32 PM     0     15224         -   41.33   72.33    0.00  113.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15226    0.00    0.33    0.00    0.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15250    1.00    2.33    0.00    3.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15251    1.33    2.00    0.00    3.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15252    1.00    1.67    0.00    2.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15253    1.00    2.33    0.00    3.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15273    0.00    0.33    0.00    0.33     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:32 PM     0         -     15306   36.67   64.00    0.00  100.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:32 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:35 PM     0     15224         -   39.00   77.00    0.00  116.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15226    0.00    1.00    0.00    1.00     3  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15250    0.67    1.00    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15251    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15252    0.67    1.00    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15253    1.00    1.00    0.00    2.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15255    0.00    4.00    0.00    4.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15257    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15273    0.00    5.33    0.00    5.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:35 PM     0         -     15306   35.67   62.00    0.00   97.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:35 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:38 PM     0     15224         -   46.00   69.67    0.00  115.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15250    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15251    1.33    2.00    0.00    3.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15252    1.00    1.67    0.00    2.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15253    1.67    1.00    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15254    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15255    1.67    1.00    0.00    2.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15257    0.00    0.67    0.00    0.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:38 PM     0         -     15306   39.33   61.67    0.00  101.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:38 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:41 PM     0     15224         -   39.67   71.00    0.00  110.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15250    0.00    2.67    0.00    2.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15251    1.00    0.33    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15252    0.67    1.00    0.00    1.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15253    0.67    0.33    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15254    0.00    1.33    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15255    0.33    0.67    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15257    0.00    2.67    0.00    2.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:41 PM     0         -     15306   36.33   62.33    0.00   98.67     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:41 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:44 PM     0     15224         -   38.00   65.00    0.00  103.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:44 PM     0         -     15255    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:44 PM     0         -     15257    0.00    1.33    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:44 PM     0         -     15259    0.00    1.33    0.00    1.33     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:44 PM     0         -     15306   37.67   62.00    0.00   99.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:44 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:47 PM     0     15224         -   42.00   63.33    0.00  105.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15252    0.33    0.67    0.00    1.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15253    0.67    0.33    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15254    0.33    0.33    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15255    0.67    0.00    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15257    0.00    0.33    0.00    0.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15259    0.00    1.00    0.00    1.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:47 PM     0         -     15306   40.00   60.33    0.00  100.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:47 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:50 PM     0     15224         -   40.33   69.33    0.00  109.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15252    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15253    0.67    0.67    0.00    1.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15254    0.33    0.33    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15255    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15256    0.67    0.67    0.00    1.33     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15257    0.67    0.33    0.00    1.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15259    0.00    2.67    0.00    2.67     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15261    0.00    1.33    0.00    1.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:50 PM     0         -     15306   38.00   62.00    0.00  100.00    13  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:50 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:53 PM     0     15224         -   34.33   59.33    0.00   93.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15251    0.00    2.67    0.00    2.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15252    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15254    0.33    0.33    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15255    0.33    0.00    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15256    0.00    0.33    0.00    0.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15257    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15259    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15261    0.00    2.67    0.00    2.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:53 PM     0         -     15306   33.00   52.00    0.00   85.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:53 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:56 PM     0     15224         -   24.33   41.33    0.00   65.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15227    0.33    0.00    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15253    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15255    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15256    0.33    0.33    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15258    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15261    0.00    0.67    0.00    0.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15264    0.00    1.00    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:56 PM     0         -     15306   23.67   37.67    0.00   61.33     3  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:56 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:09:59 PM     0     15224         -   27.67   47.33    0.00   75.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15227    0.67    0.00    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15252    0.33    0.67    0.00    1.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15253    0.33    0.33    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15254    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15255    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15256    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15257    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15258    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15259    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15260    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15261    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15264    0.00    2.33    0.00    2.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:09:59 PM     0         -     15306   25.33   41.33    0.00   66.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:09:59 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:02 PM     0     15224         -   30.00   65.33    0.00   95.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15227    2.33    0.67    0.00    3.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15252    0.33    0.67    0.00    1.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15253    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15254    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15255    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15256    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15257    0.33    0.67    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15258    0.67    0.33    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15259    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15260    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15261    1.33    1.00    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15264    0.00    2.67    0.00    2.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15265    0.00    1.00    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:02 PM     0         -     15306   24.00   54.67    0.00   78.67     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:02 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:05 PM     0     15224         -   30.00   52.00    0.00   82.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15227    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15252    0.33    0.33    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15254    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15256    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15257    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15258    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15259    0.00    0.67    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15261    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15262    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15263    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15264    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15265    0.00    1.67    0.00    1.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15266    0.00    0.67    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:05 PM     0         -     15306   28.67   45.67    0.00   74.33     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:05 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:08 PM     0     15224         -   22.67   37.33    0.00   60.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:08 PM     0         -     15262    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:08 PM     0         -     15263    0.00    0.33    0.00    0.33    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:08 PM     0         -     15266    0.00    1.33    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:08 PM     0         -     15270    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:08 PM     0         -     15306   22.00   35.00    0.00   57.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:08 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:11 PM     0     15224         -   21.67   40.00    0.00   61.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15227    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15252    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15253    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15255    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15257    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15260    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15261    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15264    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15265    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15270    0.00    3.00    0.00    3.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:11 PM     0         -     15306   20.33   33.67    0.00   54.00     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:11 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:14 PM     0     15224         -   23.67   44.00    0.00   67.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15227    1.00    0.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15252    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15254    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15255    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15256    0.33    0.33    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15257    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15258    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15259    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15260    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15261    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15263    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15264    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15265    0.33    0.00    0.00    0.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15270    0.00    2.33    0.00    2.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15272    0.00    1.00    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:14 PM     0         -     15306   21.00   37.00    0.00   58.00     1  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:14 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:17 PM     0     15224         -   24.33   41.00    0.00   65.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15227    0.33    0.33    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15252    0.67    0.33    0.00    1.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15253    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15254    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15255    0.33    0.00    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15256    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15259    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15261    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15262    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15263    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15264    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15265    0.33    0.00    0.00    0.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15266    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15272    0.00    2.00    0.00    2.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:17 PM     0         -     15306   21.33   34.67    0.00   56.00     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:17 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:20 PM     0     15224         -   24.33   40.00    0.00   64.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15226    0.00    0.67    0.00    0.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15227    1.33    1.00    0.00    2.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15252    0.33    0.00    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15255    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15256    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15257    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15258    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15259    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15260    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15261    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15262    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15264    0.33    0.67    0.00    1.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15265    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15268    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15270    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15272    0.00    1.33    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:20 PM     0         -     15306   19.67   30.67    0.00   50.33     2  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:20 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:23 PM     0     15224         -   12.00   22.33    0.00   34.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15226    0.00    1.00    0.00    1.00     3  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15250    0.00    1.33    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15256    0.33    0.00    0.00    0.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15262    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15263    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15266    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15267    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15268    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:23 PM     0         -     15271    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:23 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:26 PM     0     15224         -    1.67    4.67    0.00    6.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15250    0.33    1.33    0.00    1.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15251    0.00    1.00    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15252    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15254    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15257    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15258    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15259    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15260    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15261    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15265    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:26 PM     0         -     15273    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:26 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:29 PM     0     15224         -    0.33    4.33    0.00    4.67    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:29 PM     0         -     15251    0.00    3.33    0.00    3.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:29 PM     0         -     15264    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:29 PM     0         -     15267    0.33    0.00    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:29 PM     0         -     15268    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:29 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:32 PM     0     15224         -    4.67   10.00    0.00   14.67    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15226    0.00    0.67    0.00    0.67     3  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15250    0.33    0.33    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15251    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15252    0.33    0.00    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15253    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15254    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15255    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15256    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15257    0.67    0.00    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15258    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15259    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15260    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15261    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15262    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15263    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15264    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15265    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15266    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15267    0.67    0.00    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15268    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15270    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15271    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15272    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:32 PM     0         -     15273    0.00    0.33    0.00    0.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:32 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:35 PM     0     15224         -    4.00    6.33    0.00   10.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15226    0.33    0.33    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15251    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15254    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15255    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15256    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15257    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15258    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15259    0.33    0.00    0.00    0.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15260    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15261    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15262    0.00    0.33    0.00    0.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15263    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15265    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15266    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15270    0.33    0.00    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15271    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15272    0.33    0.67    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:35 PM     0         -     15273    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:35 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:38 PM     0     15224         -    4.33    8.33    0.00   12.67    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15226    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15250    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15251    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15254    0.33    0.33    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15255    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15256    0.67    0.00    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15257    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15258    0.00    0.67    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15259    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15260    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15261    0.00    0.67    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15262    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15263    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15264    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15265    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15266    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15267    0.00    0.67    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15268    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15270    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15271    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:38 PM     0         -     15272    0.00    0.33    0.00    0.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:38 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:41 PM     0     15224         -    5.67   14.33    0.00   20.00    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15226    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15250    0.00    1.33    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15251    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15254    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15255    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15256    0.33    1.33    0.00    1.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15257    0.33    0.67    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15258    0.67    0.00    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15259    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15260    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15261    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15262    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15263    0.00    1.33    0.00    1.33     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15264    0.00    1.00    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15265    0.00    0.67    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15266    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15267    0.00    1.00    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15268    0.00    1.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15270    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15271    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15272    0.33    0.33    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:41 PM     0         -     15273    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:41 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:44 PM     0     15224         -   12.00   23.33    0.00   35.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15226    0.67    1.33    0.00    2.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15250    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15251    0.67    0.67    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15254    0.33    1.00    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15255    0.33    1.33    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15256    0.33    0.67    0.00    1.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15257    1.00    0.67    0.00    1.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15258    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15259    0.33    1.33    0.00    1.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15260    0.67    1.00    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15261    1.00    1.00    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15262    1.00    0.67    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15263    0.67    0.67    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15264    0.67    1.33    0.00    2.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15265    0.67    1.67    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15266    0.00    1.33    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15267    0.33    0.67    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15268    0.67    0.67    0.00    1.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15270    0.67    1.00    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15271    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15272    0.33    1.33    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:44 PM     0         -     15273    1.00    0.67    0.00    1.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:44 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:47 PM     0     15224         -    6.00   14.33    0.00   20.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15226    0.33    1.00    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15250    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15251    0.33    1.00    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15254    0.00    0.67    0.00    0.67     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15255    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15256    0.33    1.00    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15257    0.67    0.33    0.00    1.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15258    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15259    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15260    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15261    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15262    0.00    1.00    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15263    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15264    0.33    0.67    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15265    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15266    0.67    0.67    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15267    0.33    1.00    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15268    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15270    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15271    0.33    0.67    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15272    0.33    1.00    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:47 PM     0         -     15273    0.00    0.33    0.00    0.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:47 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+
+10:10:50 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:53 PM     0     15224         -   10.33   17.67    0.00   28.00    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15226    0.67    0.67    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15250    1.00    0.67    0.00    1.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15251    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15254    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15255    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15256    0.33    1.00    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15257    0.33    1.00    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15258    0.67    0.33    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15259    1.00    0.33    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15260    1.00    0.00    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15261    0.33    1.00    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15262    0.33    1.00    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15263    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15264    0.67    0.67    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15265    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15266    0.33    1.00    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15267    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15268    0.00    1.33    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15270    0.67    0.33    0.00    1.00     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15271    0.33    1.00    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15272    0.67    0.67    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:53 PM     0         -     15273    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:53 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:10:56 PM     0     15224         -    7.67   15.00    0.00   22.67    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15226    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15250    0.33    0.67    0.00    1.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15251    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15254    0.00    0.33    0.00    0.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15255    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15256    0.00    1.33    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15257    0.00    0.33    0.00    0.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15258    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15259    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15260    0.00    1.00    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15261    0.67    0.67    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15262    0.00    1.33    0.00    1.33     9  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15263    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15264    0.33    1.00    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15265    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15266    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15267    0.00    1.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15268    0.00    1.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15270    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15271    0.00    1.33    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15272    0.33    0.00    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:10:56 PM     0         -     15273    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:10:56 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+
+10:10:59 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:02 PM     0     15224         -    5.00    8.67    0.00   13.67    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15226    0.00    0.33    0.00    0.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15250    0.00    0.67    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15251    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15254    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15255    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15256    0.67    0.00    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15257    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15258    0.67    0.00    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15259    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15260    0.33    0.33    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15261    0.33    0.33    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15262    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15263    0.33    0.00    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15264    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15265    0.00    0.67    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15266    0.00    0.67    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15267    0.33    0.33    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15268    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15270    0.33    0.00    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15271    0.33    0.33    0.00    0.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15272    0.00    0.33    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:02 PM     0         -     15273    0.67    0.33    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:02 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:05 PM     0     15224         -    3.00    4.33    0.00    7.33    10  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15226    0.33    0.33    0.00    0.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15251    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15254    0.00    0.67    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15255    0.33    0.00    0.00    0.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15257    0.00    0.33    0.00    0.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15258    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15259    0.00    0.67    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15260    0.67    0.00    0.00    0.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15261    0.00    0.33    0.00    0.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15265    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15270    0.33    0.33    0.00    0.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:05 PM     0         -     15272    0.67    0.33    0.00    1.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:05 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+
+10:11:08 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:11 PM     0     15224         -    8.33   18.00    0.00   26.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15226    0.33    1.00    0.00    1.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15250    0.67    1.00    0.00    1.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15251    0.67    0.67    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15254    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15255    0.33    0.33    0.00    0.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15256    0.67    0.67    0.00    1.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15257    0.67    0.33    0.00    1.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15258    0.67    0.67    0.00    1.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15259    0.67    0.33    0.00    1.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15260    0.33    1.00    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15261    0.33    1.33    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15262    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15263    0.33    1.33    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15264    0.00    1.00    0.00    1.00    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15265    0.00    1.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15266    0.00    1.33    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15267    0.33    0.67    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15268    0.33    1.00    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15270    0.67    0.33    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15271    0.00    1.33    0.00    1.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15272    0.00    1.00    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:11 PM     0         -     15273    0.67    0.33    0.00    1.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:11 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:14 PM     0     15224         -   13.33   23.33    0.00   36.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15226    0.67    1.67    0.00    2.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15250    1.00    1.00    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15251    0.67    1.33    0.00    2.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15254    0.00    0.67    0.00    0.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15256    1.00    1.00    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15257    0.67    1.33    0.00    2.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15258    0.33    1.33    0.00    1.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15259    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15260    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15261    0.00    1.67    0.00    1.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15262    1.33    0.33    0.00    1.67    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15263    0.33    1.33    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15264    0.33    2.00    0.00    2.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15265    0.67    1.00    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15266    1.33    0.67    0.00    2.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15267    1.00    1.00    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15268    0.33    1.33    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15270    0.33    1.00    0.00    1.33    10  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15271    0.67    1.33    0.00    2.00    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15272    1.00    0.67    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:14 PM     0         -     15273    0.67    1.33    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:14 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:17 PM     0     15224         -   12.67   26.33    0.00   39.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15226    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15250    0.33    1.67    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15251    0.67    1.00    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15256    0.33    1.67    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15257    0.67    1.33    0.00    2.00     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15258    1.00    0.67    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15259    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15260    0.67    1.33    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15261    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15262    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15263    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15264    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15265    1.00    1.33    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15266    0.67    1.67    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15267    0.33    1.33    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15268    0.67    1.67    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15270    1.00    0.67    0.00    1.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15271    0.00    1.67    0.00    1.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15272    0.33    1.67    0.00    2.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:17 PM     0         -     15273    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:17 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:20 PM     0     15224         -   15.00   24.67    0.00   39.67     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15226    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15250    0.67    2.33    0.00    3.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15251    0.67    1.00    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15256    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15258    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15259    1.00    0.67    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15260    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15261    1.00    1.00    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15262    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15263    1.00    0.67    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15264    1.33    1.33    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15265    0.33    1.67    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15266    0.33    1.33    0.00    1.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15267    1.00    1.33    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15268    0.67    1.67    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15270    1.00    2.00    0.00    3.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15271    1.00    1.00    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15272    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:20 PM     0         -     15273    1.00    1.33    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:20 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:23 PM     0     15224         -   14.00   26.33    0.00   40.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15226    1.33    1.00    0.00    2.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15250    0.67    1.33    0.00    2.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15251    1.00    1.33    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15256    0.67    2.00    0.00    2.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15258    0.33    0.67    0.00    1.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15259    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15260    0.67    1.67    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15261    1.00    1.67    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15262    1.33    1.33    0.00    2.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15263    0.67    1.33    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15264    0.67    1.33    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15265    0.67    1.33    0.00    2.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15266    1.00    1.67    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15267    1.00    1.00    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15268    0.33    1.67    0.00    2.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15270    0.33    1.33    0.00    1.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15271    1.00    1.67    0.00    2.67    11  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15272    1.00    1.67    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:23 PM     0         -     15273    0.33    1.33    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:23 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:26 PM     0     15224         -   11.67   28.33    0.00   40.00     9  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15226    0.67    1.67    0.00    2.33     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15250    0.33    2.00    0.00    2.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15251    0.33    2.00    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15256    1.00    1.67    0.00    2.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15258    0.33    0.00    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15260    0.00    1.67    0.00    1.67     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15261    1.00    2.00    0.00    3.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15262    1.33    1.33    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15263    0.00    0.33    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15264    0.33    2.33    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15265    1.00    2.33    0.00    3.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15266    1.00    1.33    0.00    2.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15267    0.33    0.33    0.00    0.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15268    1.00    1.33    0.00    2.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15270    1.00    1.67    0.00    2.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15271    1.00    2.00    0.00    3.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15272    0.33    2.33    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:26 PM     0         -     15273    1.33    1.33    0.00    2.67     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:26 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:29 PM     0     15224         -   13.33   32.00    0.00   45.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15226    1.33    1.67    0.00    3.00     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15250    2.00    2.00    0.00    4.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15251    1.33    2.00    0.00    3.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15256    1.33    2.00    0.00    3.33     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15261    0.67    2.67    0.00    3.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15262    1.00    2.33    0.00    3.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15264    1.00    3.00    0.00    4.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15265    0.33    2.67    0.00    3.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15266    0.67    2.67    0.00    3.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15268    0.67    3.67    0.00    4.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15270    1.00    1.67    0.00    2.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15271    0.67    2.67    0.00    3.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15272    0.67    2.67    0.00    3.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:29 PM     0         -     15273    0.33    0.67    0.00    1.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:29 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:32 PM     0     15224         -   12.00   28.33    0.00   40.33     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15226    0.67    1.67    0.00    2.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15250    2.33    4.33    0.00    6.67     0  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15251    2.00    4.33    0.00    6.33     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15256    0.33    0.67    0.00    1.00     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15261    0.67    1.00    0.00    1.67     8  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15262    1.33    2.33    0.00    3.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15264    1.00    3.33    0.00    4.33     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15265    0.67    4.00    0.00    4.67     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15266    0.67    1.00    0.00    1.67     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15268    1.33    2.67    0.00    4.00     4  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15271    0.67    2.67    0.00    3.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:32 PM     0         -     15272    0.33    0.00    0.00    0.33     5  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:32 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+10:11:35 PM     0     15224         -   12.00   20.00    0.00   32.00     0  /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:35 PM     0         -     15250    1.33    1.67    0.00    3.00     7  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+10:11:35 PM     0         -     15251   11.00   18.00    0.00   29.00     6  |__/home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=fillseq --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --thread
+
+10:11:35 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+
+
+Average:      UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
+Average:        0     15041         -    0.00    1.41    0.00    1.41     -  /bin/bash ./run_db_bench.sh --backup fillseq 
+Average:        0         -     15041    0.00    1.41    0.00    1.41     -  |__/bin/bash ./run_db_bench.sh --backup fillseq 
