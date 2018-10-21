@@ -39,11 +39,11 @@ requestdistribution=zipfian
 
 threadcount=30
 
-# The database size is approximately 75 GB
-recordcount=9811237
+# The database size is approximately 10 GB
+recordcount=2611239
 
 # The number of operations is the same as the recordcount
-operationcount=9811237
+operationcount=2611239
 
 # BEGIN ANSIBLE MANAGED BLOCK
 ########## Common Workload Parameters ##########
@@ -57,7 +57,7 @@ fieldcount=1
 #                  bytes of the field value (this is the fieldlength))
 #                 * fieldcount
 # https://github.com/ljishen/YCSB/blob/master/rocksdb/src/main/java/com/yahoo/ycsb/db/rocksdb/RocksDBClient.java#L326
-fieldlength=8178
+fieldlength=4082
 
 # For example for row 5, with zeropadding=1 you get 'user5' key and with
 # zeropading=8 you get 'user00000005' key.
