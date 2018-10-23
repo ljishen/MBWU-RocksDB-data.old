@@ -1,0 +1,340 @@
+
+[INFO | 2018-10-22 00:19:21,865] start benchmark readrandommergerandom at 2018-10-22_00:19:21
+================================================================================
+operation_keys_ratio=100
+merge_read_ratio=50
+data_dir=/mnt/sdc1/rocksdb_data
+device_fullname=/dev/sdc1
+pdevice_fullname=/dev/sdc
+daemon_report_interval_sec=3
+db_bench_command=( time /home/ljishen/rocksdb-5.14.3/db_bench --benchmarks=readrandommergerandom --db=/mnt/sdc1/rocksdb_data --key_size=16 --value_size=4096 --threads=8 --disable_wal=0 --stats_per_interval=1 --stats_interval_seconds=60 --histogram=1 --enable_pipelined_write=true --delayed_write_rate=16777216 --wal_dir=/mnt/sdc1/rocksdb_data --table_cache_numshardbits=6 --dump_malloc_stats=true --new_table_reader_for_compaction_inputs=false --compression_type=lz4 --max_write_buffer_number=24 --fifo_compaction_allow_compaction=false --fifo_compaction_max_table_files_size_mb=1024 --num_levels=7 --block_size=8192 --bytes_per_sync=1048576 --soft_pending_compaction_bytes_limit=68719476736 --hard_pending_compaction_bytes_limit=274877906944 --max_background_jobs=24 --max_background_flushes=24 --max_background_compactions=24 --subcompactions=4 --min_level_to_compress=2 --max_bytes_for_level_base=536870912 --level0_file_num_compaction_trigger=2 --write_buffer_size=134217728 --min_write_buffer_number_to_merge=2 --max_compaction_bytes=1677721600 --level0_slowdown_writes_trigger=20 --level0_stop_writes_trigger=36 --target_file_size_base=67108864 --use_existing_db=1 --merge_keys=2611239 --merge_operator='put' --num=326404 --seed=1540192761 --mergereadpercent=50 ) 2>&1 | tee -a /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/db_bench.log
+================================================================================
+
+[INFO | 2018-10-22 00:19:21,889] configuring scaling governor to performance for online CPUs
+Successfully updated scaling governor for CPUs [0-23].
+
+[INFO | 2018-10-22 00:19:21,930] set the nofile soft limit to 63536
+
+[INFO | 2018-10-22 00:19:21,933] mpstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL mpstat -P ALL 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/mpstat.log 2>&1 &
+
+[INFO | 2018-10-22 00:19:21,937] mpstat daemon is running (PID=58431)
+
+[INFO | 2018-10-22 00:19:21,941] iostat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL iostat -dktxyzH -g /dev/sdc1 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/iostat.log 2>&1 &
+
+[INFO | 2018-10-22 00:19:21,945] iostat daemon is running (PID=58446)
+
+[INFO | 2018-10-22 00:19:21,948] pidstat command: S_TIME_FORMAT=ISO nohup stdbuf -oL -eL pidstat -G db_bench -ult 3 < /dev/null > /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/pidstat.log 2>&1 &
+
+[INFO | 2018-10-22 00:19:21,952] pidstat daemon is running (PID=58461)
+
+[INFO | 2018-10-22 00:19:21,955] freeing the slab objects and pagecache
+
+[INFO | 2018-10-22 00:19:25,182] block events tracer command: nohup trace-cmd record -o /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/blkstat.dat --date -e block:block_rq_issue -f 'dev == 8388640' -e block:block_rq_complete -f 'dev == 8388640' < /dev/null > nohup.out 2>&1 &
+
+[INFO | 2018-10-22 00:19:25,347] starting to trace the block events for device /dev/sdc (PID=58483)
+
+[INFO | 2018-10-22 00:19:25,350] pause 7 seconds to wait for the tracer to start...
+
+[INFO | 2018-10-22 00:19:32,370] saving stats for disk /dev/sdc (before)
+
+RocksDB:    version 5.14
+Date:       Mon Oct 22 00:19:34 2018
+CPU:        24 * Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+CPUCache:   15360 KB
+2018/10/22-00:20:34  ... thread 2: (35000,35000) ops and (583.3,583.3) ops/second in (60.002868,60.002868) seconds
+2018/10/22-00:20:34  ... thread 7: (35000,35000) ops and (583.1,583.1) ops/second in (60.026180,60.026180) seconds
+2018/10/22-00:20:34  ... thread 6: (35000,35000) ops and (582.8,582.8) ops/second in (60.053282,60.053282) seconds
+2018/10/22-00:20:35  ... thread 3: (35000,35000) ops and (581.9,581.9) ops/second in (60.145782,60.145782) seconds
+2018/10/22-00:20:35  ... thread 4: (36000,36000) ops and (594.5,594.5) ops/second in (60.550772,60.550772) seconds
+2018/10/22-00:20:35  ... thread 1: (35000,35000) ops and (577.7,577.7) ops/second in (60.585511,60.585511) seconds
+2018/10/22-00:20:35  ... thread 5: (36000,36000) ops and (594.0,594.0) ops/second in (60.611157,60.611157) seconds
+2018/10/22-00:20:35  ... thread 0: (36000,36000) ops and (593.3,593.3) ops/second in (60.674778,60.674778) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   244.76 MB   0.5      0.0     0.0      0.0       0.7      0.7       0.0   1.0      0.0    123.7         6         4    1.395       0      0
+  L1     28/0    1.57 GB   3.1      1.7     0.7      1.0       1.6      0.6       0.0   2.3     58.9     56.1        29         1   28.738    428K      3
+  L2     92/0    4.97 GB   1.0      2.0     0.3      1.6       1.6      0.0       0.0   5.1     60.4     50.5        33         5    6.672    849K      0
+  L3     31/0    1.52 GB   0.0      1.1     0.4      0.7       0.7      0.1       0.0   1.8     13.6      9.1        80         6   13.400    495K      0
+ Sum    152/0    8.29 GB   0.0      4.7     1.4      3.3       4.6      1.3       0.0   6.8     32.4     31.9       148        16    9.255   1774K      3
+ Int      0/0    0.00 KB   0.0      4.7     1.4      3.3       4.4      1.1       0.0   9.2     32.6     30.7       147        14   10.514   1774K      3
+Uptime(secs): 62.6 total, 60.7 interval
+Flush(GB): cumulative 0.674, interval 0.478
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 4.61 GB write, 75.39 MB/s write, 4.69 GB read, 76.64 MB/s read, 148.1 seconds
+Interval compaction: 4.41 GB write, 74.49 MB/s write, 4.69 GB read, 79.08 MB/s read, 147.2 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 62.6 total, 60.7 interval
+Cumulative writes: 143K writes, 143K keys, 140K commit groups, 1.0 writes per commit group, ingest: 0.55 GB, 9.00 MB/s
+Cumulative WAL: 143K writes, 0 syncs, 143132.00 writes per sync, written: 0.55 GB, 9.00 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 143K writes, 143K keys, 140K commit groups, 1.0 writes per commit group, ingest: 563.45 MB, 9.29 MB/s
+Interval WAL: 143K writes, 0 syncs, 143132.00 writes per sync, written: 0.55 MB, 9.29 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/22-00:21:35  ... thread 7: (54000,89000) ops and (895.9,739.8) ops/second in (60.273879,120.300059) seconds
+2018/10/22-00:21:35  ... thread 3: (55000,90000) ops and (913.9,747.9) ops/second in (60.184843,120.330625) seconds
+2018/10/22-00:21:35  ... thread 2: (54000,89000) ops and (894.9,739.6) ops/second in (60.338703,120.341571) seconds
+2018/10/22-00:21:35  ... thread 6: (55000,90000) ops and (909.4,746.7) ops/second in (60.481063,120.534345) seconds
+2018/10/22-00:21:35  ... thread 4: (55000,91000) ops and (915.3,754.3) ops/second in (60.089608,120.640380) seconds
+2018/10/22-00:21:35  ... thread 5: (54000,90000) ops and (899.4,746.0) ops/second in (60.036992,120.648149) seconds
+2018/10/22-00:21:35  ... thread 1: (54000,89000) ops and (897.6,737.1) ops/second in (60.161706,120.747217) seconds
+2018/10/22-00:21:35  ... thread 0: (56000,92000) ops and (930.3,761.1) ops/second in (60.198186,120.872964) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   944.75 MB   1.8      1.0     0.0      1.0       2.3      1.4       0.0   1.7     46.5    112.6        21         8    2.628    247K      0
+  L1     13/3   710.92 MB   1.0      1.7     0.7      1.0       1.6      0.6       0.0   2.3     58.9     56.1        29         1   28.738    428K      3
+  L2     92/16   5.05 GB   0.8      6.1     1.2      4.9       4.9      0.1       0.0   4.1     20.5     16.8       302        19   15.898   2572K      0
+  L3     31/0    1.52 GB   0.0      1.1     0.4      0.7       0.7      0.1       0.0   1.8     13.6      9.1        80         6   13.400    495K      0
+ Sum    137/19   8.19 GB   0.0      9.7     2.3      7.5       9.5      2.1       0.0   6.9     23.1     22.6       432        34   12.713   3744K      3
+ Int      0/0    0.00 KB   0.0      5.0     0.9      4.2       4.9      0.8       0.0   6.9     18.2     17.8       284        18   15.786   1970K      0
+Uptime(secs): 122.8 total, 60.2 interval
+Flush(GB): cumulative 1.390, interval 0.717
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 9.55 GB write, 79.60 MB/s write, 9.73 GB read, 81.14 MB/s read, 432.2 seconds
+Interval compaction: 4.94 GB write, 83.98 MB/s write, 5.04 GB read, 85.81 MB/s read, 284.1 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 122.8 total, 60.2 interval
+Cumulative writes: 365K writes, 365K keys, 352K commit groups, 1.0 writes per commit group, ingest: 1.41 GB, 11.73 MB/s
+Cumulative WAL: 365K writes, 0 syncs, 365934.00 writes per sync, written: 1.41 GB, 11.73 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 222K writes, 222K keys, 211K commit groups, 1.1 writes per commit group, ingest: 876.99 MB, 14.57 MB/s
+Interval WAL: 222K writes, 0 syncs, 222802.00 writes per sync, written: 0.86 MB, 14.57 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/22-00:22:36  ... thread 5: (69000,159000) ops and (1137.4,876.9) ops/second in (60.662915,181.311064) seconds
+2018/10/22-00:22:36  ... thread 3: (70000,160000) ops and (1147.8,882.4) ops/second in (60.983874,181.314499) seconds
+2018/10/22-00:22:36  ... thread 6: (70000,160000) ops and (1148.5,881.6) ops/second in (60.951650,181.485995) seconds
+2018/10/22-00:22:36  ... thread 2: (71000,160000) ops and (1156.7,880.5) ops/second in (61.380418,181.721989) seconds
+2018/10/22-00:22:36  ... thread 1: (69000,158000) ops and (1127.9,868.5) ops/second in (61.177338,181.924555) seconds
+2018/10/22-00:22:37  ... thread 0: (68000,160000) ops and (1108.5,878.1) ops/second in (61.342753,182.215717) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      4/4   979.04 MB   0.0      1.0     0.0      1.0       3.5      2.6       0.0   1.4     30.6    112.4        32        13    2.459    247K      0
+  L1     23/12   1.34 GB   1.2      3.3     1.8      1.5       3.2      1.7       0.0   1.7     77.0     73.3        44         2   22.082    861K      6
+  L2     92/55   5.06 GB   0.4      8.5     1.6      6.9       7.0      0.1       0.0   4.2     19.7     16.1       442        26   17.015   3626K      0
+  L3     31/0    1.52 GB   0.0      1.1     0.4      0.7       0.7      0.1       0.0   1.8     13.6      9.1        80         6   13.400    495K      0
+ Sum    150/71   8.87 GB   0.0     13.9     3.9     10.0      14.4      4.4       0.0   5.6     23.7     24.5       599        47   12.743   5231K      6
+ Int      0/0    0.00 KB   0.0      4.1     1.6      2.5       4.8      2.3       0.0   4.0     25.3     29.5       167        13   12.822   1486K      3
+Uptime(secs): 184.1 total, 61.3 interval
+Flush(GB): cumulative 2.586, interval 1.195
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 14.36 GB write, 79.82 MB/s write, 13.86 GB read, 77.05 MB/s read, 598.9 seconds
+Interval compaction: 4.81 GB write, 80.26 MB/s write, 4.13 GB read, 68.87 MB/s read, 166.7 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 184.1 total, 61.3 interval
+Cumulative writes: 639K writes, 639K keys, 589K commit groups, 1.1 writes per commit group, ingest: 2.46 GB, 13.67 MB/s
+Cumulative WAL: 639K writes, 0 syncs, 639555.00 writes per sync, written: 2.46 GB, 13.67 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 273K writes, 273K keys, 236K commit groups, 1.2 writes per commit group, ingest: 1076.76 MB, 17.55 MB/s
+Interval WAL: 273K writes, 0 syncs, 273621.00 writes per sync, written: 1.05 MB, 17.55 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/22-00:22:40  ... thread 4: (70000,161000) ops and (1086.3,869.9) ops/second in (64.439153,185.079533) seconds
+2018/10/22-00:22:41  ... thread 7: (71000,160000) ops and (1077.2,859.2) ops/second in (65.909694,186.209753) seconds
+2018/10/22-00:23:36  ... thread 5: (81000,240000) ops and (1334.8,991.7) ops/second in (60.685489,241.996553) seconds
+2018/10/22-00:23:37  ... thread 2: (79000,239000) ops and (1294.3,984.5) ops/second in (61.037757,242.759746) seconds
+2018/10/22-00:23:38  ... thread 3: (81000,241000) ops and (1301.1,989.5) ops/second in (62.254810,243.569309) seconds
+2018/10/22-00:23:38  ... thread 6: (80000,240000) ops and (1280.7,983.8) ops/second in (62.467989,243.953984) seconds
+2018/10/22-00:23:38  ... thread 0: (81000,241000) ops and (1311.3,987.8) ops/second in (61.771031,243.986748) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      4/4   979.34 MB   0.0      1.9     0.0      1.9       5.6      3.7       0.0   1.5     31.8     93.5        62        19    3.241    495K      0
+  L1     26/14   1.42 GB   1.3      5.1     3.0      2.1       4.8      2.7       0.0   1.6     86.5     82.2        60         3   20.127   1322K      9
+  L2     95/61   5.10 GB   0.4     13.3     2.6     10.6      10.8      0.1       0.0   4.1     17.1     13.9       793        42   18.875   5637K      0
+  L3     31/0    1.52 GB   0.0      1.1     0.4      0.7       0.7      0.1       0.0   1.8     13.6      9.1        80         6   13.400    495K      0
+ Sum    156/79   8.99 GB   0.0     21.3     6.0     15.3      22.0      6.6       0.0   5.8     22.0     22.6       995        70   14.216   7950K      9
+ Int      0/0    0.00 KB   0.0      7.5     2.1      5.3       7.6      2.3       0.0   6.4     19.4     19.7       396        23   17.227   2719K      3
+Uptime(secs): 245.9 total, 61.8 interval
+Flush(GB): cumulative 3.781, interval 1.195
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 21.97 GB write, 91.46 MB/s write, 21.34 GB read, 88.87 MB/s read, 995.1 seconds
+Interval compaction: 7.61 GB write, 126.16 MB/s write, 7.49 GB read, 124.12 MB/s read, 396.2 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 245.9 total, 61.8 interval
+Cumulative writes: 961K writes, 961K keys, 857K commit groups, 1.1 writes per commit group, ingest: 3.70 GB, 15.39 MB/s
+Cumulative WAL: 961K writes, 0 syncs, 961550.00 writes per sync, written: 3.70 GB, 15.39 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 321K writes, 321K keys, 268K commit groups, 1.2 writes per commit group, ingest: 1267.01 MB, 20.51 MB/s
+Interval WAL: 321K writes, 0 syncs, 321995.00 writes per sync, written: 1.24 MB, 20.51 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/22-00:23:39  ... thread 1: (80000,238000) ops and (1287.0,975.1) ops/second in (62.158318,244.082873) seconds
+2018/10/22-00:23:41  ... thread 4: (81000,242000) ops and (1323.8,982.7) ops/second in (61.187587,246.267120) seconds
+2018/10/22-00:23:41  ... thread 7: (81000,241000) ops and (1344.0,977.8) ops/second in (60.268039,246.477792) seconds
+2018/10/22-00:24:37  ... thread 5: (43000,283000) ops and (708.5,934.9) ops/second in (60.695255,302.691808) seconds
+2018/10/22-00:24:39  ... thread 2: (44000,283000) ops and (709.6,928.6) ops/second in (62.008851,304.768597) seconds
+2018/10/22-00:24:40  ... thread 6: (44000,284000) ops and (716.0,929.9) ops/second in (61.456421,305.410405) seconds
+2018/10/22-00:24:40  ... thread 3: (45000,286000) ops and (727.0,936.3) ops/second in (61.898808,305.468117) seconds
+2018/10/22-00:24:40  ... thread 0: (42000,283000) ops and (681.9,926.1) ops/second in (61.590265,305.577013) seconds
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   244.95 MB   0.5      2.9     0.0      2.9       7.0      4.2       0.0   1.6     28.0     68.5       105        22    4.772    743K      0
+  L1     27/1    1.48 GB   2.8      6.7     4.2      2.6       6.4      3.8       0.0   1.5     90.0     85.6        76         4   19.112   1741K     12
+  L2     94/7    5.14 GB   1.0     18.6     3.7     15.0      15.2      0.2       0.0   4.1     15.2     12.3      1259        60   20.985   7925K      0
+  L3     31/0    1.52 GB   0.0      1.1     0.4      0.7       0.7      0.1       0.0   1.8     13.6      9.1        80         6   13.400    495K      0
+ Sum    153/8    8.38 GB   0.0     29.3     8.2     21.1      29.3      8.2       0.0   6.9     19.7     19.7      1521        92   16.532     10M     12
+ Int      0/0    0.00 KB   0.0      7.9     2.2      5.8       7.3      1.6       0.0  15.3     15.5     14.3       526        22   23.900   2955K      3
+Uptime(secs): 307.5 total, 61.6 interval
+Flush(GB): cumulative 4.259, interval 0.478
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 29.29 GB write, 97.55 MB/s write, 29.29 GB read, 97.52 MB/s read, 1520.9 seconds
+Interval compaction: 7.33 GB write, 121.85 MB/s write, 7.94 GB read, 132.05 MB/s read, 525.8 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+
+** File Read Latency Histogram By Level [default] **
+
+** DB Stats **
+Uptime(secs): 307.5 total, 61.6 interval
+Cumulative writes: 1134K writes, 1134K keys, 1007K commit groups, 1.1 writes per commit group, ingest: 4.36 GB, 14.52 MB/s
+Cumulative WAL: 1134K writes, 0 syncs, 1134615.00 writes per sync, written: 4.36 GB, 14.52 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 173K writes, 173K keys, 150K commit groups, 1.1 writes per commit group, ingest: 681.06 MB, 11.06 MB/s
+Interval WAL: 173K writes, 0 syncs, 173065.00 writes per sync, written: 0.67 MB, 11.06 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+
+2018/10/22-00:24:40  ... thread 1: (44000,282000) ops and (711.3,921.8) ops/second in (61.854564,305.937437) seconds
+2018/10/22-00:24:41  ... thread 4: (41000,283000) ops and (681.8,923.6) ops/second in (60.137441,306.404561) seconds
+2018/10/22-00:24:41  ... thread 7: (43000,284000) ops and (712.7,925.6) ops/second in (60.335111,306.812903) seconds
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+Keys:       16 bytes each
+Values:     4096 bytes each (2048 bytes after compression)
+Entries:    326404
+Prefix:    0 bytes
+Keys per prefix:    0
+RawSize:    1280.0 MB (estimated)
+FileSize:   642.5 MB (estimated)
+Write rate: 0 bytes/second
+Read rate: 0 ops/second
+Compression: LZ4
+Memtablerep: skip_list
+Perf Level: 1
+------------------------------------------------
+DB path: [/mnt/sdc1/rocksdb_data]
+readrandommergerandom :     130.105 micros/op 7686 ops/sec; (reads:163061 merges:163343 total:326404 hits:163061 maxlength:4096)
+Microseconds per read:
+Count: 1305462 Average: 2016.0018  StdDev: 3156.93
+Min: 9  Median: 67.1318  Max: 4765290
+Percentiles: P50: 67.13 P75: 108.72 P99: 48375.65 P99.9: 226189.89 P99.99: 558067.25
+------------------------------------------------------
+(       6,      10 ]        6   0.000%   0.000% 
+(      10,      15 ]       34   0.003%   0.003% 
+(      15,      22 ]      484   0.037%   0.040% 
+(      22,      34 ]    44789   3.431%   3.471% #
+(      34,      51 ]   320761  24.571%  28.042% #####
+(      51,      76 ]   444243  34.030%  62.071% #######
+(      76,     110 ]   175390  13.435%  75.506% ###
+(     110,     170 ]    22781   1.745%  77.251% 
+(     170,     250 ]      762   0.058%  77.310% 
+(     250,     380 ]    48215   3.693%  81.003% #
+(     380,     580 ]    66318   5.080%  86.083% #
+(     580,     870 ]    39305   3.011%  89.094% #
+(     870,    1300 ]    34769   2.663%  91.757% #
+(    1300,    1900 ]    25153   1.927%  93.684% 
+(    1900,    2900 ]    17446   1.336%  95.020% 
+(    2900,    4400 ]     7306   0.560%  95.580% 
+(    4400,    6600 ]     8910   0.683%  96.263% 
+(    6600,    9900 ]    10051   0.770%  97.033% 
+(    9900,   14000 ]     8028   0.615%  97.647% 
+(   14000,   22000 ]     7342   0.562%  98.210% 
+(   22000,   33000 ]     5339   0.409%  98.619% 
+(   33000,   50000 ]     5501   0.421%  99.040% 
+(   50000,   75000 ]     3616   0.277%  99.317% 
+(   75000,  110000 ]     3904   0.299%  99.616% 
+(  110000,  170000 ]     2775   0.213%  99.829% 
+(  170000,  250000 ]     1322   0.101%  99.930% 
+(  250000,  380000 ]      639   0.049%  99.979% 
+(  380000,  570000 ]      152   0.012%  99.991% 
+(  570000,  860000 ]       41   0.003%  99.994% 
+(  860000, 1200000 ]       38   0.003%  99.997% 
+( 1200000, 1900000 ]       34   0.003%  99.999% 
+( 4300000, 6500000 ]        8   0.001% 100.000% 
+
+Microseconds per merge:
+Count: 1305770 Average: 34.2704  StdDev: 65.68
+Min: 9  Median: 27.9363  Max: 13133
+Percentiles: P50: 27.94 P75: 39.22 P99: 161.00 P99.9: 525.14 P99.99: 2633.05
+------------------------------------------------------
+(       6,      10 ]       69   0.005%   0.005% 
+(      10,      15 ]   115595   8.853%   8.858% ##
+(      15,      22 ]   306792  23.495%  32.353% #####
+(      22,      34 ]   465804  35.673%  68.026% #######
+(      34,      51 ]   296354  22.696%  90.721% #####
+(      51,      76 ]    90542   6.934%  97.655% #
+(      76,     110 ]    11457   0.877%  98.533% 
+(     110,     170 ]     7176   0.550%  99.082% 
+(     170,     250 ]     6566   0.503%  99.585% 
+(     250,     380 ]     3467   0.266%  99.851% 
+(     380,     580 ]      885   0.068%  99.919% 
+(     580,     870 ]      354   0.027%  99.946% 
+(     870,    1300 ]      300   0.023%  99.969% 
+(    1300,    1900 ]      167   0.013%  99.981% 
+(    1900,    2900 ]      152   0.012%  99.993% 
+(    2900,    4400 ]       49   0.004%  99.997% 
+(    4400,    6600 ]       25   0.002%  99.999% 
+(    6600,    9900 ]        5   0.000%  99.999% 
+(    9900,   14000 ]       11   0.001% 100.000% 
+
+
+real	5m45.066s
+user	3m30.044s
+sys	1m46.224s
+
+[INFO | 2018-10-22 00:25:17,479] saving stats for disk /dev/sdc (after)
+
+[INFO | 2018-10-22 00:25:17,913] stopping mpstat daemon
+
+[INFO | 2018-10-22 00:25:18,047] stopping iostat daemon
+
+[INFO | 2018-10-22 00:25:18,059] stopping pidstat daemon
+
+[INFO | 2018-10-22 00:25:18,071] stopping blkstat daemon
+
+[INFO | 2018-10-22 00:25:18,082] pause 20 seconds to wait for the tracer to finish...
+
+[INFO | 2018-10-22 00:25:38,087] compressing the output from block event tracer to /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/blkstat.dat.gz
+
+[INFO | 2018-10-22 00:25:42,005] generating I/O size distribution to /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/ioszdist.log
+
+[INFO | 2018-10-22 00:26:35,417] backuping files to dir /home/ljishen/ycsb-rocksdb/analysis/data/db_bench/2018-10-22_00:19:21
