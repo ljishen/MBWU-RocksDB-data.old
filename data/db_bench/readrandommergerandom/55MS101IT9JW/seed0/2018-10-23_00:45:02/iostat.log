@@ -1,0 +1,602 @@
+Linux 4.4.132-0404132-generic (pl2) 	2018-10-23 	_x86_64_	(24 CPU)
+
+2018-10-23T00:45:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1       51.67    51.67  714.33   58.00 58993.83 13321.00   187.26     8.96    7.25    3.15   57.63   0.88  16.90
+
+2018-10-23T00:45:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1       18.00    11.00 1011.33  193.33 54585.33 75863.83   216.57    26.10   24.46    3.40  134.62   0.92  27.77
+
+2018-10-23T00:45:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.33 2757.00  133.00 83760.00 55307.67    96.24     7.13    2.48    1.96   13.09   0.35  25.13
+
+2018-10-23T00:45:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.33 2256.00  118.33 72485.33 49386.67   102.66     7.05    2.97    2.53   11.37   0.42  25.20
+
+2018-10-23T00:45:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.00 4728.00  209.33 126540.00 87224.17    86.59     7.44    1.50    1.27    6.66   0.20  25.27
+
+2018-10-23T00:45:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        1.33     6.00 1715.33  211.33 65581.33 87380.33   158.78    21.82   11.35   10.98   14.36   0.53  25.30
+
+2018-10-23T00:45:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67     1.33 1561.33  191.00 52757.33 78644.00   149.97    20.75   11.80   11.01   18.30   0.57  25.03
+
+2018-10-23T00:45:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        3.67     2.67 1793.67  209.00 66282.67 86285.00   152.36    17.79    8.86    8.12   15.22   0.51  25.43
+
+2018-10-23T00:45:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.00 2478.67  290.33 93746.67 119853.83   154.28    16.55    6.01    5.52   10.14   0.36  25.20
+
+2018-10-23T00:45:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33 3498.67  145.67 80718.67 60607.50    77.56     6.85    1.89    1.58    9.13   0.27  25.00
+
+2018-10-23T00:45:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     8.00 3694.00  146.33 81592.00 59720.33    73.59     6.61    1.72    1.44    8.71   0.26  25.40
+
+2018-10-23T00:45:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    69.00 2957.67  145.33 69456.00 53826.00    79.46     8.69    2.79    2.04   18.05   0.37  29.00
+
+2018-10-23T00:45:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        3.67    16.67 3238.67  211.00 68277.33 93404.17    93.74    26.53    7.70    1.78   98.59   0.30  25.47
+
+2018-10-23T00:45:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67 4337.00  147.67 81541.33 61792.17    63.92     7.36    1.64    1.41    8.53   0.23  25.43
+
+2018-10-23T00:45:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.33     0.33 3970.67  155.33 57729.33 64052.83    59.03     9.36    2.27    1.41   24.27   0.24  24.90
+
+2018-10-23T00:45:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67 1171.33  221.00 15156.00 103933.50   171.06    78.42   42.64    3.12  252.10   0.73  25.27
+
+2018-10-23T00:45:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.33     0.33 1645.00  251.00 30129.33 96241.83   133.30   104.63   65.23    3.00  473.07   0.53  25.00
+
+2018-10-23T00:45:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.33 4160.67  142.67 76724.00 58538.33    62.86     7.26    1.69    1.45    8.74   0.23  25.13
+
+2018-10-23T00:45:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    12.67 4225.00  141.67 75808.00 58931.67    61.71     7.50    1.72    1.46    9.25   0.23  25.20
+
+2018-10-23T00:46:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.00 6551.33  192.33 106066.67 79352.83    54.99     6.90    1.02    0.88    6.01   0.15  25.30
+
+2018-10-23T00:46:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67 3878.33  130.33 65433.33 53618.17    59.40     7.73    1.93    1.67    9.68   0.25  25.17
+
+2018-10-23T00:46:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67    32.67 2611.00  156.67 41840.00 71071.33    81.59    43.68   12.66    2.29  185.57   0.36  25.23
+
+2018-10-23T00:46:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.33    13.67  119.33  126.67  1826.67 60609.00   507.61    98.50  385.11   26.44  723.02   4.09  25.17
+
+2018-10-23T00:46:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        1.67    27.00  935.67  230.00 16994.67 86654.17   177.84   106.81  102.25    8.33  484.32   0.92  26.67
+
+2018-10-23T00:46:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     8.33 4104.00  168.33 60201.33 67985.00    60.01     7.58    1.78    1.49    8.90   0.24  25.43
+
+2018-10-23T00:46:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.67 5060.00  171.67 64302.67 71109.83    51.77     7.90    1.51    1.09   13.99   0.19  25.10
+
+2018-10-23T00:46:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.00 5119.33  145.33 73333.33 60624.00    50.89     7.84    1.49    1.29    8.55   0.19  25.07
+
+2018-10-23T00:46:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.00 4040.67  169.67 56693.33 74778.00    62.45    22.68    3.82    1.50   59.03   0.24  25.07
+
+2018-10-23T00:46:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.00   78.00  214.00   560.00 102307.33   704.57   119.62  380.05   28.32  508.24   3.44  25.13
+
+2018-10-23T00:46:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        3.67     4.67 2194.33  273.00 28261.33 108169.67   110.59   109.42   50.53    2.13  439.59   0.43  26.57
+
+2018-10-23T00:46:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.67 2122.33  151.33 26830.67 72184.17    87.10   100.03   31.46    2.03  444.22   0.44  25.20
+
+2018-10-23T00:46:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    46.33   42.67  172.33   316.33 62680.67   586.02   146.33  709.41   97.59  860.88   4.77  25.63
+
+2018-10-23T00:46:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    12.00   42.67  260.00   312.00 106837.33   708.04   168.83  577.78   94.03  657.16   3.33  25.23
+
+2018-10-23T00:46:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.33   39.33  241.67   265.33 101106.50   721.51   130.45  465.40  101.36  524.65   3.59  25.20
+
+2018-10-23T00:46:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.33   88.00  214.33   612.00 83695.17   557.71    98.77  379.44   45.80  516.42   3.34  25.27
+
+2018-10-23T00:46:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     9.67 4040.33  120.00 49230.67 44029.17    44.83     8.17    1.96    1.51   17.30   0.25  26.17
+
+2018-10-23T00:46:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     6.33 6889.33  194.00 76733.33 82767.17    45.04    19.43    1.36    0.73   23.63   0.14  25.60
+
+2018-10-23T00:46:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33   26.67  204.33   192.00 98375.83   853.40   111.89  511.39  115.15  563.10   4.33  25.03
+
+2018-10-23T00:46:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        3.33    18.67   54.33  191.33   346.67 90964.50   743.37   140.03  442.75   73.25  547.68   4.14  25.43
+
+2018-10-23T00:47:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00  505.67  273.33  3600.00 99216.50   263.97    58.09  118.92    7.87  324.37   1.29  25.13
+
+2018-10-23T00:47:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67  902.67  260.00  7738.67 107232.17   197.77    25.60   22.27    4.44   84.17   0.86  24.93
+
+2018-10-23T00:47:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    37.00 3042.33  233.33 29586.67 98159.17    78.00    16.30    4.66    1.36   47.62   0.31  25.57
+
+2018-10-23T00:47:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.00  450.67  199.00  3185.33 79355.00   254.10    44.03   69.38    8.78  206.60   1.54  25.00
+
+2018-10-23T00:47:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    25.67 4688.33  160.33 51690.67 65646.00    48.40     7.49    1.54    1.33    7.73   0.21  25.33
+
+2018-10-23T00:47:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67     6.00 2725.33  303.00 29508.00 146190.00   116.04    83.91   22.58    2.33  204.77   0.33  25.17
+
+2018-10-23T00:47:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67     0.00 1572.67  187.00 18014.67 69031.33    98.93    76.86   52.51    4.75  454.17   0.57  25.03
+
+2018-10-23T00:47:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    12.67 2467.00  194.00 22144.00 80358.67    77.04    25.14    7.58    1.61   83.56   0.39  26.10
+
+2018-10-23T00:47:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33 1211.67  187.33  8581.33 74412.17   118.65    23.16   20.09    3.15  129.67   0.71  24.83
+
+2018-10-23T00:47:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     9.00 5256.00  139.33 54918.67 56922.83    41.46     7.82    1.45    1.23    9.75   0.19  25.30
+
+2018-10-23T00:47:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67     2.00  490.67  277.67  5276.00 138712.67   374.81   110.96  130.71   12.56  339.48   1.30  24.93
+
+2018-10-23T00:47:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        1.00     3.00 2192.00  234.67 22757.33 92522.83    95.01    78.38   33.66    3.15  318.69   0.41  24.90
+
+2018-10-23T00:47:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    50.33   60.00  338.00   400.00 133776.00   674.25   161.03  391.24   66.84  448.82   2.59  25.80
+
+2018-10-23T00:47:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00   53.00  331.67   353.33 137144.17   714.89   159.37  409.12   74.54  462.58   2.60  25.00
+
+2018-10-23T00:47:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     9.00   47.33  285.00   298.67 117406.33   708.36   143.42  456.99   85.01  518.76   3.04  25.23
+
+2018-10-23T00:47:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00  311.67  305.67  2077.33 122817.83   404.63    33.20   63.47   12.49  115.45   1.61  24.90
+
+2018-10-23T00:47:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    20.00  475.33  210.67  3149.33 86718.83   262.01    29.17   42.67    8.27  120.29   1.48  25.37
+
+2018-10-23T00:47:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33  870.00  230.33  5818.67 97385.50   187.59    24.58   21.86    4.34   88.00   0.92  25.33
+
+2018-10-23T00:47:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.33     1.00 4447.00  215.33 38498.67 95051.33    57.29    26.89    5.88    1.10  104.61   0.21  24.77
+
+2018-10-23T00:47:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67    31.33  332.33  311.00  2845.33 130077.00   413.23   118.21  183.75   19.71  359.04   1.66  26.77
+
+2018-10-23T00:48:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67 1128.33  236.00  7440.00 100068.00   157.60    22.52   16.51    3.28   79.78   0.73  24.93
+
+2018-10-23T00:48:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00 4482.33  139.00 38297.33 55166.33    40.45     6.81    1.48    1.26    8.55   0.22  24.93
+
+2018-10-23T00:48:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    33.33  981.00  240.00  6470.67 99764.33   174.01    25.39   20.79    3.78   90.34   0.82  25.10
+
+2018-10-23T00:48:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    10.33   85.33  212.67   537.33 98332.00   663.55   156.32  439.97   30.08  604.45   3.39  25.23
+
+2018-10-23T00:48:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     6.33   39.00  190.00   240.00 90127.67   789.24   135.70  593.48  102.97  694.17   4.43  25.37
+
+2018-10-23T00:48:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67   86.33  237.33   561.33 89541.33   556.76    84.70  328.45   44.23  431.84   3.09  25.00
+
+2018-10-23T00:48:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.33 1818.00  213.33 13530.67 85836.33    97.83    26.96   14.93    2.16  123.74   0.49  25.10
+
+2018-10-23T00:48:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     9.00 3721.00  176.67 30985.33 70026.83    51.83    10.83    2.78    1.27   34.59   0.27  26.00
+
+2018-10-23T00:48:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     7.67  826.67  220.33  5286.67 94905.67   191.39    45.79   33.94    4.03  146.14   0.95  24.97
+
+2018-10-23T00:48:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    94.00   57.33  134.00   372.00 62403.17   656.19   143.34  520.45   53.33  720.31   5.46  26.10
+
+2018-10-23T00:48:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     8.33   40.33  202.33   260.00 95607.00   790.11   126.43  701.82   97.59  822.27   4.18  25.37
+
+2018-10-23T00:48:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67   73.00  243.33   456.00 98704.67   626.94   145.62  437.96   53.48  553.31   3.16  25.00
+
+2018-10-23T00:48:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33   59.67  365.00   388.00 142726.50   674.01   128.12  333.13   67.80  376.50   2.38  25.27
+
+2018-10-23T00:48:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    12.67   52.67  342.33   330.67 138063.83   700.73   143.76  344.44   71.90  386.37   2.55  25.20
+
+2018-10-23T00:48:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67   22.00  138.00   138.67 58708.83   735.59   153.99  818.83  165.52  922.98   6.25  25.00
+
+2018-10-23T00:48:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.67  271.33  226.33  1677.33 89518.50   366.49    81.56  233.34   16.52  493.28   2.03  25.30
+
+2018-10-23T00:48:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67 1611.33  267.33 10114.67 113168.50   131.25    16.74    8.22    2.12   45.01   0.52  24.43
+
+2018-10-23T00:48:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    26.33  815.67  220.00  5094.67 90920.67   185.42    23.96   22.90    4.57   90.85   0.98  25.27
+
+2018-10-23T00:48:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00  813.00  249.67  5034.67 97274.00   192.55    27.97   27.78    4.71  102.91   0.97  25.90
+
+2018-10-23T00:48:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   102.67  473.67  297.33  2949.33 135397.00   358.88   123.26  129.87    5.78  327.55   1.38  26.67
+
+2018-10-23T00:49:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     6.33   43.67  223.33   273.33 106852.33   802.44   147.59  533.33   90.14  619.98   3.80  25.37
+
+2018-10-23T00:49:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00 1097.33  282.33  6712.00 98386.17   152.35    20.81   35.61    3.27  161.29   0.71  24.57
+
+2018-10-23T00:49:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00 1011.00  229.00  6180.00 95452.67   163.92    24.23   19.54    3.58   90.02   0.80  24.77
+
+2018-10-23T00:49:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.67  825.00  226.67  4973.33 92221.00   184.84    22.23   21.13    4.42   81.96   0.94  24.73
+
+2018-10-23T00:49:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     9.33  990.00  247.67  6016.00 116674.33   198.26   106.41   51.01    2.45  245.11   0.79  24.47
+
+2018-10-23T00:49:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.00   96.00  215.00   602.67 103560.00   669.86   123.60  508.23   42.01  716.40   3.22  25.00
+
+2018-10-23T00:49:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.33  675.33  153.00  4920.00 48072.83   127.95   107.08  139.93    5.34  734.03   1.21  25.03
+
+2018-10-23T00:49:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67 4899.67  198.67 35882.67 88632.00    48.85    19.93    2.88    0.79   54.38   0.19  24.07
+
+2018-10-23T00:49:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    24.33  162.00  329.33  1077.33 140460.33   576.14   120.41  255.70   29.83  366.81   2.15  26.43
+
+2018-10-23T00:49:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   102.67  701.33  246.00  4222.67 97971.17   215.75    22.36   23.63    5.19   76.19   1.09  25.87
+
+2018-10-23T00:49:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67  835.67  226.33  4925.33 92961.33   184.34    19.36   18.22    4.18   70.09   0.91  24.27
+
+2018-10-23T00:49:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67 1951.67  213.67 12736.00 97901.17   102.19    75.12   28.81    1.38  279.39   0.44  23.87
+
+2018-10-23T00:49:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.00  101.00  163.33   646.67 77945.83   594.65   109.65  361.87   45.98  557.21   3.78  25.00
+
+2018-10-23T00:49:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.00  127.67  192.00   845.33 74225.33   469.68   145.81  509.00   51.71  813.06   3.14  25.13
+
+2018-10-23T00:49:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    30.00   79.00  346.33   524.00 151802.67   716.27   159.20  350.80   71.41  414.53   2.51  26.70
+
+2018-10-23T00:49:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.67     0.33   69.67  220.33   489.33 111492.17   772.29   140.90  503.11  101.45  630.11   3.45  25.00
+
+2018-10-23T00:49:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    86.67   90.00  242.00   714.67 103679.33   628.88   164.58  502.75   87.41  657.21   3.16  26.23
+
+2018-10-23T00:49:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33   85.00  221.00   628.00 105538.33   693.90   155.84  467.48   95.67  610.48   3.27  25.00
+
+2018-10-23T00:49:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.33   62.33  193.00   493.33 83874.33   660.84   174.02  597.65  110.74  754.91   3.97  25.33
+
+2018-10-23T00:49:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.33   56.33  289.00   418.67 69113.50   402.70   179.46  616.64   70.70  723.06   2.92  25.20
+
+2018-10-23T00:50:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.00 2561.33  230.00 17554.67 92187.17    78.63    32.73   14.25    2.32  147.07   0.35  24.53
+
+2018-10-23T00:50:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     7.00   46.33  264.00   278.67 107219.17   692.79   152.28  430.47   80.26  491.93   3.25  25.20
+
+2018-10-23T00:50:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33   39.00  228.67   225.33 100282.50   750.99   246.82  920.17  108.14 1058.67   3.76  25.17
+
+2018-10-23T00:50:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.33   35.67  211.33   218.67 86133.17   699.21   159.59  709.02  112.15  809.75   4.09  25.27
+
+2018-10-23T00:50:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   127.67   46.67  330.33   280.00 123579.67   657.08   138.20  386.57   84.86  429.19   2.96  27.87
+
+2018-10-23T00:50:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.33  322.33  288.00  1841.33 118588.00   394.63    35.24   61.52   11.91  117.04   1.63  24.93
+
+2018-10-23T00:50:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00  275.33  202.67  1608.00 90843.17   386.82    67.64  101.21   12.47  221.76   2.08  24.87
+
+2018-10-23T00:50:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.33   71.67  136.00   413.33 66215.50   641.69   117.98  549.28   54.25  810.15   4.82  25.00
+
+2018-10-23T00:50:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     7.00  489.00  319.33  2806.67 122726.50   310.60    59.84  102.53    7.74  247.67   1.23  24.77
+
+2018-10-23T00:50:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33  493.33  217.00  2854.67 93446.67   271.14    25.35   35.32    7.60   98.35   1.39  24.70
+
+2018-10-23T00:50:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67  450.00  219.67  2600.00 88366.00   271.68    29.10   42.22    8.19  111.93   1.49  25.00
+
+2018-10-23T00:50:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.00  596.00  199.33  3400.00 84202.83   220.29    27.30   33.13    5.95  114.38   1.23  24.40
+
+2018-10-23T00:50:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00  293.33  228.67  1646.67 95735.83   373.11    63.69   87.77   10.39  187.04   1.92  25.00
+
+2018-10-23T00:50:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     5.67   51.33  284.33   308.00 137473.17   820.94   120.93  343.39   70.05  392.74   3.01  25.23
+
+2018-10-23T00:50:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   113.33   63.00  212.00   373.33 68748.33   502.70   137.95  585.43   64.74  740.16   3.98  27.37
+
+2018-10-23T00:50:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    14.00  395.00  197.33  2216.00 79275.17   275.15    28.11   46.04    9.17  119.84   1.73  25.63
+
+2018-10-23T00:50:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67 1724.67  171.67 11370.67 73007.00    88.99    17.28   10.55    2.41   92.32   0.51  24.23
+
+2018-10-23T00:50:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.67 1330.67  219.33  8848.00 102445.17   143.60    68.37   38.37    2.67  254.95   0.62  24.17
+
+2018-10-23T00:50:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.33  218.67  247.00  1356.00 102833.33   447.48   114.29  266.23   26.15  478.76   2.15  25.00
+
+2018-10-23T00:50:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67  433.67  219.00  2428.00 90362.83   284.34    27.54   42.18    8.20  109.45   1.50  24.53
+
+2018-10-23T00:51:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67  107.33  337.33   588.00 150517.67   679.64   135.49  269.20   34.83  343.77   2.27  25.23
+
+2018-10-23T00:51:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00   43.00  226.33   237.33 92241.00   686.72   140.81  466.96   95.44  537.54   3.71  25.00
+
+2018-10-23T00:51:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.00   58.00  268.00   321.33 101817.17   626.62   135.29  456.75   67.03  541.09   3.10  25.23
+
+2018-10-23T00:51:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00   40.33  249.67   214.67 101177.83   699.26   128.44  495.66   99.21  559.71   3.45  25.00
+
+2018-10-23T00:51:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     7.33  549.33  192.67  3004.00 78041.33   218.45    31.67   41.41    6.20  141.83   1.35  25.10
+
+2018-10-23T00:51:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    79.33  474.00  202.67  2628.00 82093.17   250.41    95.17   75.63    6.08  238.29   1.52  25.70
+
+2018-10-23T00:51:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    13.67   36.67  196.33   216.00 93143.67   801.37   157.05  750.13  100.15  871.52   4.41  25.70
+
+2018-10-23T00:51:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     4.67   27.00  153.00   157.33 71300.00   793.97   124.24  766.56  153.78  874.70   5.59  25.17
+
+2018-10-23T00:51:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00    48.67  148.33  266.33   809.33 93922.67   456.91    91.50  256.23   24.00  385.57   2.59  26.80
+
+2018-10-23T00:51:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     8.00  325.33  234.67  1810.67 99604.00   362.20    27.03   48.70   11.78   99.87   1.80  25.13
+
+2018-10-23T00:51:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00  638.33  221.67  3429.33 89044.67   215.06    29.59   34.73    5.36  119.32   1.11  23.93
+
+2018-10-23T00:51:35-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.00  551.00  189.67  3070.67 79936.17   224.14    27.42   32.95    6.36  110.19   1.31  24.23
+
+2018-10-23T00:51:38-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.00   87.00  212.67   457.33 98546.00   660.76   136.35  393.05   25.04  543.59   3.33  24.97
+
+2018-10-23T00:51:41-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     7.67   45.67  186.33   252.00 92413.67   798.84   128.83  543.29   85.05  655.60   4.35  25.23
+
+2018-10-23T00:51:44-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33  108.67  236.33   589.33 84453.67   493.00    61.29  243.65   36.07  339.09   2.92  25.17
+
+2018-10-23T00:51:47-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.67  169.00  160.00   894.67 67450.50   415.47    42.14  130.04   22.35  243.78   3.04  24.97
+
+2018-10-23T00:51:50-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   114.00  468.67  195.33  2581.33 73768.17   229.97    34.02   46.71    7.49  140.81   1.57  26.13
+
+2018-10-23T00:51:53-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33  770.67  245.67  4122.67 100834.67   206.54    24.63   27.49    4.14  100.75   0.91  23.13
+
+2018-10-23T00:51:56-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     8.67   44.33  214.33   238.67 105666.67   818.86   147.96  514.04   60.99  607.74   4.01  25.90
+
+2018-10-23T00:51:59-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.33   55.33  185.67   302.67 88568.00   737.52   135.77  491.03   71.54  616.05   4.15  25.00
+
+2018-10-23T00:52:02-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.67  214.67  233.00  1124.00 79462.17   360.03    69.87  230.19   16.21  427.34   2.21  24.73
+
+2018-10-23T00:52:05-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33  646.00  226.33  3485.33 93482.83   222.32    22.79   26.14    5.01   86.45   1.07  23.43
+
+2018-10-23T00:52:08-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     0.33  491.00  216.67  2614.67 90552.67   263.31    34.36   47.98    6.92  141.02   1.33  23.57
+
+2018-10-23T00:52:11-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     6.00  109.67  190.00   572.00 87731.67   589.35   122.29  232.97   22.07  354.71   3.35  25.13
+
+2018-10-23T00:52:14-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     1.00   36.33  192.00   190.67 97678.83   857.25   196.92  935.75  100.92 1093.73   4.38  25.00
+
+2018-10-23T00:52:17-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33   22.67  161.67   116.00 61091.17   664.09   176.77 1006.88  168.47 1124.43   5.47  25.20
+
+2018-10-23T00:52:20-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00   110.67   31.00  167.67   154.67 69781.83   704.06   156.57  813.70  134.19  939.33   5.42  26.93
+
+2018-10-23T00:52:23-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.33    14.67   65.00  365.00   374.67 138691.17   646.82   190.06  451.24   60.33  520.86   2.37  25.50
+
+2018-10-23T00:52:26-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     6.00  143.00  318.67   897.33 126621.33   552.43   138.94  337.86   78.79  454.12   2.19  25.27
+
+2018-10-23T00:52:29-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     2.33  547.00  269.67  3492.00 109510.67   276.74    78.25   97.29   16.98  260.19   1.22  24.97
+
+2018-10-23T00:52:32-0700
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+ /dev/sdc1        0.00     3.33 2102.00  207.67 13316.00 91294.33    90.58    22.72    7.36    2.81   53.42   0.39  22.40
+
