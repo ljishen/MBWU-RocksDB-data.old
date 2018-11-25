@@ -1,7 +1,7 @@
 [wipc]
 ioengine=libaio
 group_reporting=1
-filename=/dev/sdb
+filename=/dev/sda
 direct=1
 rw=write
 bssplit=128KB
