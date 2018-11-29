@@ -10,12 +10,15 @@ import sys
 
 CPU_LOG_INTERVAL_IN_SECS = 3
 
+_KEY_IOWAITS = 'iowaits'
+_KEY_IDLES = 'idles'
+
 
 def main():
     iowait_idx = -1
     idle_idx = -1
 
-    cpu_utils = []
+    cpu_utils = {_KEY_IOWAITS: [], _KEY_IDLES: []}
 
     with open(CPUSTAT_LOG_FILE, 'rt') as filep:
         for line in filep:
@@ -26,13 +29,19 @@ def main():
                     idle_idx = headers.index('%idle')
             elif 'Average' not in line and 'all' in line:
                 values = line.split()
-                cpu_utils.append(
-                    float(values[iowait_idx]) + float(values[idle_idx]))
+                cpu_utils[_KEY_IOWAITS].append(float(values[iowait_idx]))
+                cpu_utils[_KEY_IDLES].append(float(values[idle_idx]))
 
     with open('cpu_utils.csv', 'wt') as filep:
+        filep.write('seconds,non-idle (%),utilization (%),\n')
         seconds = 0
-        for util_val in cpu_utils:
-            filep.write(str(seconds) + ',' + str(100 - util_val) + ',\n')
+        for idx in range(len(cpu_utils[_KEY_IOWAITS])):
+            line = str(seconds) + ','
+            line += str(100 - cpu_utils[_KEY_IDLES][idx]) + ','
+            line += str(100 - cpu_utils[_KEY_IDLES][idx] -
+                        cpu_utils[_KEY_IOWAITS][idx]) + ','
+            filep.write(line + '\n')
+
             seconds += CPU_LOG_INTERVAL_IN_SECS
 
 

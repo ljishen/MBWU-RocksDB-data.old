@@ -22,6 +22,7 @@ def main():
                     SYSTEM_MEM_KB - int(values[3]))
 
     with open('mem_utils.csv', 'wt') as filep:
+        filep.write('seconds,utilization (KB),\n')
         seconds = 0
         for util_val in mem_utils:
             filep.write(str(seconds) + ',' + str(util_val) + ',\n')
