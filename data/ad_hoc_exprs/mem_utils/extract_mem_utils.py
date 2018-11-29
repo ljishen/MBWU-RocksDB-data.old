@@ -19,10 +19,7 @@ def main():
             if ':' in line:
                 values = line.split()
                 mem_utils.append(
-                    SYSTEM_MEM_KB -
-                    int(values[3]) -
-                    int(values[4]) -
-                    int(values[5]))
+                    SYSTEM_MEM_KB - int(values[3]))
 
     with open('mem_utils.csv', 'wt') as filep:
         seconds = 0
