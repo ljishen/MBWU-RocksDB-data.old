@@ -6,7 +6,8 @@ Usage: $0 MPSTAT_LOG_FILE
 
 """
 
-import os
+from typing import List
+
 import sys
 
 
@@ -54,7 +55,10 @@ def main():
                 continue
 
             comps = line.split()
-            if comps[cpu_idx] in CPU_NUMS:
+            if comps[cpu_idx] in ['all', 'CPU']:
+                continue
+
+            if (CPU_NUMS and comps[cpu_idx] in CPU_NUMS) or not CPU_NUMS:
                 core_iowaits.append(float(comps[iowait_idx]))
                 core_idles.append(float(comps[idle_idx]))
 
@@ -90,15 +94,8 @@ CPUS:
         exit(1)
 
     CPUSTAT_LOG_FILE = sys.argv[1]
+    CPU_NUMS = []   # type: List[str]
     if NUM_ARGS == 3:
         CPU_NUMS = sys.argv[2].split(',')
-    else:
-        CPU_COUNTS = os.cpu_count()
-        if not CPU_COUNTS:
-            raise RuntimeError('Unable to get the number of CPU count')
-
-        CPU_NUMS = []
-        for num in range(CPU_COUNTS):
-            CPU_NUMS.append(str(num))
 
     main()
