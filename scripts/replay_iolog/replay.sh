@@ -28,7 +28,7 @@ fi
 # by default it uses the version of fio that the system has installed.
 fio_bin="${FIO_BIN:-fio}"
 
-if ! command -v "$fio_bin"; then
+if ! command -v "$fio_bin" > /dev/null; then
     echo "fio not found. Use env the FIO_BIN to specify the path of it."
     exit 3
 fi
@@ -48,7 +48,7 @@ if [ ! -b "$redirected_device" ]; then
     exit 3
 fi
 
-echo "Unmount device $redirected_device if necessary"
+echo "unmount device $redirected_device if necessary"
 if findmnt --source "$redirected_device" > /dev/null 2>&1; then
     umount "$redirected_device"
 fi
@@ -61,7 +61,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 output_dir="${OUTPUT_DIR:-"$SCRIPT_DIR"/results/output}"
 mkdir --parents "$output_dir"
-echo "Output directory: $output_dir"
+echo "output directory: $output_dir"
 
 # get the number of rounds that have record in the folder
 num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*_issue.bin' | wc -l)"
@@ -69,12 +69,13 @@ num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*_issue.bin' | wc
 # get the first round number in the steady state window
 MEASUREMENT_WINDOW_SIZE=3
 start_round="$(( num_rounds - MEASUREMENT_WINDOW_SIZE + 1 ))"
+echo "steady state window rounds: $start_round - $num_rounds"
 
 function kill_iostat() {
-    echo "$cur_round: clean remnant iostat process"
-    iostat_comms="$(pgrep -u "$(whoami)" --list-full iostat | sed 's/^/    /')"
+    echo "[$cur_round] clean remnant iostat process"
+    iostat_comms="$( (pgrep -u "$(whoami)" --list-full iostat || true) | sed 's/^/    /' )"
     if pkill -u "$(whoami)" -SIGTERM iostat; then
-        printf "Commands are teminated: \\n%s\\n" "$iostat_comms"
+        printf "commands are teminated: \\n%s\\n" "$iostat_comms"
     fi
 }
 
@@ -94,7 +95,7 @@ function do_replay() {
 iostat_interval_secs="${IOSTAT_INTERVAL_SECS:-3}"
 
 for r in $(seq "$start_round" "$num_rounds"); do
-    cur_round="Replay round: $r"
+    cur_round="replay round: $r"
 
     kill_iostat
 
