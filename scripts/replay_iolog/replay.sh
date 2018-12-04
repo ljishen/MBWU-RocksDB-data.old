@@ -48,6 +48,11 @@ if [ ! -b "$redirected_device" ]; then
     exit 3
 fi
 
+echo "Unmount device $redirected_device if necessary"
+if findmnt --source "$redirected_device" > /dev/null 2>&1; then
+    umount "$redirected_device"
+fi
+
 purge_script=/tmp/blkerasediscard.sh
 curl -o "$purge_script" -fsSL https://raw.githubusercontent.com/ljishen/SSSPT/master/playbooks/roles/common/files/blkerasediscard.sh
 chmod +x "$purge_script"
