@@ -1,0 +1,8 @@
+[job]
+ioengine=libaio
+group_reporting=1
+replay_redirect={{ redirected_device }}
+direct=1
+numjobs=1
+read_iolog={{ iolog }}
+replay_no_stall=1
