@@ -13,7 +13,7 @@ FOLDER:
     that are used to replay.
 
 DEVICE:
-    This is the device that all IOPS in the iolog will be redirected to,
+    This is the device that all IOS in the iolog will be redirected to,
     e.g. /dev/sdb
     See replay_redirect [https://fio.readthedocs.io/en/latest/fio_man.html#cmdoption-arg-replay-redirect]
 ENDOFMESSAGE
@@ -75,7 +75,7 @@ function kill_iostat() {
     echo "[$cur_round] clean remnant iostat process"
     iostat_comms="$( (pgrep -u "$(whoami)" --list-full iostat || true) | sed 's/^/    /' )"
     if pkill -u "$(whoami)" -SIGTERM iostat; then
-        printf "commands are teminated: \\n%s\\n" "$iostat_comms"
+        printf "the following commands are teminated: \\n%s\\n" "$iostat_comms"
     fi
 }
 
@@ -106,7 +106,7 @@ for r in $(seq "$start_round" "$num_rounds"); do
     "$fio_bin" "$workload_folder"/wipc.fio --output-format=json+ --output "$output_dir"/wipc_round"$r".json
 
     echo "[$cur_round] start iostat log"
-    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > iostat_round"$r".log 2>&1 &
+    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$r".log 2>&1 &
 
     do_replay load
     do_replay transactions
@@ -114,4 +114,4 @@ done
 
 kill_iostat
 
-echo "done!"
+echo "execution successfully completed!"
