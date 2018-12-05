@@ -59,12 +59,12 @@ chmod +x "$purge_script"
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-output_dir="${OUTPUT_DIR:-"$SCRIPT_DIR"/results/output}"
+output_dir="${OUTPUT_DIR:-"$SCRIPT_DIR"/output}"
 mkdir --parents "$output_dir"
 echo "output directory: $output_dir"
 
 # get the number of rounds that have record in the folder
-num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*_issue.bin' | wc -l)"
+num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*.bin' | wc -l)"
 
 # get the first round number in the steady state window
 MEASUREMENT_WINDOW_SIZE=3
@@ -83,7 +83,7 @@ function do_replay() {
     phase="$1"
 
     job_file="$output_dir"/"$phase"_round"$r".fio
-    iolog="$workload_folder"/blkstat_"$phase"_round"$r"_issue.bin
+    iolog="$workload_folder"/blkstat_"$phase"_round"$r".bin
 
     echo "[$cur_round] generate fio job file for $phase phase"
     sed -e "s#{{ redirected_device }}#$redirected_device#" -e "s#{{ iolog }}#$iolog#" "$SCRIPT_DIR"/job.fio > "$job_file"
