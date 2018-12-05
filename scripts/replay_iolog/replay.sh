@@ -32,6 +32,7 @@ if ! command -v "$fio_bin" > /dev/null; then
     echo "fio not found. Use env the FIO_BIN to specify the path of it."
     exit 3
 fi
+echo "[fio verion] $("$fio_bin" -v)"
 
 workload_folder="$1"
 
@@ -61,7 +62,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 output_dir="${OUTPUT_DIR:-"$SCRIPT_DIR"/output}"
 mkdir --parents "$output_dir"
-echo "output directory: $output_dir"
+echo "[output directory] $output_dir"
 
 # get the number of rounds that have record in the folder
 num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*.bin' | wc -l)"
@@ -69,7 +70,7 @@ num_rounds="$(find "$workload_folder" -name 'blkstat_load_round*.bin' | wc -l)"
 # get the first round number in the steady state window
 MEASUREMENT_WINDOW_SIZE=3
 start_round="$(( num_rounds - MEASUREMENT_WINDOW_SIZE + 1 ))"
-echo "steady state window rounds: $start_round - $num_rounds"
+echo "[steady state window rounds] $start_round - $num_rounds"
 
 function kill_iostat() {
     echo "[$cur_round] clean remnant iostat process"
