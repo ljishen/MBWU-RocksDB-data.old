@@ -80,6 +80,11 @@ function kill_iostat() {
     fi
 }
 
+function free_cache() {
+    echo "free slab objects and pagecache"
+    sync; echo 3 > /proc/sys/vm/drop_caches
+}
+
 function do_replay() {
     phase="$1"
 
@@ -88,6 +93,8 @@ function do_replay() {
 
     echo "[$cur_round] generate fio job file for $phase phase"
     sed -e "s#{{ redirected_device }}#$redirected_device#" -e "s#{{ iolog }}#$iolog#" "$SCRIPT_DIR"/job.fio > "$job_file"
+
+    free_cache
 
     echo "[$cur_round] replay $phase I/O patterns ..."
     "$fio_bin" "$job_file" --output-format=json+ --output "$output_dir"/"$phase"_round"$r".json
