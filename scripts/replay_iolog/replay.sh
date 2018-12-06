@@ -81,13 +81,15 @@ function free_cache() {
     echo 3 > /proc/sys/vm/drop_caches
 }
 
+mountpoint=/mnt/"$(basename "$redirected_device")"
+
 function do_replay() {
     phase="$1"
 
     job_file="$output_dir"/"$phase"_round"$r".fio
     iolog="$workload_folder"/blkstat_"$phase"_round"$r".bin
 
-    echo "[$cur_round] generate fio job file for $phase phase"
+    echo "[$cur_round] generate fio replay job file for $phase phase"
     sed -e "s#{{ redirected_device }}#$redirected_device#" \
         -e "s#{{ iolog }}#$iolog#" \
         -e "s#{{ mountpoint }}#$mountpoint#" \
@@ -100,6 +102,12 @@ function do_replay() {
 }
 
 iostat_interval_secs="${IOSTAT_INTERVAL_SECS:-3}"
+
+WIPC_JOB_FILENAME="wipc.fio"
+WIPC_JOB_FILE="$output_dir"/"$WIPC_JOB_FILENAME"
+
+echo "generate workload independent pre-conditioning job file $WIPC_JOB_FILE"
+sed -E -e "s#(filename=).*\$#\\1$redirected_device#" "$workload_folder"/"$WIPC_JOB_FILENAME" > "$WIPC_JOB_FILE"
 
 for r in $(seq "$start_round" "$num_rounds"); do
     cur_round="replay round: $r"
@@ -118,12 +126,11 @@ for r in $(seq "$start_round" "$num_rounds"); do
     nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$r".log 2>&1 &
 
     echo "[$cur_round] run workload independent pre-conditioning on $redirected_device ..."
-    "$fio_bin" "$workload_folder"/wipc.fio --output-format=json+ --output "$output_dir"/wipc_round"$r".json
+    "$fio_bin" "$WIPC_JOB_FILE" --output-format=json+ --output "$output_dir"/wipc_round"$r".json
 
     echo "create xfs filesystem for device $redirected_device"
     mkfs.xfs -Kf "$redirected_device"
 
-    mountpoint=/mnt/"$(basename "$redirected_device")"
     echo "mount device $redirected_device to $mountpoint"
     mkdir --parents "$mountpoint"
     mount -o nodiscard "$redirected_device" "$mountpoint"
