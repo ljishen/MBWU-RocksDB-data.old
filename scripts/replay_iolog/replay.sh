@@ -82,7 +82,8 @@ function kill_iostat() {
 
 function free_cache() {
     echo "free slab objects and pagecache"
-    sync; echo 3 > /proc/sys/vm/drop_caches
+    sync
+    echo 3 > /proc/sys/vm/drop_caches
 }
 
 function do_replay() {
@@ -122,4 +123,4 @@ done
 
 kill_iostat
 
-echo "execution successfully completed!"
+printf "\\nexecution successfully completed!"
