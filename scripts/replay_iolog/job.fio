@@ -1,7 +1,7 @@
 [job]
 ioengine=libaio
 group_reporting=1
-filename={{ redirected_device }}
+filename={{ mountpoint }}
 replay_redirect={{ redirected_device }}
 direct=0
 numjobs=1

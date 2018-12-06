@@ -49,11 +49,6 @@ if [ ! -b "$redirected_device" ]; then
     exit 3
 fi
 
-echo "unmount device $redirected_device if necessary"
-if findmnt --source "$redirected_device" > /dev/null 2>&1; then
-    umount "$redirected_device"
-fi
-
 purge_script=/tmp/blkerasediscard.sh
 curl -o "$purge_script" -fsSL https://raw.githubusercontent.com/ljishen/SSSPT/master/playbooks/roles/common/files/blkerasediscard.sh
 chmod +x "$purge_script"
@@ -93,7 +88,10 @@ function do_replay() {
     iolog="$workload_folder"/blkstat_"$phase"_round"$r".bin
 
     echo "[$cur_round] generate fio job file for $phase phase"
-    sed -e "s#{{ redirected_device }}#$redirected_device#" -e "s#{{ iolog }}#$iolog#" "$SCRIPT_DIR"/job.fio > "$job_file"
+    sed -e "s#{{ redirected_device }}#$redirected_device#" \
+        -e "s#{{ iolog }}#$iolog#" \
+        -e "s#{{ mountpoint }}#$mountpoint#" \
+        "$SCRIPT_DIR"/job.fio > "$job_file"
 
     free_cache
 
@@ -108,14 +106,27 @@ for r in $(seq "$start_round" "$num_rounds"); do
 
     kill_iostat
 
+    echo "unmount device $redirected_device if necessary"
+    if findmnt --source "$redirected_device" > /dev/null 2>&1; then
+        umount "$redirected_device"
+    fi
+
     echo "[$cur_round] purge device $redirected_device ..."
     "$purge_script" "$redirected_device"
+
+    echo "[$cur_round] start iostat log"
+    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$r".log 2>&1 &
 
     echo "[$cur_round] run workload independent pre-conditioning on $redirected_device ..."
     "$fio_bin" "$workload_folder"/wipc.fio --output-format=json+ --output "$output_dir"/wipc_round"$r".json
 
-    echo "[$cur_round] start iostat log"
-    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$r".log 2>&1 &
+    echo "create xfs filesystem for device $redirected_device"
+    mkfs.xfs -Kf "$redirected_device"
+
+    mountpoint=/mnt/"$(basename "$redirected_device")"
+    echo "mount device $redirected_device to $mountpoint"
+    mkdir --parents "$mountpoint"
+    mount -o nodiscard "$redirected_device" "$mountpoint"
 
     do_replay load
     do_replay transactions
