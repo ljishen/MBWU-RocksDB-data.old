@@ -85,6 +85,7 @@ mountpoint=/mnt/"$(basename "$redirected_device")"
 
 function do_replay() {
     phase="$1"
+    no_stall="$2"
 
     job_file="$output_dir"/"$phase"_round"$r".fio
     iolog="$workload_folder"/blkstat_"$phase"_round"$r".bin
@@ -93,6 +94,7 @@ function do_replay() {
     sed -e "s#{{ redirected_device }}#$redirected_device#" \
         -e "s#{{ iolog }}#$iolog#" \
         -e "s#{{ mountpoint }}#$mountpoint#" \
+        -e "s#{{ no_stall }}#$no_stall#" \
         "$SCRIPT_DIR"/job.fio > "$job_file"
 
     free_cache
@@ -135,8 +137,8 @@ for r in $(seq "$start_round" "$num_rounds"); do
     mkdir --parents "$mountpoint"
     mount -o nodiscard "$redirected_device" "$mountpoint"
 
-    do_replay load
-    do_replay transactions
+    do_replay load 0
+    do_replay transactions 1
 done
 
 kill_iostat

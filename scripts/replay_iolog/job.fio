@@ -6,4 +6,4 @@ replay_redirect={{ redirected_device }}
 direct=0
 numjobs=1
 read_iolog={{ iolog }}
-replay_no_stall=1
+replay_no_stall={{ no_stall }}
