@@ -1,0 +1,77 @@
+# Copyright (c) 2010 Yahoo! Inc. All rights reserved.                                                                                                                             
+#                                                                                                                                                                                 
+# Licensed under the Apache License, Version 2.0 (the "License"); you                                                                                                             
+# may not use this file except in compliance with the License. You                                                                                                                
+# may obtain a copy of the License at                                                                                                                                             
+#                                                                                                                                                                                 
+# http://www.apache.org/licenses/LICENSE-2.0                                                                                                                                      
+#                                                                                                                                                                                 
+# Unless required by applicable law or agreed to in writing, software                                                                                                             
+# distributed under the License is distributed on an "AS IS" BASIS,                                                                                                               
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or                                                                                                                 
+# implied. See the License for the specific language governing                                                                                                                    
+# permissions and limitations under the License. See accompanying                                                                                                                 
+# LICENSE file.                                                                                                                                                                   
+
+
+# Yahoo! Cloud System Benchmark
+# Workload A: Update heavy workload
+#   Application example: Session store recording recent actions
+#                        
+#   Read/update ratio: 50/50
+#   Default data size: 1 KB records (10 fields, 100 bytes each, plus key)
+#   Request distribution: zipfian
+
+recordcount=1000
+operationcount=1000
+workload=com.yahoo.ycsb.workloads.CoreWorkload
+
+readallfields=true
+
+readproportion=0.5
+updateproportion=0.5
+scanproportion=0
+insertproportion=0
+
+requestdistribution=zipfian
+
+# You can overwite any parameters from workloada here
+
+threadcount=18
+
+# The database size is approximately 40 GB
+recordcount=10444959
+
+# The number of operations is half of the recordcount
+operationcount=5222479
+
+# BEGIN ANSIBLE MANAGED BLOCK
+########## Common Workload Parameters ##########
+
+fieldcount=1
+
+# According to the serialization method for combining all the fields in the RocksDB binding,
+# RocksDB value = (bytes of the length of the field name (4 bytes) +
+#                  bytes of the field name ("field" + index) +
+#                  bytes of the length of the field value (4 bytes) +
+#                  bytes of the field value (this is the fieldlength))
+#                 * fieldcount
+# https://github.com/ljishen/YCSB/blob/master/rocksdb/src/main/java/com/yahoo/ycsb/db/rocksdb/RocksDBClient.java#L326
+fieldlength=4082
+
+# For example for row 5, with zeropadding=1 you get 'user5' key and with
+# zeropading=8 you get 'user00000005' key.
+#
+# In Java each ASCII character is encoded to 1 byte using UTF-8 charset.
+#
+# See
+# https://github.com/ljishen/YCSB/blob/master/rocksdb/src/main/java/com/yahoo/ycsb/db/rocksdb/RocksDBClient.java
+# https://github.com/ljishen/YCSB/blob/master/core/src/main/java/com/yahoo/ycsb/workloads/CoreWorkload.java
+zeropadding=12
+
+# This has to be ordered to make the key size fixed
+insertorder=ordered
+
+# Whether or not to track the JVM stats per run
+measurement.trackjvm=true
+# END ANSIBLE MANAGED BLOCK
