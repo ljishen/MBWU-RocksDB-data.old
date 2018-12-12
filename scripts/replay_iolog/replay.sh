@@ -50,6 +50,7 @@ if [ ! -b "$redirected_device" ]; then
 fi
 
 purge_script=/tmp/blkerasediscard.sh
+echo "download script to $purge_script"
 curl -o "$purge_script" -fsSL https://raw.githubusercontent.com/ljishen/SSSPT/master/playbooks/roles/common/files/blkerasediscard.sh
 chmod +x "$purge_script"
 
