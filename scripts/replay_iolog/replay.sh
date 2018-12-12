@@ -13,7 +13,7 @@ FOLDER:
     that are used to replay.
 
 DEVICE:
-    This is the device that all IOS in the iolog will be redirected to,
+    This is the device that all IOS in the iologs will be redirected to,
     e.g. /dev/sdb
     See replay_redirect [https://fio.readthedocs.io/en/latest/fio_man.html#cmdoption-arg-replay-redirect]
 ENDOFMESSAGE
@@ -76,32 +76,21 @@ function kill_iostat() {
     fi
 }
 
-function free_cache() {
-    echo "free slab objects and pagecache"
-    sync
-    echo 3 > /proc/sys/vm/drop_caches
-}
-
-mountpoint=/mnt/"$(basename "$redirected_device")"
-
 function do_replay() {
     phase="$1"
     no_stall="$2"
 
-    job_file="$output_dir"/"$phase"_round"$r".fio
-    iolog="$workload_folder"/blkstat_"$phase"_round"$r".bin
+    job_file="$output_dir"/"$phase"_round"$round".fio
+    iolog="$workload_folder"/blkstat_"$phase"_round"$round".bin
 
     echo "[$cur_round] generate fio replay job file for $phase phase"
     sed -e "s#{{ redirected_device }}#$redirected_device#" \
         -e "s#{{ iolog }}#$iolog#" \
-        -e "s#{{ mountpoint }}#$mountpoint#" \
         -e "s#{{ no_stall }}#$no_stall#" \
         "$SCRIPT_DIR"/job.fio > "$job_file"
 
-    free_cache
-
     echo "[$cur_round] replay $phase I/O patterns ..."
-    "$fio_bin" "$job_file" --output-format=json+ --output "$output_dir"/"$phase"_round"$r".json
+    "$fio_bin" "$job_file" --output-format=json+ --output "$output_dir"/"$phase"_round"$round".json
 }
 
 iostat_interval_secs="${IOSTAT_INTERVAL_SECS:-3}"
@@ -109,39 +98,41 @@ iostat_interval_secs="${IOSTAT_INTERVAL_SECS:-3}"
 WIPC_JOB_FILENAME="wipc.fio"
 WIPC_JOB_FILE="$output_dir"/"$WIPC_JOB_FILENAME"
 
+echo "unmount device $redirected_device if necessary"
+if findmnt --source "$redirected_device" > /dev/null 2>&1; then
+    umount "$redirected_device"
+fi
+
+BLOCK_DEVICE_SCHEDULER_FILE=/sys/block/sda/queue/scheduler
+orig_io_scheduler="$(sed -E -e 's/.*\[(.*)\].*$/\1/' "$BLOCK_DEVICE_SCHEDULER_FILE")"
+echo "change the block I/O scheduler from $orig_io_scheduler to noop"
+echo 'noop' > "$BLOCK_DEVICE_SCHEDULER_FILE"
+
 echo "generate workload independent pre-conditioning job file $WIPC_JOB_FILE"
 sed -E -e "s#(filename=).*\$#\\1$redirected_device#" "$workload_folder"/"$WIPC_JOB_FILENAME" > "$WIPC_JOB_FILE"
 
-for r in $(seq "$start_round" "$num_rounds"); do
-    cur_round="replay round: $r"
+
+for round in $(seq "$start_round" "$num_rounds"); do
+    cur_round="replay round: $round"
 
     kill_iostat
-
-    echo "unmount device $redirected_device if necessary"
-    if findmnt --source "$redirected_device" > /dev/null 2>&1; then
-        umount "$redirected_device"
-    fi
 
     echo "[$cur_round] purge device $redirected_device ..."
     "$purge_script" "$redirected_device"
 
     echo "[$cur_round] start iostat log"
-    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$r".log 2>&1 &
+    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$round".log 2>&1 &
 
     echo "[$cur_round] run workload independent pre-conditioning on $redirected_device ..."
-    "$fio_bin" "$WIPC_JOB_FILE" --output-format=json+ --output "$output_dir"/wipc_round"$r".json
-
-    echo "create xfs filesystem for device $redirected_device"
-    mkfs.xfs -Kf "$redirected_device"
-
-    echo "mount device $redirected_device to $mountpoint"
-    mkdir --parents "$mountpoint"
-    mount -o nodiscard "$redirected_device" "$mountpoint"
+    "$fio_bin" "$WIPC_JOB_FILE" --output-format=json+ --output "$output_dir"/wipc_round"$round".json
 
     do_replay load 0
     do_replay transactions 1
 done
 
 kill_iostat
+
+echo "revert the block I/O scheduler to $orig_io_scheduler"
+echo "$orig_io_scheduler" > "$BLOCK_DEVICE_SCHEDULER_FILE"
 
 printf "\\nexecution successfully completed!"
