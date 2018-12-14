@@ -93,24 +93,26 @@ function do_replay() {
     "$fio_bin" "$job_file" --output-format=json+ --output "$output_dir"/"$phase"_round"$round".json
 }
 
-iostat_interval_secs="${IOSTAT_INTERVAL_SECS:-3}"
-
-WIPC_JOB_FILENAME="wipc.fio"
-WIPC_JOB_FILE="$output_dir"/"$WIPC_JOB_FILENAME"
-
 echo "unmount device $redirected_device if necessary"
 if findmnt --source "$redirected_device" > /dev/null 2>&1; then
     umount "$redirected_device"
 fi
 
-BLOCK_DEVICE_SCHEDULER_FILE=/sys/block/sda/queue/scheduler
-orig_io_scheduler="$(sed -E -e 's/.*\[(.*)\].*$/\1/' "$BLOCK_DEVICE_SCHEDULER_FILE")"
-echo "change the block I/O scheduler from $orig_io_scheduler to noop"
-echo 'noop' > "$BLOCK_DEVICE_SCHEDULER_FILE"
+block_dev_scheduler_file=/sys/block/"$redirected_device"/queue/scheduler
+orig_io_scheduler="$(sed -E -e 's/.*\[(.*)\].*$/\1/' "$block_dev_scheduler_file")"
+echo "[block I/O scheduler of $redirected_device] $orig_io_scheduler"
+if [ "$orig_io_scheduler" != "noop" ]; then
+    echo 'noop' > "$block_dev_scheduler_file"
+    echo "[block I/O scheduler of $redirected_device] current: noop"
+fi
+
+WIPC_JOB_FILENAME="wipc.fio"
+WIPC_JOB_FILE="$output_dir"/"$WIPC_JOB_FILENAME"
 
 echo "generate workload independent pre-conditioning job file $WIPC_JOB_FILE"
 sed -E -e "s#(filename=).*\$#\\1$redirected_device#" "$workload_folder"/"$WIPC_JOB_FILENAME" > "$WIPC_JOB_FILE"
 
+iostat_interval_in_secs="${IOSTAT_INTERVAL_SECS:-3}"
 
 for round in $(seq "$start_round" "$num_rounds"); do
     cur_round="replay round: $round"
@@ -121,7 +123,7 @@ for round in $(seq "$start_round" "$num_rounds"); do
     "$purge_script" "$redirected_device"
 
     echo "[$cur_round] start iostat log"
-    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_secs" < /dev/null > "$output_dir"/iostat_round"$round".log 2>&1 &
+    nohup stdbuf -oL -eL iostat -dktxyzH -g "$redirected_device" "$redirected_device" "$iostat_interval_in_secs" < /dev/null > "$output_dir"/iostat_round"$round".log 2>&1 &
 
     echo "[$cur_round] run workload independent pre-conditioning on $redirected_device ..."
     "$fio_bin" "$WIPC_JOB_FILE" --output-format=json+ --output "$output_dir"/wipc_round"$round".json
@@ -132,7 +134,7 @@ done
 
 kill_iostat
 
-echo "revert the block I/O scheduler to $orig_io_scheduler"
-echo "$orig_io_scheduler" > "$BLOCK_DEVICE_SCHEDULER_FILE"
+echo "$orig_io_scheduler" > "$block_dev_scheduler_file"
+echo "[block I/O scheduler of $redirected_device] reverted: $orig_io_scheduler"
 
 printf "\\nexecution successfully completed!"
