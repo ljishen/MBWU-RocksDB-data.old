@@ -98,7 +98,7 @@ if findmnt --source "$redirected_device" > /dev/null 2>&1; then
     umount "$redirected_device"
 fi
 
-block_dev_scheduler_file=/sys/block/"$redirected_device"/queue/scheduler
+block_dev_scheduler_file=/sys/block/"$(basename "$redirected_device")"/queue/scheduler
 orig_io_scheduler="$(sed -E -e 's/.*\[(.*)\].*$/\1/' "$block_dev_scheduler_file")"
 echo "[block I/O scheduler of $redirected_device] $orig_io_scheduler"
 if [ "$orig_io_scheduler" != "noop" ]; then
