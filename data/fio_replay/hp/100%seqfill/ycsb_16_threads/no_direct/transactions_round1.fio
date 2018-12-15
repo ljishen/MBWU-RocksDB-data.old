@@ -1,0 +1,9 @@
+[job]
+ioengine=libaio
+group_reporting=1
+filename=/dev/sda
+replay_redirect=/dev/sda
+direct=0
+numjobs=1
+read_iolog=/home/ljishen/ycsb-rocksdb/analysis/data/ycsb/workloada/hp/throughput/100%seqfill/16_threads/blkstat_transactions_round1.bin
+replay_no_stall=1
