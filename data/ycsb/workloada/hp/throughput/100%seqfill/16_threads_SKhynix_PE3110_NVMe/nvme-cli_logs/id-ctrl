@@ -1,0 +1,50 @@
+NVME Identify Controller:
+vid     : 0x1c5c
+ssvid   : 0x1c5c
+sn      : SN IS 0x0100        
+mn      : SKhynix PE3110                          
+fr      : 40030A00
+rab     : 1
+ieee    : ace42e
+cmic    : 0
+mdts    : 5
+cntlid  : 0
+ver     : 10200
+rtd3r   : 90f560
+rtd3e   : ea60
+oaes    : 0
+oacs    : 0x6
+acl     : 3
+aerl    : 3
+frmw    : 0xf
+lpa     : 0x2
+elpe    : 254
+npss    : 2
+avscc   : 0x1
+apsta   : 0
+wctemp  : 353
+cctemp  : 361
+mtfa    : 0
+hmpre   : 0
+hmmin   : 0
+tnvmcap : 0
+unvmcap : 0
+rpmbs   : 0
+sqes    : 0x66
+cqes    : 0x44
+nn      : 1
+oncs    : 0x14
+fuses   : 0
+fna     : 0x4
+vwc     : 0
+awun    : 255
+awupf   : 0
+nvscc   : 1
+acwu    : 0
+sgls    : 0
+ps    0 : mp:7.39W operational enlat:1 exlat:1 rrt:0 rrl:0
+          rwt:0 rwl:0 idle_power:- active_power:-
+ps    1 : mp:6.82W operational enlat:1 exlat:1 rrt:1 rrl:1
+          rwt:1 rwl:1 idle_power:- active_power:-
+ps    2 : mp:4.95W operational enlat:1 exlat:1 rrt:2 rrl:2
+          rwt:2 rwl:2 idle_power:- active_power:-
