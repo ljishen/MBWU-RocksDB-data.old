@@ -3,7 +3,7 @@
 
 ATA device, with non-removable media
 	Model Number:       TOSHIBA THNSNJ128G8NU                   
-	Serial Number:      75AS102IT9HW
+	Serial Number:      75AS101DT9HW
 	Firmware Revision:  JUGB0101
 	Transport:          Serial, ATA8-AST, SATA 1.0a, SATA II Extensions, SATA Rev 2.5, SATA Rev 2.6, SATA Rev 3.0
 Standards:
@@ -88,7 +88,7 @@ Commands/features:
 	   *	Data Set Management TRIM supported (limit 8 blocks)
 	   *	Deterministic read ZEROs after TRIM
 Security: 
-	Master password revision code = 65534
+	Master password revision code = 5
 		supported
 	not	enabled
 	not	locked
@@ -96,10 +96,10 @@ Security:
 	not	expired: security count
 		supported: enhanced erase
 	2min for SECURITY ERASE UNIT. 2min for ENHANCED SECURITY ERASE UNIT. 
-Logical Unit WWN Device Identifier: 500080d91041f060
+Logical Unit WWN Device Identifier: 500080d91041f097
 	NAA		: 5
 	IEEE OUI	: 00080d
-	Unique ID	: 91041f060
+	Unique ID	: 91041f097
 Device Sleep:
 	DEVSLP Exit Timeout (DETO): 70 ms (drive)
 	Minimum DEVSLP Assertion Time (MDAT): 10 ms (drive)
