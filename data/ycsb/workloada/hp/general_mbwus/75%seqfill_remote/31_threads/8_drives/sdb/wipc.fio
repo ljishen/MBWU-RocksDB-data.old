@@ -1,0 +1,11 @@
+[wipc]
+ioengine=libaio
+group_reporting=1
+filename=/dev/sdb
+direct=1
+rw=write
+bssplit=128KB
+numjobs=2
+iodepth=16
+size=75%
+io_size=128035676160B
