@@ -13,6 +13,7 @@ from IPython.display import display, Math
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator
+from matplotlib.ticker import MaxNLocator
 
 
 _SUFFIX = 'suf'
@@ -230,6 +231,66 @@ def plot_throughputs(folder):
 
     plt.savefig(
         _OUTPUT_FIGURES_BASE + folder.replace('/', '_'), bbox_inches='tight')
+
+
+def compare_general_mbwus_of_threads(folder, nr_drives):
+    subfolders = __list_subfolders(folder, r'^\d+_threads$')
+    subfolders.sort(key=lambda path: re.findall(r'/(\d+)_', path)[-1])
+
+    total_ops_of_threads = {}
+
+    # nr_threads_folder: x_threads
+    for nr_threads_folder in subfolders:
+        nr_drives_folder = os.path.join(
+            nr_threads_folder, str(nr_drives) + '_drives')
+        folder_of_drive = next(os.walk(nr_drives_folder))[1]
+
+        total_ops_of_cur_thread = 0
+
+        # drive: sdx
+        for drive in folder_of_drive:
+            realpath = os.path.join(nr_drives_folder, drive)
+            rounds = __get_rounds_in_ss_window(realpath)
+
+            total_ops_of_cur_drive = 0
+            for r in rounds:
+                device_iops, device_throughput, ycsb_tps = \
+                    __get_stats(realpath, r)
+                total_ops_of_cur_drive = ycsb_tps + total_ops_of_cur_drive
+
+            total_ops_of_cur_thread = \
+                total_ops_of_cur_thread + total_ops_of_cur_drive / len(rounds)
+
+        nr_threads = int(re.findall(r'/(\d+)_', nr_threads_folder)[-1])
+        total_ops_of_threads[nr_threads] = total_ops_of_cur_thread
+
+    fig, ax = plt.subplots()
+    fig.set_dpi(150)
+    ax.yaxis.grid(which='major', alpha=0.5)
+    ax.yaxis.grid(which='minor', alpha=0.2)
+
+    width = 0.2
+    ax.bar(total_ops_of_threads.keys(),
+           total_ops_of_threads.values(),
+           width, color='m')
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+
+    # plot value on top of bar
+    for nr_threads, total_ops in total_ops_of_threads.items():
+        ax.text(nr_threads, total_ops * 1.02,
+                '%.1f' % total_ops,
+                ha='center', size=6, color='m')
+
+    ax.set_ylim(0)
+
+    ax.set_ylabel('ops/sec')
+    ax.set_xlabel('number of threads')
+    ax.set_title('Compare throughputs using {:d} drives'.format(nr_drives),
+                 y=1.05)
+
+    ax.yaxis.set_minor_locator(AutoMinorLocator(5))
+
+    plt.show()
 
 
 __timestamp_pattern_in_transactions_log = \
