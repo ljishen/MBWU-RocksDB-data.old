@@ -30,7 +30,7 @@ def calc_avg_cpu_util(base):
              for dirname in base_dirnames):
         __calc_avg_cpu_util_multi_drives(base, base_dirnames)
     else:
-        print("Error: folder \"{}\" does not either contains transactionsi \
+        print("Error: folder \"{}\" does not either contains transactions \
 files or X_drives directory.\n".format(base))
         exit(1)
 
