@@ -44,7 +44,7 @@ def __calc_avg_cpu_util_multi_drives(base, dirnames):
 
         num_drives_path = os.path.join(base, dirname)
         for dirpath, _, filenames in os.walk(num_drives_path):
-            if dirpath.endswith(dirname):
+            if not re.match(r'.*/(sd[a-z]|nvme[\w\d]+)$', dirpath):
                 continue
 
             # dirpath: one of sdX folders
@@ -128,7 +128,7 @@ def __times_info_of_single_drive(dirpath, filenames):
 
     total_rounds = len(transactions_files)
     if total_rounds < STEADY_STATE_WINDOW_SIZE:
-        print("folder {} does not contain {} transactions files!"
+        print("Error: folder \"{}\" does not contain {} transactions files!"
               .format(dirpath, STEADY_STATE_WINDOW_SIZE))
         exit(1)
 
