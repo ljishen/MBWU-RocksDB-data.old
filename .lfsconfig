@@ -1,2 +1,3 @@
 [lfs]
-	fetchexclude = *.gz,blkstat*,pidstat.log
+    # https://github.com/git-lfs/git-lfs/issues/2717#issuecomment-397372050
+    fetchexclude = *.gz,blkstat*,pidstat.log
