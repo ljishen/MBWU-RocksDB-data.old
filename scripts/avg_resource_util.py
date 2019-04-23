@@ -16,7 +16,7 @@ END_TIME = "end_time"
 ROUND = "round"
 
 
-def calc_avg_cpu_util(profile_dir):
+def calc_avg_resource_util(profile_dir):
     transactions_file_pattern = re.compile(r'transactions_round\d+\.dat')
     round_index_pattern = re.compile(r'(\d+)\.dat')
 
@@ -60,32 +60,33 @@ def calc_avg_cpu_util(profile_dir):
         exit(1)
 
     round_to_idle = \
-        __avg_cpu_util_of_rounds(round_to_times)
+        __avg_resource_util_of_rounds(round_to_times)
     idles_of_rounds = round_to_idle.values()
-    print("\nAverage CPU Idle Percentage: " +
+    print("\nAverage Utilization Percentage: " +
           str(sum(idles_of_rounds) / len(idles_of_rounds)) + "\n")
 
 
-def __avg_cpu_util_of_rounds(round_to_times):
-    time_pattern_in_cpustat = re.compile(r'\d{2}:\d{2}:\d{2} [AP]M')
+def __avg_resource_util_of_rounds(round_to_times):
+    time_pattern_in_stat_file = re.compile(r'\d{2}:\d{2}:\d{2} [AP]M')
 
     round_to_idle = {}
     for cur_round, times in round_to_times.items():
         idle_values = []
         amp = ''
-        with open(CPUSTAT_LOG_FILE, 'r') as filedesc:
+        with open(STAT_LOG_FILE, 'r') as filedesc:
             for line in filedesc:
                 if 'Linux' in line:
                     year_month_day = re.search(
                         r'\d{4}\-\d{2}\-\d{2}', line).group()
 
                 if 'Average' in line:
-                    print("\nError: Cannot find the end time from CPUSTAT_LOG_FILE")
+                    print("\nError: \
+Cannot find the end time from STAT_LOG_FILE")
                     exit(1)
 
-                if 'all' in line:
+                if LINE_KEY in line:
                     line_raw_time = \
-                        time_pattern_in_cpustat.search(line).group()
+                        time_pattern_in_stat_file.search(line).group()
 
                     cur_amp = line_raw_time.split()[-1]
                     if cur_amp == 'AM' and amp == 'PM':
@@ -124,29 +125,51 @@ def __extract_timestamps(filepath):
 
 def __print_usage():
     print("""\
-Usage: {} PROFILE_DIR CPUSTAT_LOG_FILE
+Usage: {} PROFILE_DIR STAT_LOG_FILE [IF_NAME]
 
 PROFILE_DIR
     Absolute dir that contains all transaction files from a single test
-CPUSTAT_LOG_FILE
-    Absolute path of file cpustat.log
+STAT_LOG_FILE
+    Absolute path of file cpustat.log or netstat.log
+IF_NAME:
+    This is the name of network interface for which the utilization is
+    measured.
+    This parameter is required if the STAT_LOG_FILE is a netstat.log
+
+----------------------------------------------------------------------
+Result Explanation
+----------------------------------------------------------------------
+For STAT_LOG_FILE is a cpustat.log, the output is an average of
+CPU idle percentage.
+For STAT_LOG_FILE is a netstat.log, the output is an average of
+network interface utilization (see %ifutil in sar(1)).
 """.format(sys.argv[0]))
-
-
-if len(sys.argv) != 3:
-    __print_usage()
     exit(1)
 
+
+if len(sys.argv) < 3:
+    __print_usage()
+
 PROFILE_BASE = sys.argv[1]
-CPUSTAT_LOG_FILE = sys.argv[2]
+STAT_LOG_FILE = sys.argv[2]
 
 if not os.path.isdir(PROFILE_BASE):
     print("\nError: directory {} does not exist!".format(PROFILE_BASE))
     exit(1)
 
-if not os.path.isfile(CPUSTAT_LOG_FILE):
-    print("\nError: CPUSTAT_LOG_FILE {} does not exist!".format(PROFILE_BASE))
+if not os.path.isfile(STAT_LOG_FILE):
+    print("\nError: STAT_LOG_FILE {} does not exist!".format(STAT_LOG_FILE))
     exit(1)
 
+if STAT_LOG_FILE.endswith("cpustat.log"):
+    LINE_KEY = "all"
+elif STAT_LOG_FILE.endswith("netstat.log"):
+    if len(sys.argv) != 4:
+        __print_usage()
 
-calc_avg_cpu_util(PROFILE_BASE)
+    LINE_KEY = sys.argv[3]
+else:
+    __print_usage()
+
+
+calc_avg_resource_util(PROFILE_BASE)
