@@ -6,6 +6,7 @@ import re
 import os
 import sys
 
+from enum import Enum
 from dateutil.parser import parse
 
 
@@ -16,7 +17,7 @@ END_TIME = "end_time"
 ROUND = "round"
 
 
-def calc_avg_resource_util(profile_dir):
+def __calc_avg_resource_util(profile_dir):
     transactions_file_pattern = re.compile(r'transactions_round\d+\.dat')
     round_index_pattern = re.compile(r'(\d+)\.dat')
 
@@ -46,7 +47,7 @@ def calc_avg_resource_util(profile_dir):
             round_to_times[round_index] = {START_TIME: 0,
                                            END_TIME: sys.maxsize}
 
-        raw_times = __extract_timestamps(file)
+        raw_times = __extract_timestamps_from_transaction_file(file)
         round_to_times[round_index][START_TIME] = \
             max(round_to_times[round_index][START_TIME],
                 parse(raw_times[0]).timestamp())
@@ -62,55 +63,93 @@ def calc_avg_resource_util(profile_dir):
     round_to_idle = \
         __avg_resource_util_of_rounds(round_to_times)
     idles_of_rounds = round_to_idle.values()
-    print("\nAverage Utilization Percentage: " +
+    print("\nAverage Resource Utilization: " +
           str(sum(idles_of_rounds) / len(idles_of_rounds)) + "\n")
 
 
-def __avg_resource_util_of_rounds(round_to_times):
-    time_pattern_in_stat_file = re.compile(r'\d{2}:\d{2}:\d{2} [AP]M')
+def __collect_cpu_net_values(times, filedesc, time_pattern):
+    res_values = []
+    amp = ''
+    for line in filedesc:
+        if 'Linux' in line:
+            year_month_day = re.search(
+                r'\d{4}\-\d{2}\-\d{2}', line).group()
 
+        if 'Average' in line:
+            print("\nError: \
+Cannot find the end time from STAT_LOG_FILE")
+            exit(1)
+
+        if LINE_KEY in line:
+            line_raw_time = \
+                time_pattern.search(line).group()
+
+            cur_amp = line_raw_time.split()[-1]
+            if cur_amp == 'AM' and amp == 'PM':
+                year_month_day = \
+                    (parse(year_month_day) +
+                     datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+            amp = cur_amp
+
+            line_timestamp = parse(
+                year_month_day + ' ' + line_raw_time).timestamp()
+
+            if times[START_TIME] - line_timestamp > 5:
+                continue
+
+            if line_timestamp - times[END_TIME] > 5:
+                break
+
+            res_values.append(float(line.split()[-1]))
+
+    return res_values
+
+
+def __collect_mem_values(times, filedesc, time_pattern):
+    res_values = []
+    is_break = False
+    for line in filedesc:
+        match_obj = time_pattern.search(line)
+        if match_obj:
+            line_timestamp = parse(match_obj.group()).timestamp()
+
+            if times[START_TIME] - line_timestamp > 5:
+                continue
+
+            if line_timestamp - times[END_TIME] > 5:
+                is_break = True
+                break
+
+            comps = line.split()
+            # system available memory is free + buff + cache
+            res_values.append(int(comps[3]) + int(comps[4]) + int(comps[5]))
+
+    if not is_break:
+        print("\nError: \
+Cannot find the end time from STAT_LOG_FILE")
+        exit(1)
+
+    return res_values
+
+
+def __avg_resource_util_of_rounds(round_to_times):
     round_to_idle = {}
     for cur_round, times in round_to_times.items():
-        idle_values = []
-        amp = ''
         with open(STAT_LOG_FILE, 'r') as filedesc:
-            for line in filedesc:
-                if 'Linux' in line:
-                    year_month_day = re.search(
-                        r'\d{4}\-\d{2}\-\d{2}', line).group()
+            if LOG_TYPE == _LogType.MEMORY:
+                res_values = __collect_mem_values(
+                    times, filedesc,
+                    re.compile(r'\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2}'))
+            else:
+                res_values = __collect_cpu_net_values(
+                    times, filedesc,
+                    re.compile(r'\d{2}:\d{2}:\d{2} [AP]M'))
 
-                if 'Average' in line:
-                    print("\nError: \
-Cannot find the end time from STAT_LOG_FILE")
-                    exit(1)
-
-                if LINE_KEY in line:
-                    line_raw_time = \
-                        time_pattern_in_stat_file.search(line).group()
-
-                    cur_amp = line_raw_time.split()[-1]
-                    if cur_amp == 'AM' and amp == 'PM':
-                        year_month_day = \
-                            (parse(year_month_day) +
-                             datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-                    amp = cur_amp
-
-                    line_timestamp = parse(
-                        year_month_day + ' ' + line_raw_time).timestamp()
-
-                    if times[START_TIME] - line_timestamp > 5:
-                        continue
-
-                    if line_timestamp - times[END_TIME] > 5:
-                        break
-
-                    idle_values.append(float(line.split()[-1]))
-
-        round_to_idle[cur_round] = sum(idle_values) / len(idle_values)
+        round_to_idle[cur_round] = sum(res_values) / len(res_values)
     return round_to_idle
 
 
-def __extract_timestamps(filepath):
+def __extract_timestamps_from_transaction_file(filepath):
     time_pattern_in_transaction_file = \
         re.compile(r'\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2}')
 
@@ -130,7 +169,7 @@ Usage: {} PROFILE_DIR STAT_LOG_FILE [IF_NAME]
 PROFILE_DIR
     Absolute dir that contains all transaction files from a single test
 STAT_LOG_FILE
-    Absolute path of file cpustat.log or netstat.log
+    Absolute path of file cpustat.log, memstat.log, or netstat.log
 IF_NAME:
     This is the name of network interface for which the utilization is
     measured.
@@ -143,6 +182,8 @@ For STAT_LOG_FILE is a cpustat.log, the output is an average of
 CPU idle percentage.
 For STAT_LOG_FILE is a netstat.log, the output is an average of
 network interface utilization (see %ifutil in sar(1)).
+For STAT_LOG_FILE is a memstat.log, the output is available system
+memory in KB.
 """.format(sys.argv[0]))
     exit(1)
 
@@ -161,15 +202,26 @@ if not os.path.isfile(STAT_LOG_FILE):
     print("\nError: STAT_LOG_FILE {} does not exist!".format(STAT_LOG_FILE))
     exit(1)
 
+
+class _LogType(Enum):
+    CPU = 1
+    NETWORK = 2
+    MEMORY = 3
+
+
 if STAT_LOG_FILE.endswith("cpustat.log"):
+    LOG_TYPE = _LogType.CPU
     LINE_KEY = "all"
+elif STAT_LOG_FILE.endswith("memstat.log"):
+    LOG_TYPE = _LogType.MEMORY
 elif STAT_LOG_FILE.endswith("netstat.log"):
     if len(sys.argv) != 4:
         __print_usage()
 
+    LOG_TYPE = _LogType.NETWORK
     LINE_KEY = sys.argv[3]
 else:
     __print_usage()
 
 
-calc_avg_resource_util(PROFILE_BASE)
+__calc_avg_resource_util(PROFILE_BASE)
