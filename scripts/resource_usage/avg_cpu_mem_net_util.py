@@ -66,10 +66,10 @@ Cannot find the end time from STAT_LOG_FILE")
             line_timestamp = parse(
                 year_month_day + ' ' + line_raw_time).timestamp()
 
-            if times[START_TIME] - line_timestamp > 5:
+            if times[START_TIME] > line_timestamp:
                 continue
 
-            if line_timestamp - times[END_TIME] > 5:
+            if line_timestamp > times[END_TIME]:
                 break
 
             res_values.append(float(line.split()[-1]))
