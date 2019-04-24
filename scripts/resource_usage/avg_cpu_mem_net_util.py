@@ -8,63 +8,35 @@ import sys
 
 from enum import Enum
 from dateutil.parser import parse
-
-
-STEADY_STATE_WINDOW_SIZE = 3
+from helper import TransactionFiles
 
 START_TIME = "start_time"
 END_TIME = "end_time"
-ROUND = "round"
 
 
 def __calc_avg_resource_util(profile_dir):
-    transactions_file_pattern = re.compile(r'transactions_round\d+\.dat')
-    round_index_pattern = re.compile(r'(\d+)\.dat')
+    transaction_files = TransactionFiles(profile_dir)
 
-    transactions_files = []
-    for dirpath, _, filenames in os.walk(profile_dir):
-        for filename in filenames:
-            if transactions_file_pattern.match(filename):
-                transactions_files.append(
-                    os.path.join(dirpath, filename))
+    def __do_update(file, round_index):
+        obj_at_cur_round = transaction_files.round_to_obj[round_index]
+        raw_times = __extract_timestamps(file)
+        start_time = max(obj_at_cur_round[START_TIME],
+                         parse(raw_times[0]).timestamp())
+        end_time = min(obj_at_cur_round[END_TIME],
+                       parse(raw_times[-1]).timestamp())
 
-    transactions_files.sort(
-        key=lambda file: int(
-            round_index_pattern.search(file).group(1)),
-        reverse=True)
+        transaction_files.update_obj_at_cur_round(
+            {START_TIME: start_time,
+             END_TIME: end_time})
 
-    round_to_times = {}
+    transaction_files.fill(__do_update, {START_TIME: 0,
+                                         END_TIME: sys.maxsize})
 
-    process_rounds = set()
-    for file in transactions_files:
-        round_index = round_index_pattern.search(file).group(1)
-
-        process_rounds.add(round_index)
-        if len(process_rounds) > STEADY_STATE_WINDOW_SIZE:
-            break
-
-        if round_index not in round_to_times:
-            round_to_times[round_index] = {START_TIME: 0,
-                                           END_TIME: sys.maxsize}
-
-        raw_times = __extract_timestamps_from_transaction_file(file)
-        round_to_times[round_index][START_TIME] = \
-            max(round_to_times[round_index][START_TIME],
-                parse(raw_times[0]).timestamp())
-        round_to_times[round_index][END_TIME] = \
-            min(round_to_times[round_index][END_TIME],
-                parse(raw_times[-1]).timestamp())
-
-    if len(process_rounds) < STEADY_STATE_WINDOW_SIZE:
-        print("Error: do not have enough transaction files for \
-{} rounds in steady state!".format(STEADY_STATE_WINDOW_SIZE))
-        exit(1)
-
-    round_to_idle = \
-        __avg_resource_util_of_rounds(round_to_times)
-    idles_of_rounds = round_to_idle.values()
-    print("\nAverage Resource Utilization: " +
-          str(sum(idles_of_rounds) / len(idles_of_rounds)) + "\n")
+    round_to_util = \
+        __avg_resource_util_of_rounds(transaction_files.round_to_obj)
+    utils_of_rounds = round_to_util.values()
+    print("\nAverage Resource Utilization: {}\n".format(
+        sum(utils_of_rounds) / len(utils_of_rounds)))
 
 
 def __collect_cpu_net_values(times, filedesc, time_pattern):
@@ -133,7 +105,7 @@ Cannot find the end time from STAT_LOG_FILE")
 
 
 def __avg_resource_util_of_rounds(round_to_times):
-    round_to_idle = {}
+    round_to_util = {}
     for cur_round, times in round_to_times.items():
         with open(STAT_LOG_FILE, 'r') as filedesc:
             if LOG_TYPE == _LogType.MEMORY:
@@ -145,16 +117,16 @@ def __avg_resource_util_of_rounds(round_to_times):
                     times, filedesc,
                     re.compile(r'\d{2}:\d{2}:\d{2} [AP]M'))
 
-        round_to_idle[cur_round] = sum(res_values) / len(res_values)
-    return round_to_idle
+        round_to_util[cur_round] = sum(res_values) / len(res_values)
+    return round_to_util
 
 
-def __extract_timestamps_from_transaction_file(filepath):
+def __extract_timestamps(file):
     time_pattern_in_transaction_file = \
         re.compile(r'\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2}')
 
     match_strs = []
-    with open(filepath, 'r') as filedesc:
+    with open(file, 'r') as filedesc:
         for line in filedesc:
             match_obj = time_pattern_in_transaction_file.search(line)
             if match_obj:
@@ -191,11 +163,11 @@ memory in KB.
 if len(sys.argv) < 3:
     __print_usage()
 
-PROFILE_BASE = sys.argv[1]
+PROFILE_DIR = sys.argv[1]
 STAT_LOG_FILE = sys.argv[2]
 
-if not os.path.isdir(PROFILE_BASE):
-    print("\nError: directory {} does not exist!".format(PROFILE_BASE))
+if not os.path.isdir(PROFILE_DIR):
+    print("\nError: directory {} does not exist!".format(PROFILE_DIR))
     exit(1)
 
 if not os.path.isfile(STAT_LOG_FILE):
@@ -223,5 +195,4 @@ elif STAT_LOG_FILE.endswith("netstat.log"):
 else:
     __print_usage()
 
-
-__calc_avg_resource_util(PROFILE_BASE)
+__calc_avg_resource_util(PROFILE_DIR)
