@@ -6,7 +6,7 @@ import re
 import os
 import sys
 
-from enum import Enum
+from enum import Enum, unique
 from dateutil.parser import parse
 from helper import TransactionFiles
 
@@ -35,8 +35,7 @@ def __calc_avg_resource_util(profile_dir):
     round_to_util = \
         __avg_resource_util_of_rounds(transaction_files.round_to_obj)
     utils_of_rounds = round_to_util.values()
-    print("\nAverage Resource Utilization: {}\n".format(
-        sum(utils_of_rounds) / len(utils_of_rounds)))
+    LOG_TYPE.print_result(sum(utils_of_rounds) / len(utils_of_rounds))
 
 
 def __collect_cpu_net_values(times, filedesc, time_pattern):
@@ -72,7 +71,16 @@ Cannot find the end time from STAT_LOG_FILE")
             if line_timestamp > times[END_TIME]:
                 break
 
-            res_values.append(float(line.split()[-1]))
+            comps = line.split()
+            if LOG_TYPE == _LogType.NETWORK:
+                # in netstat.log, the last column is %ifutil
+                res_value = float(comps[-1])
+            else:
+                # in cpustat.log, we should calculate the cpu availability
+                # using %iowait (column 6) and %idle (the last column)
+                res_value = float(comps[-1]) + float(comps[6])
+
+            res_values.append(res_value)
 
     return res_values
 
@@ -150,12 +158,12 @@ IF_NAME:
 ----------------------------------------------------------------------
 Result Explanation
 ----------------------------------------------------------------------
-For STAT_LOG_FILE is a cpustat.log, the output is an average of
-CPU idle percentage.
-For STAT_LOG_FILE is a netstat.log, the output is an average of
+If STAT_LOG_FILE is a cpustat.log, the output is the average of
+CPU utilization.
+If STAT_LOG_FILE is a netstat.log, the output is the average of
 network interface utilization (see %ifutil in sar(1)).
-For STAT_LOG_FILE is a memstat.log, the output is available system
-memory in KB.
+If STAT_LOG_FILE is a memstat.log, the output is the average available
+system memory in MB.
 """.format(sys.argv[0]))
     exit(1)
 
@@ -175,10 +183,24 @@ if not os.path.isfile(STAT_LOG_FILE):
     exit(1)
 
 
+@unique
 class _LogType(Enum):
     CPU = 1
     NETWORK = 2
     MEMORY = 3
+
+    def print_result(self, value):
+        """Print result message for value."""
+        if self is _LogType.CPU:
+            msg = "The average CPU utilization is: {:.2f}%".format(100 - value)
+        elif self is _LogType.NETWORK:
+            msg = "The average network utilization of interface {} is: \
+{:.2f}%".format(LINE_KEY, value)
+        else:
+            msg = "The average available system memory is: {:.2f} MB".format(
+                value / 1024)
+
+        print("\n" + msg + "\n")
 
 
 if STAT_LOG_FILE.endswith("cpustat.log"):
