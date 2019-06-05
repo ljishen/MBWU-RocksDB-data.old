@@ -15,7 +15,6 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator
 from matplotlib.ticker import MaxNLocator
 
-
 _SUFFIX = 'suf'
 _VALUES = 'vals'
 
@@ -168,8 +167,8 @@ def __do_plot(ax, throughput_type, text_pos, color, fmt, tcs, ths):
 
 
 def plot_throughputs(folder):
-    plt.rc('xtick', labelsize=8)
-    plt.rc('ytick', labelsize=8)
+    plt.rc('xtick', labelsize=10)
+    plt.rc('ytick', labelsize=10)
 
     fig, ax = plt.subplots()
     ax.grid(which='major', alpha=0.5)
@@ -279,7 +278,7 @@ def compare_general_mbwus_of_threads(folder, nr_drives):
     for nr_threads, total_ops in total_ops_of_threads.items():
         ax.text(nr_threads, total_ops * 1.02,
                 '%.1f' % total_ops,
-                ha='center', size=6, color='m')
+                ha='center', size=9, color='m')
 
     ax.set_ylim(0)
 
@@ -414,7 +413,7 @@ def __plot_general_throughputs(nr_drives,
     for idx, nd in enumerate(nr_drives):
         ax.text(nd, means[idx] + text_pos_incr,
                 '%.1f' % means[idx],
-                ha='center', size=6, color='r')
+                ha='center', size=9, color='r')
 
     # calculate polynomial
     poly_degree = 2
@@ -451,7 +450,7 @@ and n is the number of drives\n'.format(ytitle))
                bbox_to_anchor=(0.5, 1.02),
                ncol=2,
                frameon=False,
-               prop={'size': 8})
+               prop={'size': 9})
 
     plt.savefig(_OUTPUT_FIGURES_BASE + output_figure_name, bbox_inches='tight')
 
@@ -581,7 +580,7 @@ def __plot_power_consumption(subfolders,
     for idx, nd in enumerate(nr_drives):
         ax.text(nd, means[idx] + text_pos_incr,
                 '%.2f' % means[idx],
-                ha='center', size=6, color='r')
+                ha='center', size=9, color='r')
 
     # calculate polynomial
     poly_degree = 2
@@ -617,7 +616,7 @@ def __plot_power_consumption(subfolders,
                bbox_to_anchor=(0.5, 1.02),
                ncol=2,
                frameon=False,
-               prop={'size': 8})
+               prop={'size': 9})
 
     output_figure_name = title_note.replace('/', '_') + '_power_consumption'
     plt.savefig(_OUTPUT_FIGURES_BASE + output_figure_name, bbox_inches='tight')
