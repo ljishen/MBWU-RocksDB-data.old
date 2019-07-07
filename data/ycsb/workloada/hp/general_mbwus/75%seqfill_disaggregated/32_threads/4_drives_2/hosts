@@ -1,0 +1,38 @@
+# init_devices: The names of PARENT storage devices on the initiator server.
+#               Each storage device is assigned to a RocksDB instance for data
+#               operations and each RocksDB instance stores data only to one
+#               storage device.
+#               This is required for each host.
+# rmi_ports:    The system available ports on the host (the device machine).
+#               These ports are used to run RocksDB RIM servers.
+#               Each RocksDB RMI server is only responsible for one device,
+#               so the number of ports should be the same as the number of DUTs.
+#               See https://github.com/ljishen/YCSB/tree/remote-rocksdb/rocksdb
+[rocksdb]
+# EXAMPLES
+# 192.168.140.138   ansible_user=ljishen    init_devices=sda,sdb    rmi_ports=1099,1100
+# 73.162.248.180    ansible_user=ljishen    init_devices=sda        rmi_ports=1099,     ansible_port=22002
+# 192.168.86.31     ansible_user=rock64     init_devices=sda        rmi_ports=1099,
+
+192.168.140.138     ansible_user=ljishen    init_devices=sdb        rmi_ports=1099,
+10.0.2.21           ansible_user=ljishen    init_devices=sdc        rmi_ports=1100,
+10.0.3.31           ansible_user=ljishen    init_devices=sdd        rmi_ports=1101,
+10.0.4.41           ansible_user=ljishen    init_devices=sde        rmi_ports=1102,
+
+# target_devices: The names of PHYSICAL PARENT storage devices under test (DUT)
+#                 on the target server.
+#                 This is required for each host.
+#                 CAUTION: ALL DATA on the DUTs will be ERASED!
+#
+# You need to config the target hosts ([storage]) and the initiator hosts
+# ([rocksdb]) beforehand to set up connections of how the init_devices map to
+# the target_devices using protocols such as iSCSI or NVMe-oF.
+# Performance statistics will be collected from these hosts.
+[storage]
+# EXAMPLES
+# 192.168.140.138   ansible_user=ljishen    target_devices=sda,sdb
+
+192.168.140.252     ansible_user=ljishen    target_devices=sdb,sdc,sdd,sde
+# 192.168.140.252     ansible_user=ljishen    target_devices=sdb,sdc,sdd
+# 192.168.140.252     ansible_user=ljishen    target_devices=sdc,sdd
+# 192.168.140.252     ansible_user=ljishen    target_devices=sdc
