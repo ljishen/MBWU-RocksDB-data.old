@@ -57,7 +57,7 @@ def main():
 
 if __name__ == "__main__":
     NUM_ARGS = len(sys.argv)
-    if NUM_ARGS < 1:
+    if NUM_ARGS < 2:
         print("""\
 Usage: {} IOSTAT_LOG_FILE
 
