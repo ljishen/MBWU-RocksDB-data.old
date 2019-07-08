@@ -297,7 +297,9 @@ __timestamp_pattern_in_transactions_log = \
 
 
 def plot_general_mbwus(folder):
+    # subfolders: [x_drives]
     subfolders = __list_subfolders(folder, r'^\d+_drives$')
+
     subfolders.sort(key=lambda path: re.findall(r'/(\d+)_', path)[-1])
 
     nr_drives = []
@@ -307,18 +309,21 @@ def plot_general_mbwus(folder):
     transactions_start_times = {}
     transactions_end_times = {}
 
-    # subfolders: [x_drives]
+    # nr_drives_folder: x_drives
     for nr_drives_folder in subfolders:
-        res_folder_of_drive = next(os.walk(nr_drives_folder))[1]
+        res_folder_of_drive = glob.glob(
+            nr_drives_folder + '/**/sd[a-z]*' + os.sep, recursive=True)
+        res_folder_of_drive = [res_folder for res_folder in res_folder_of_drive
+                               if not res_folder.startswith(
+                                   nr_drives_folder + '/storage-')]
 
         ops_sec = {}
         mb_s = {}
 
         cur_nr_drives = len(res_folder_of_drive)
 
-        for drive in res_folder_of_drive:
-            # drive: sdx
-            realpath = os.path.join(nr_drives_folder, drive)
+        # realpath: folder that end with 'sdx'
+        for realpath in res_folder_of_drive:
             rounds = __get_rounds_in_ss_window(realpath)
             for r in rounds:
                 device_iops, device_throughput, ycsb_tps = \
@@ -329,8 +334,8 @@ def plot_general_mbwus(folder):
                 transactions_log_file = os.path.join(
                     realpath, 'transactions_round' + str(r) + '.dat')
 
-                with open(transactions_log_file, 'r') as fh:
-                    file_str = fh.read()
+                with open(transactions_log_file, 'r') as fobj:
+                    file_str = fobj.read()
                     ts_strs = re.findall(
                         __timestamp_pattern_in_transactions_log, file_str)
 
@@ -551,7 +556,8 @@ def __plot_power_consumption(subfolders,
     for nr_drives_folder in subfolders:
         phase_load_file = __get_phase_load_file(nr_drives_folder)
         if os.path.isfile(phase_load_file):
-            cur_nr_drives = len(next(os.walk(nr_drives_folder))[1])
+            cur_nr_drives = int(re.search("(\\d+)_drives$",
+                                          nr_drives_folder).group(1))
             nr_drives.append(cur_nr_drives)
 
             means_of_loads = []
