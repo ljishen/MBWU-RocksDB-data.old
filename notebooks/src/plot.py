@@ -412,6 +412,7 @@ def __plot_general_throughputs(nr_drives,
 
     width = 0.2
     ax.bar(nr_drives, means, width, yerr=stds, color=color, label='raw value')
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 
     # plot value on top of bar
     text_pos_incr = min(means) * 0.2
@@ -580,6 +581,7 @@ def __plot_power_consumption(subfolders,
 
     width = 0.2
     ax.bar(nr_drives, means, width, yerr=stds, color='g', label='average load')
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 
     # plot value on top of bar
     text_pos_incr = max(means) * 0.03
