@@ -1,0 +1,427 @@
+storage iblock {
+    disk sdb {
+        path /dev/sdb 
+        wwn be4376eb-a537-40af-8cb9-475b6a1b583a 
+        attribute {
+            block_size 512 
+            emulate_3pc yes 
+            emulate_caw yes 
+            emulate_dpo yes 
+            emulate_fua_read yes 
+            emulate_fua_write yes 
+            emulate_model_alias no 
+            emulate_rest_reord no 
+            emulate_tas yes 
+            emulate_tpu no 
+            emulate_tpws no 
+            emulate_ua_intlck_ctrl no 
+            emulate_write_cache no 
+            enforce_pr_isids yes 
+            fabric_max_sectors 8192 
+            force_pr_aptpl 0 
+            is_nonrot yes 
+            max_unmap_block_desc_count 0 
+            max_unmap_lba_count 0 
+            max_write_same_len 65535 
+            optimal_sectors 1024 
+            pi_prot_format 0 
+            pi_prot_type 0 
+            queue_depth 128 
+            unmap_granularity 0 
+            unmap_granularity_alignment 0 
+        }
+    }
+    disk sdc {
+        path /dev/sdc 
+        wwn 9943a7b2-9801-49a2-8262-7b8acc85756f 
+        attribute {
+            block_size 512 
+            emulate_3pc yes 
+            emulate_caw yes 
+            emulate_dpo yes 
+            emulate_fua_read yes 
+            emulate_fua_write yes 
+            emulate_model_alias no 
+            emulate_rest_reord no 
+            emulate_tas yes 
+            emulate_tpu no 
+            emulate_tpws no 
+            emulate_ua_intlck_ctrl no 
+            emulate_write_cache no 
+            enforce_pr_isids yes 
+            fabric_max_sectors 8192 
+            force_pr_aptpl 0 
+            is_nonrot yes 
+            max_unmap_block_desc_count 0 
+            max_unmap_lba_count 0 
+            max_write_same_len 65535 
+            optimal_sectors 1024 
+            pi_prot_format 0 
+            pi_prot_type 0 
+            queue_depth 128 
+            unmap_granularity 0 
+            unmap_granularity_alignment 0 
+        }
+    }
+    disk sdd {
+        path /dev/sdd 
+        wwn 18f0fd86-673b-47ff-9c3c-c9dd6d6efb12 
+        attribute {
+            block_size 512 
+            emulate_3pc yes 
+            emulate_caw yes 
+            emulate_dpo yes 
+            emulate_fua_read yes 
+            emulate_fua_write yes 
+            emulate_model_alias no 
+            emulate_rest_reord no 
+            emulate_tas yes 
+            emulate_tpu no 
+            emulate_tpws no 
+            emulate_ua_intlck_ctrl no 
+            emulate_write_cache no 
+            enforce_pr_isids yes 
+            fabric_max_sectors 8192 
+            force_pr_aptpl 0 
+            is_nonrot yes 
+            max_unmap_block_desc_count 0 
+            max_unmap_lba_count 0 
+            max_write_same_len 65535 
+            optimal_sectors 1024 
+            pi_prot_format 0 
+            pi_prot_type 0 
+            queue_depth 128 
+            unmap_granularity 0 
+            unmap_granularity_alignment 0 
+        }
+    }
+    disk sde {
+        path /dev/sde 
+        wwn dc0aaa6a-bf77-43ad-acb1-0e8e1ed4a20d 
+        attribute {
+            block_size 512 
+            emulate_3pc yes 
+            emulate_caw yes 
+            emulate_dpo yes 
+            emulate_fua_read yes 
+            emulate_fua_write yes 
+            emulate_model_alias no 
+            emulate_rest_reord no 
+            emulate_tas yes 
+            emulate_tpu no 
+            emulate_tpws no 
+            emulate_ua_intlck_ctrl no 
+            emulate_write_cache no 
+            enforce_pr_isids yes 
+            fabric_max_sectors 8192 
+            force_pr_aptpl 0 
+            is_nonrot yes 
+            max_unmap_block_desc_count 0 
+            max_unmap_lba_count 0 
+            max_write_same_len 65535 
+            optimal_sectors 1024 
+            pi_prot_format 0 
+            pi_prot_type 0 
+            queue_depth 128 
+            unmap_granularity 0 
+            unmap_granularity_alignment 0 
+        }
+    }
+}
+fabric iscsi {
+    discovery_auth {
+        enable yes 
+        mutual_password "" 
+        mutual_userid "" 
+        password 12345 
+        userid ljishen 
+    }
+    target iqn.2003-01.org.linux-iscsi.pl3.x8664:sn.2e7526a1372e tpgt 1 {
+        enable yes 
+        attribute {
+            authentication yes 
+            cache_dynamic_acls no 
+            default_cmdsn_depth 64 
+            default_erl 0 
+            demo_mode_discovery yes 
+            demo_mode_write_protect yes 
+            fabric_prot_type 0 
+            generate_node_acls no 
+            login_keys_workaround 1 
+            login_timeout 15 
+            netif_timeout 2 
+            prod_mode_write_protect no 
+            t10_pi 0 
+            tpg_enabled_sendtargets 1 
+        }
+        auth {
+            password "" 
+            password_mutual "" 
+            userid "" 
+            userid_mutual "" 
+        }
+        parameter {
+            AuthMethod CHAP 
+            DataDigest "CRC32C,None" 
+            DataPDUInOrder yes 
+            DataSequenceInOrder yes 
+            DefaultTime2Retain 20 
+            DefaultTime2Wait 2 
+            ErrorRecoveryLevel no 
+            FirstBurstLength 65536 
+            HeaderDigest "CRC32C,None" 
+            IFMarkInt Reject 
+            IFMarker no 
+            ImmediateData yes 
+            InitialR2T yes 
+            MaxBurstLength 262144 
+            MaxConnections 1 
+            MaxOutstandingR2T 1 
+            MaxRecvDataSegmentLength 8192 
+            MaxXmitDataSegmentLength 262144 
+            OFMarkInt Reject 
+            OFMarker no 
+            TargetAlias "LIO Target" 
+        }
+        lun 0 backend iblock:sdb 
+        acl iqn.1993-08.org.debian:01:14672bd55c {
+            attribute {
+                dataout_timeout 3 
+                dataout_timeout_retries 5 
+                default_erl 0 
+                nopin_response_timeout 30 
+                nopin_timeout 15 
+                random_datain_pdu_offsets no 
+                random_datain_seq_offsets no 
+                random_r2t_offsets no 
+            }
+            auth {
+                password 12345 
+                password_mutual "" 
+                userid ljishen 
+                userid_mutual "" 
+            }
+            mapped_lun 0 {
+                target_lun 0 
+                write_protect no 
+            }
+        }
+        portal 10.0.9.90:3260 
+    }
+    target iqn.2003-01.org.linux-iscsi.pl3.x8664:sn.6cfedf6f2cf4 tpgt 1 {
+        enable yes 
+        attribute {
+            authentication yes 
+            cache_dynamic_acls no 
+            default_cmdsn_depth 64 
+            default_erl 0 
+            demo_mode_discovery yes 
+            demo_mode_write_protect yes 
+            fabric_prot_type 0 
+            generate_node_acls no 
+            login_keys_workaround 1 
+            login_timeout 15 
+            netif_timeout 2 
+            prod_mode_write_protect no 
+            t10_pi 0 
+            tpg_enabled_sendtargets 1 
+        }
+        auth {
+            password "" 
+            password_mutual "" 
+            userid "" 
+            userid_mutual "" 
+        }
+        parameter {
+            AuthMethod CHAP 
+            DataDigest "CRC32C,None" 
+            DataPDUInOrder yes 
+            DataSequenceInOrder yes 
+            DefaultTime2Retain 20 
+            DefaultTime2Wait 2 
+            ErrorRecoveryLevel no 
+            FirstBurstLength 65536 
+            HeaderDigest "CRC32C,None" 
+            IFMarkInt Reject 
+            IFMarker no 
+            ImmediateData yes 
+            InitialR2T yes 
+            MaxBurstLength 262144 
+            MaxConnections 1 
+            MaxOutstandingR2T 1 
+            MaxRecvDataSegmentLength 8192 
+            MaxXmitDataSegmentLength 262144 
+            OFMarkInt Reject 
+            OFMarker no 
+            TargetAlias "LIO Target" 
+        }
+        lun 0 backend iblock:sdc 
+        acl iqn.1993-08.org.debian:01:14672bd55c {
+            attribute {
+                dataout_timeout 3 
+                dataout_timeout_retries 5 
+                default_erl 0 
+                nopin_response_timeout 30 
+                nopin_timeout 15 
+                random_datain_pdu_offsets no 
+                random_datain_seq_offsets no 
+                random_r2t_offsets no 
+            }
+            auth {
+                password 12345 
+                password_mutual "" 
+                userid ljishen 
+                userid_mutual "" 
+            }
+            mapped_lun 0 {
+                target_lun 0 
+                write_protect no 
+            }
+        }
+        portal 10.0.9.90:3261 
+    }
+    target iqn.2003-01.org.linux-iscsi.pl3.x8664:sn.7f5d30766087 tpgt 1 {
+        enable yes 
+        attribute {
+            authentication yes 
+            cache_dynamic_acls no 
+            default_cmdsn_depth 64 
+            default_erl 0 
+            demo_mode_discovery yes 
+            demo_mode_write_protect yes 
+            fabric_prot_type 0 
+            generate_node_acls no 
+            login_keys_workaround 1 
+            login_timeout 15 
+            netif_timeout 2 
+            prod_mode_write_protect no 
+            t10_pi 0 
+            tpg_enabled_sendtargets 1 
+        }
+        auth {
+            password "" 
+            password_mutual "" 
+            userid "" 
+            userid_mutual "" 
+        }
+        parameter {
+            AuthMethod CHAP 
+            DataDigest "CRC32C,None" 
+            DataPDUInOrder yes 
+            DataSequenceInOrder yes 
+            DefaultTime2Retain 20 
+            DefaultTime2Wait 2 
+            ErrorRecoveryLevel no 
+            FirstBurstLength 65536 
+            HeaderDigest "CRC32C,None" 
+            IFMarkInt Reject 
+            IFMarker no 
+            ImmediateData yes 
+            InitialR2T yes 
+            MaxBurstLength 262144 
+            MaxConnections 1 
+            MaxOutstandingR2T 1 
+            MaxRecvDataSegmentLength 8192 
+            MaxXmitDataSegmentLength 262144 
+            OFMarkInt Reject 
+            OFMarker no 
+            TargetAlias "LIO Target" 
+        }
+        lun 0 backend iblock:sdd 
+        acl iqn.1993-08.org.debian:01:14672bd55c {
+            attribute {
+                dataout_timeout 3 
+                dataout_timeout_retries 5 
+                default_erl 0 
+                nopin_response_timeout 30 
+                nopin_timeout 15 
+                random_datain_pdu_offsets no 
+                random_datain_seq_offsets no 
+                random_r2t_offsets no 
+            }
+            auth {
+                password 12345 
+                password_mutual "" 
+                userid ljishen 
+                userid_mutual "" 
+            }
+            mapped_lun 0 {
+                target_lun 0 
+                write_protect no 
+            }
+        }
+        portal 10.0.9.90:3262 
+    }
+    target iqn.2003-01.org.linux-iscsi.pl3.x8664:sn.d6bc96d54c64 tpgt 1 {
+        enable yes 
+        attribute {
+            authentication yes 
+            cache_dynamic_acls no 
+            default_cmdsn_depth 64 
+            default_erl 0 
+            demo_mode_discovery yes 
+            demo_mode_write_protect yes 
+            fabric_prot_type 0 
+            generate_node_acls no 
+            login_keys_workaround 1 
+            login_timeout 15 
+            netif_timeout 2 
+            prod_mode_write_protect no 
+            t10_pi 0 
+            tpg_enabled_sendtargets 1 
+        }
+        auth {
+            password "" 
+            password_mutual "" 
+            userid "" 
+            userid_mutual "" 
+        }
+        parameter {
+            AuthMethod CHAP 
+            DataDigest "CRC32C,None" 
+            DataPDUInOrder yes 
+            DataSequenceInOrder yes 
+            DefaultTime2Retain 20 
+            DefaultTime2Wait 2 
+            ErrorRecoveryLevel no 
+            FirstBurstLength 65536 
+            HeaderDigest "CRC32C,None" 
+            IFMarkInt Reject 
+            IFMarker no 
+            ImmediateData yes 
+            InitialR2T yes 
+            MaxBurstLength 262144 
+            MaxConnections 1 
+            MaxOutstandingR2T 1 
+            MaxRecvDataSegmentLength 8192 
+            MaxXmitDataSegmentLength 262144 
+            OFMarkInt Reject 
+            OFMarker no 
+            TargetAlias "LIO Target" 
+        }
+        lun 0 backend iblock:sde 
+        acl iqn.1993-08.org.debian:01:14672bd55c {
+            attribute {
+                dataout_timeout 3 
+                dataout_timeout_retries 5 
+                default_erl 0 
+                nopin_response_timeout 30 
+                nopin_timeout 15 
+                random_datain_pdu_offsets no 
+                random_datain_seq_offsets no 
+                random_r2t_offsets no 
+            }
+            auth {
+                password 12345 
+                password_mutual "" 
+                userid ljishen 
+                userid_mutual "" 
+            }
+            mapped_lun 0 {
+                target_lun 0 
+                write_protect no 
+            }
+        }
+        portal 10.0.9.90:3263 
+    }
+}
