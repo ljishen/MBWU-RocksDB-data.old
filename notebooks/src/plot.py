@@ -580,7 +580,8 @@ def __plot_power_consumption(subfolders,
     stds = [np.std(loads, ddof=1) for loads in loads_of_nr_drives]
 
     width = 0.2
-    ax.bar(nr_drives, means, width, yerr=stds, color='g', label='average load')
+    # ax.bar(nr_drives, means, width, yerr=stds, color='g', label='average load')
+    ax.bar(nr_drives, means, width, color='g', label='average load')
     ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 
     # plot value on top of bar
